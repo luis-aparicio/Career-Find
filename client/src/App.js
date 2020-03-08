@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./views/Home/Home";
-import Careers from "./views/Login/login"
+import Careers from "./views/Careers/careers"
 import Classroom from "./views/Classroom/classroom"
 import Profile from "./views/Profile/profile"
 import Rewards from "./views/Rewards/rewards"

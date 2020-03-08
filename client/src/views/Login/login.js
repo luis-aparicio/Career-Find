@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
-//import './Home.css';
-
-function Home() {
+import Button from 'react-bootstrap/Button'
+import './login.css'
+function Login() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                </a>
-            </header>
+        <div class = "buttons">
+            <Button variant="primary" size="lg" block>
+                Teacher adasdaj
+            </Button>
+            <Button variant="secondary" size="lg" block>
+                Student
+            </Button>
         </div>
     );
 }
 
-export default Home;
+export default Login;
