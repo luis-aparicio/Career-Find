@@ -7,7 +7,6 @@ import Profile from "./views/Profile/profile"
 import Rewards from "./views/Rewards/rewards"
 import Chat from "./views/Chat/chat"
 import Login from "./views/Login/login"
-import Register from "./views/Register/register"
 import NotFound from "./views/NotFound";
 import NavBar from "./components/Header/NavBar";
 
@@ -23,7 +22,6 @@ const App = () => {
         <Route exact path="/Rewards" component={Rewards} />
         <Route exact path="/Chat" component={Chat} />
         <Route exact path="/Login" component={Login} />
-        <Route exact path="/Register" component={Register} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>

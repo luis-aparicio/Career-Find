@@ -18,8 +18,7 @@ const NavBar = () => {
                 <Link className = "nav-link" to='/Profile'>Profile</Link>
                 <Link className = "nav-link" to='/Rewards'>Rewards</Link>
                 <Link className = "nav-link" to='/Chat'>Chat</Link>
-                <Link className = "nav-link" to='/Login'>Login</Link>
-                <Link className = "nav-link" to='/Register'>Register</Link>
+                <Link className = "nav-link" to='/Login'>Login/Register</Link>
                 {/*<a className = "nav-link" target="_blank" rel="noopener norefferer" href="https://nodejs.org/en/docs/">*To Link*</a>*/}
             </div>
 

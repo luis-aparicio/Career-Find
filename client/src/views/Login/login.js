@@ -5,7 +5,7 @@ function Login() {
     return (
         <div class = "buttons">
             <Button variant="primary" size="lg" block>
-                Teacher adasdaj
+                Teacher
             </Button>
             <Button variant="secondary" size="lg" block>
                 Student
