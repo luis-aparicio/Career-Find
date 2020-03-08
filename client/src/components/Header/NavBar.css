@@ -1,5 +1,5 @@
 .header {
-    background: #282c34;
+    background: #3A82EF;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -25,7 +25,7 @@
 }
 
 .nav-link {
-    background-color: #09d3ac;
+    background: #2F77E3;
     color: black;
     padding: 14px 25px;
     text-align: center;
@@ -33,6 +33,6 @@
 }
 
 .nav-link:hover {
-    background-color: #08bd9a;
+    background-color: #0707fa;
 }
 
