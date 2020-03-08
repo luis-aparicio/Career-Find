@@ -9,11 +9,14 @@ import Chat from "./views/Chat/chat"
 import Login from "./views/Login/login"
 import NotFound from "./views/NotFound";
 import NavBar from "./components/Header/NavBar";
+import Footer from "./components/Footer/Footer";
+import Ban from "./components/Banner/Titlebanner";
 
 const App = () => {
   return (
     <div>
-      <NavBar />
+      <NavBar/>
+      <Ban/>
       <Switch>
         <Route exact path="/Home" component={Home} />
         <Route exact path="/Careers" component={Careers} />
@@ -27,6 +30,7 @@ const App = () => {
         </Route>
         <Route component={NotFound}/>
       </Switch>
+      <Footer/>
     </div>
   );
 }
