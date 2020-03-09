@@ -1,15 +1,31 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button'
+
+import React, {useState, useEffect} from 'react';
+import RegisterUser from '../../components/Login/RegisterUser.js';
+import LoginUser from '../../components/Login/LoginUser.js';
+import LoginForm from '../../components/Login/LoginForm.js';
+
 import './login.css'
 function Login() {
+    const [newUser, setNewUser] = useState(false);
+    const [returningUser, setReturningUser] = useState(false);
+
     return (
-        <div class = "buttons">
-            <Button variant="primary" size="lg" block>
-                Teacher
-            </Button>
-            <Button variant="secondary" size="lg" block>
-                Student
-            </Button>
+        <div>
+            <LoginForm newUser = {newUser}
+                       setNewUser = {setNewUser}
+                       returningUser = {returningUser}
+                       setReturningUser = {setReturningUser}
+            />
+            <RegisterUser newUser = {newUser}
+                          setNewUser = {setNewUser}
+                          returningUser = {returningUser}
+                          setReturningUser = {setReturningUser}
+            />
+            <LoginUser returningUser = {returningUser}
+                       setReturningUser = {setReturningUser}
+                       newUser = {newUser}
+                       setNewUser = {setNewUser}
+            />
         </div>
     );
 }
