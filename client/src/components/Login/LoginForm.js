@@ -38,7 +38,7 @@ const LoginForm = (props) => {
                         <FormControl type="text" placeholder="Enter last name"/>
                     </FormGroup>
                 </Form>
-                <Button onClick={handleSubmit} variant="success" size="lg" block>
+                <Button onClick={handleSubmit} variant="success" size="lg">
                     Submit
                 </Button>
             </div>
@@ -70,7 +70,7 @@ const LoginForm = (props) => {
                         </FormControl.Feedback>
                     </FormGroup>
                 </Form>
-                <Button onClick = {handleSubmit} variant = "success" size = "lg" block >
+                <Button onClick = {handleSubmit} variant = "success" size = "lg">
                     Submit
                 </Button>
             </div>

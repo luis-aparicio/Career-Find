@@ -18,7 +18,7 @@ const LoginUser = (props) => {
             <Button
                 onClick ={handleClick}
                 variant="primary"
-                size="lg" block>
+                size="lg">
                 {buttonText}
             </Button>
         );

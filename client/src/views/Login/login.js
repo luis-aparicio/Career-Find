@@ -11,11 +11,6 @@ function Login() {
 
     return (
         <div>
-            <LoginForm newUser = {newUser}
-                       setNewUser = {setNewUser}
-                       returningUser = {returningUser}
-                       setReturningUser = {setReturningUser}
-            />
             <RegisterUser newUser = {newUser}
                           setNewUser = {setNewUser}
                           returningUser = {returningUser}
@@ -25,6 +20,11 @@ function Login() {
                        setReturningUser = {setReturningUser}
                        newUser = {newUser}
                        setNewUser = {setNewUser}
+            />
+            <LoginForm newUser = {newUser}
+                       setNewUser = {setNewUser}
+                       returningUser = {returningUser}
+                       setReturningUser = {setReturningUser}
             />
         </div>
     );
