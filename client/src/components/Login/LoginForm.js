@@ -56,7 +56,7 @@ const LoginForm = (props) => {
                 <Form>
                     <FormGroup controlId="formRegisterUserUsername">
                         <Form.Label>Username:</Form.Label>
-                        <FormControl type="text" placeholder="Enter username"/>
+                        <FormControl type="text" placeholder="Enter Username"/>
                         <FormControl.Feedback type="invalid">
                             That user does not exist in our system. Please change the
                             username or click Register
@@ -64,7 +64,7 @@ const LoginForm = (props) => {
                     </FormGroup>
                     <FormGroup controlId="formRegisterUserPassword">
                         <Form.Label>Password:</Form.Label>
-                        <FormControl type="password" placeholder="Enter username"/>
+                        <FormControl type="password" placeholder="Enter Password"/>
                         <FormControl.Feedback type="invalid">
                             Incorrect Password
                         </FormControl.Feedback>
