@@ -11,6 +11,7 @@ import NotFound from "./views/NotFound";
 import NavBar from "./components/Header/NavBar";
 import Footer from "./components/Footer/Footer";
 import Ban from "./components/Banner/Titlebanner";
+import careerpage from './views/Careers/careerpage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route exact path="/Rewards" component={Rewards} />
         <Route exact path="/Chat" component={Chat} />
         <Route exact path="/Login" component={Login} />
+        <Route exact path="/careerpage" component={careerpage} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
