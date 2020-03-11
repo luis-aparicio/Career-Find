@@ -1,9 +1,10 @@
 const passport = require('passport');
 const mongoose = require('mongoose');
 const User = require('../models/UserModel');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 const JwtStrategy = require('passport-jwt').Strategy;
-const localStrategy = require('passport-local').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+//const localStrategy = require('passport-local').Strategy;
 
 
 const opts = {}
