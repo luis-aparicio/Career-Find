@@ -1,33 +1,32 @@
 //import mongoose from 'mongoose';
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
 
 
-const UserSchema = new Schema({
+const UserSchema = new mongoose.Schema({
     firstName:{
         type: String,
-        required: true
+        required: 'Please enter your first name!'
     },
     lastName:{
         type: String,
-        required: true
+        required: 'Please enter yout last name'
     },
     username:{
         type: String,
-        required: true,
+        required: 'Please enter a username',
         unique: true,
         trim: true
     },
     email:{
         type: String,
-        required: true,
+        required: 'Please enter your email!',
         unique: true,
         trim: true
     },
     password:{
         type: String,
-        required: true
+        required: 'Please enter your password!'
     },
     passwordConfirmation:{
         type: String,
@@ -39,5 +38,4 @@ const UserSchema = new Schema({
     }
 });
 
-//export default mongoose.model('Users', UserSchema);
-module.exports = User = mongoose.model("users", UserSchema);
+module.exports = User = mongoose.model("User", UserSchema);
