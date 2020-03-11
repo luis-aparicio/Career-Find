@@ -4,6 +4,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "install-all": "concurrently \"npm install\" \"cd client && npm install\"",
     "client": "cd client && npm start",
     "server": "nodemon server/server.js",
@@ -20,14 +21,19 @@
   "author": "Dakota Rennemann",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.0",
     "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "jest-esm-transformer": "^1.0.0",
     "mocha": "^6.2.1",
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
   },
@@ -35,5 +41,14 @@
   "bugs": {
     "url": "https://github.com/UFWebApps/React_Template_Repo/issues"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "jest": {
+    "transform": {
+      ".js": "jest-esm-transformer"
+    },
+    "verbose": true,
+    "testEnvironment": "node"
+  }
 }
