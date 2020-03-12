@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Button} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Card from 'react-bootstrap/Card'
 
 //I am not consolidating RegisterUser and LoginUser at this point until I get the logic sorted for communicating with server
 const RegisterUser = (props) => {
@@ -17,12 +18,14 @@ const RegisterUser = (props) => {
         };
 
         return(
-            <Button
-                onClick ={handleClick}
-                variant="primary"
-                size="lg">
-                {buttonText}
-            </Button>
+            <Card>
+                    <Button
+                    onClick ={handleClick}
+                    variant="primary"
+                    size="lg">
+                    {buttonText}
+                    </Button>
+            </Card>      
         );
     }
     return null;

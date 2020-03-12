@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Card from 'react-bootstrap/Card'
 
 const LoginUser = (props) => {
     if(props.returningUser === false){
@@ -15,12 +16,14 @@ const LoginUser = (props) => {
         };
 
         return(
-            <Button
-                onClick ={handleClick}
-                variant="primary"
-                size="lg">
-                {buttonText}
-            </Button>
+            <Card>
+                    <Button
+                    onClick ={handleClick}
+                    variant="primary"
+                    size="lg">
+                    {buttonText}
+                    </Button>
+            </Card>    
         );
     }
     return null;
