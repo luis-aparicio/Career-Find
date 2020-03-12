@@ -7,6 +7,7 @@ import { Container, Button } from 'react-bootstrap';
 import './login.css';
 import {globalState} from "../../state/globalState";
 
+
 function Login() {
     const [newUser, setNewUser] = useState(false);
     const [returningUser, setReturningUser] = useState(false);

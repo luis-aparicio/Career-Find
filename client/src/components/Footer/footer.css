@@ -1,4 +1,5 @@
-.fixed-bottom {
+.footer {
     background: #124C8F;
-    
+    height: 40px;
+    padding: 1%;
 }
