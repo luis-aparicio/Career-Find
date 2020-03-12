@@ -6,61 +6,42 @@ const passport = require('passport');
 
 
 // Creating new user
-exports.create = async(req, res) => {
+exports.create = async(req, res, next) => {
+    let errString = "";
 
-    const newUser = new User(req.body);
+    let check = await User.findOne({email:req.body.email});
+    if(check) errString = "Email already exists";
+    check = null;
 
-    User.findOne({email: req.body.email})
-    .then(user => {
-        if(user){
-            return res.status(400).json("Email already exists.")
-        }
-        
-    });
+    check = await User.findOne({username: req.body.username});
+    if(check) errString += "  Username already exists";
 
-
-    User.findOne({username: req.body.username})
-    .then(username =>{
-        //check if username is unique
-        
-        if (username){
-            return res.status(400).json("Username already exist.")
-        }
-        //check if password match 
-        else if (req.body.password !== req.body.passwordConfirmation){
-                return res.status(200).send('error: Password doest not match.')
-        } else{
-            
-            
-           
-             bcrypt.genSalt(10, function(err,salt){
-                bcrypt.hash(newUser.password, salt, function(err, hash){
-                    if (err){
-                        throw err;
-                    }
-                    else{
-                        newUser.password = hash;
-                        
-                    }
-                })
+    if (errString !== "") {
+        res.status(200).send(errString);
+    }else {
+        const newUser = new User(req.body);
+        bcrypt.genSalt(10, function(err,salt){
+            bcrypt.hash(newUser.password, salt, function(err, hash){
+                if (err){
+                    throw err;
+                }
+                else{
+                    newUser.password = hash;
+                }
             })
+        });
 
-        }
-    });   
-    
-    // Saving new user to the database
-    newUser.save(function(err){
-        if(err){
-            console.log(err);
-            res.status(200).send(err);
-        }
-        else{
-            res.json(newUser);
-            return;
-        }
-    })
-
-
+        // Saving new user to the database
+        newUser.save(function(err){
+            if(err){
+                console.log(err);
+                res.status(200).send(err);
+            }
+            else{
+                res.status(200).send("Success");
+            }
+        });
+    }
 };
 
 exports.login = (req, res) =>{ 

@@ -12,28 +12,32 @@ import NavBar from "./components/Header/NavBar";
 import Footer from "./components/Footer/Footer";
 import Ban from "./components/Banner/Titlebanner";
 import careerpage from './views/Careers/careerpage';
+import { StateProvider } from "./state/globalState"; /*provider for global context*/
+
 
 const App = () => {
-  return (
-    <div>
-      <NavBar/>
-      <Ban/>
-      <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/Careers" component={Careers} />
-        <Route exact path="/Classroom" component={Classroom} />
-        <Route exact path="/Profile" component={Profile} />
-        <Route exact path="/Rewards" component={Rewards} />
-        <Route exact path="/Chat" component={Chat} />
-        <Route exact path="/Login" component={Login} />
-        <Route exact path="/careerpage" component={careerpage} />
-        <Route exact path="/">
-          <Redirect to="/Home" />
-        </Route>
-        <Route component={NotFound}/>
-      </Switch>
-      <Footer/>
-    </div>
+    return (
+        <div>
+            <StateProvider>
+                <NavBar/>
+                <Ban/>
+                <Switch>
+                    <Route exact path="/Home" component={Home} />
+                    <Route exact path="/Careers" component={Careers} />
+                    <Route exact path="/Classroom" component={Classroom} />
+                    <Route exact path="/Profile" component={Profile} />
+                    <Route exact path="/Rewards" component={Rewards} />
+                    <Route exact path="/Chat" component={Chat} />
+                    <Route exact path="/Login" component={Login} />
+                    <Route exact path="/careerpage" component={careerpage} />
+                    <Route exact path="/">
+                      <Redirect to="/Home" />
+                    </Route>
+                    <Route component={NotFound}/>
+                </Switch>
+                <Footer/>
+            </StateProvider>
+        </div>
   );
 }
 

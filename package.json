@@ -26,8 +26,6 @@
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.0",
     "express": "^4.17.1",
-    "jest": "^25.1.0",
-    "jest-esm-transformer": "^1.0.0",
     "mocha": "^6.2.1",
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
@@ -41,9 +39,7 @@
   "bugs": {
     "url": "https://github.com/UFWebApps/React_Template_Repo/issues"
   },
-  "devDependencies": {
-    "jest": "^25.1.0"
-  },
+  "devDependencies": {},
   "jest": {
     "transform": {
       ".js": "jest-esm-transformer"

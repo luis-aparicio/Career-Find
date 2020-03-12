@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Button} from "react-bootstrap";
 
 //I am not consolidating RegisterUser and LoginUser at this point until I get the logic sorted for communicating with server
