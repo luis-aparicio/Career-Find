@@ -4,7 +4,7 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     passport = require('passport'),
-    exampleRouter = require('../routes/examples.server.routes'),
+    //exampleRouter = require('../routes/examples.server.routes'),
     usersRouter = require('../routes/usersRouter');
 
 module.exports.init = () => {
@@ -30,7 +30,7 @@ module.exports.init = () => {
     app.use(bodyParser.json());
 
     // add a router
-    app.use('/api/example', exampleRouter);
+    //app.use('/api/example', exampleRouter);
     app.use('/api/user', usersRouter);
 
     // Using passport
