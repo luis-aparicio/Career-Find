@@ -54,3 +54,5 @@ yarn-error.log*
 
 # User-specific stuff
 .idea/*
+.vs/Career-Find/v15/.suo
+.vs/slnx.sqlite
