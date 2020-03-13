@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const User = require('../models/UserModel');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 
 const getHash = async (password) => {
     const salt = await bcrypt.genSalt(10);
