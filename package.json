@@ -13,8 +13,8 @@
     "start": "node server/server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
-  "engines":{
-    "node" : "13.6"
+  "engines": {
+    "node": "13.6"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "mocha": "^6.2.1",
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
+    "next": "^9.3.0",
     "nodemon": "^1.18.10",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
