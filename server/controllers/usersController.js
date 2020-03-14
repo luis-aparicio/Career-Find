@@ -43,7 +43,7 @@ exports.create = async(req, res, next) => {
     await newUser.save(function(err){
         if(err){
             //console.log(err);
-            res.status(200).send(err);
+            res.status(200).send(errString);
         }
         else{
             res.status(200).send("Success");
