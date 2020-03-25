@@ -33,7 +33,10 @@ const NavBar = () => {
                     { loggedIn ? 'Logout ' + globalStateLogin.state.user : 'Login/Register'}
                 </Link>
                 {/*<a className = "nav-link" target="_blank" rel="noopener norefferer" href="https://nodejs.org/en/docs/">*To Link*</a>*/}
+               
+                <input type={Text} name="search" placeholder="Search for a career.."></input>
             </div>
+           
 
         </div>
     )

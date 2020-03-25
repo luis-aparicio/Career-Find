@@ -13,18 +13,17 @@
     padding: 10%;
 }
 
-.nav-logo:hover {
 
-}
 
 .nav-items {
     display:flex;
-    margin-left: auto;
     margin-right: 5%;
+    margin-left: 5%;
     align-items: center;
 }
 
 .nav-link {
+
     background: #2F77E3;
     color: black;
     padding: 14px 25px;
@@ -33,6 +32,27 @@
 }
 
 .nav-link:hover {
-    background-color: #0707fa;
+    background-color:white;
+}
+
+label{
+    background: #2F77E3;
+    color: black;
+    text-align: center;
+    margin-top: 7px;
+    padding-top: 14px;
+    padding-right: 25px;
+    height: 51px;
+}
+input{
+   
+    padding-top: 14px;
+    padding-right: 85px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    height: 45px;
+    width: 550px;
+    border-radius: 5px;
+    border: none;
 }
 
