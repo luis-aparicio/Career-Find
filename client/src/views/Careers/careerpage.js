@@ -1,13 +1,24 @@
 
 import ListGroup from 'react-bootstrap/ListGroup'
 import React, {useState, useEffect} from 'react';
+import Container from 'react-bootstrap/Container'
 
 function Careerpage() {
-const [careername,setcareername] = useState("");
+
+const [careername,setCareername] = useState("");
+const [careerselected,setCareerselected] = useState(false);
+
+
+
+const handleClick = async (event) => {
+    setCareerselected(true);
+
+}
+
 
     return (
         
-    <div classname = "container">
+    <Container>
         <h1 style={{color: "green"}}>Environmental and Agricultural Sciences</h1>
         <ListGroup>
             <ListGroup.Item action>Agricultural Engineer</ListGroup.Item>
@@ -38,7 +49,7 @@ const [careername,setcareername] = useState("");
             <ListGroup.Item action>Digital Marketing Manager</ListGroup.Item>
             <ListGroup.Item action>Sports Marketing Executive</ListGroup.Item>
         </ListGroup>
-    </div>
+    </Container>
     
     );
 }
