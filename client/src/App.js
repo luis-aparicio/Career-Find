@@ -7,6 +7,7 @@ import Profile from "./views/Profile/profile"
 import Rewards from "./views/Rewards/rewards"
 import Chat from "./views/Chat/chat"
 import Login from "./views/Login/login"
+import Search from "./views/Search/search_result"
 import NotFound from "./views/NotFound";
 import NavBar from "./components/Header/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -29,10 +30,9 @@ const App = () => {
                     <Route exact path="/Rewards" component={Rewards} />
                     <Route exact path="/Chat" component={Chat} />
                     <Route exact path="/Login" component={Login} />
-                    <Route exact path="/careerpage" component={careerpage} />
-                    <Route exact path="/">
+                    <Route exact path="/careerpage" component={careerpage} />                    
+                    <Route exact path="/Search" component={Search}/>
                       <Redirect to="/Home" />
-                    </Route>
                     <Route component={NotFound}/>
                 </Switch>
                 <Footer/>

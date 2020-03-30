@@ -16,6 +16,7 @@
 
 
 .nav-items {
+    
     display:flex;
     margin-right: 5%;
     margin-left: 5%;
@@ -25,7 +26,7 @@
 .nav-link {
 
     background: #2F77E3;
-    color: black;
+    color:white;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
@@ -33,6 +34,7 @@
 
 .nav-link:hover {
     background-color:white;
+    color:black;
 }
 
 label{
@@ -51,8 +53,9 @@ input{
     padding-bottom: 10px;
     padding-left: 10px;
     height: 45px;
-    width: 550px;
+    width: 450px;
     border-radius: 5px;
+    margin-right: 15px;
     border: none;
 }
 
