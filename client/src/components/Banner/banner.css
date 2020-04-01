@@ -1,17 +1,17 @@
-.banner {
-    background: rgb(0, 208, 255);
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 1%;
 
-    font-style: normal;
-    font-weight: normal;
-    
-    line-height: 60px;
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
-    color: #ffffff;
-}
+  
+         @font-face {
+            font-family: atma;
+            src: url(../../assets/Atma-Medium.ttf);
+          }
+          
+         .banner{
+             enable-background:new;
+        }
+         .st1{fill:#3A82EF;}
+         .st2{fill:#72DDEE;}
+         .hashtag{
+            font-family: atma; 
+            font-size:33px;
+            fill:#FFFFFF;
+         }
