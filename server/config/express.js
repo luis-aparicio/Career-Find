@@ -32,6 +32,7 @@ module.exports.init = () => {
     // add a router
     //app.use('/api/example', exampleRouter);
     app.use('/api/user', usersRouter);
+    app.use('/api/career', careersRouter);
 
     // Using passport
     app.use(passport.initialize());

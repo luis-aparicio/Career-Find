@@ -161,4 +161,4 @@ const CareerSchema = new mongoose.Schema{
     AutoCorrection: string
 }
 
-module.exports = User = mongoose.model("Career", CareerSchema);
+module.exports = Career = mongoose.model("Career", CareerSchema);
