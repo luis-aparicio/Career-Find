@@ -1,9 +1,8 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { globalState } from "../../state/globalState";
 import logo from '../../assets/logo.svg'
-import React,{useState,Fragment} from 'react';
-import SearchPage from '../../views/Careers/Search.js'
 
 
 const NavBar = () => {
@@ -34,13 +33,14 @@ const NavBar = () => {
                     { loggedIn ? 'Logout ' + globalStateLogin.state.user : 'Login/Register'}
                 </Link>
                 {/*<a className = "nav-link" target="_blank" rel="noopener norefferer" href="https://nodejs.org/en/docs/">*To Link*</a>*/}
-                <Link className = "nav-link" to= '/SearchPage'>Search for a Career</Link>
+               
+                <input type={Text} name="search" placeholder="Search for a career.."></input>
+                <Link className = "nav-link" to= '/Search'>Search</Link>
             </div>
            
 
         </div>
     )
-    
 };
 
 export default NavBar;

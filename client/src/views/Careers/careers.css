@@ -60,17 +60,3 @@ table {
 li{
     padding-bottom: 8px;
 }
-select{
-   
-    
-    padding-right: 85px;
-    padding-left: 10px;
-    height: 55px;
-    width: 450px;
-    border-radius: 8px;
-    margin-top: 5%;
-    margin-bottom: 25%;
-    margin-left: 35%;
-    color: black;
-    border: solid 5px #124C8F;
-}

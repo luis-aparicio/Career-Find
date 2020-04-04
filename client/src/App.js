@@ -13,7 +13,6 @@ import NavBar from "./components/Header/NavBar";
 import Footer from "./components/Footer/Footer";
 import Ban from "./components/Banner/Titlebanner";
 import careerpage from './views/Careers/careerpage';
-import SearchPage from './views/Careers/Search';
 import { StateProvider } from "./state/globalState"; /*provider for global context*/
 
 
@@ -33,7 +32,6 @@ const App = () => {
                     <Route exact path="/Login" component={Login} />
                     <Route exact path="/careerpage" component={careerpage} />                    
                     <Route exact path="/Search" component={Search}/>
-                    <Route exact path="/SearchPage" component={SearchPage}/>
                       <Redirect to="/Home" />
                     <Route component={NotFound}/>
                 </Switch>
