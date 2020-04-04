@@ -233,7 +233,7 @@ const handleClick = async (title) => {
         <div className="rightcol">
             <h3>Related Occupations</h3>
             <ol id="activities">
-                <li><a href="">First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers</a></li>
+                <li><a href="">First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Worker</a></li>
                 <li><a href="">Explosives Workers, Ordnance Handling Experts, and Blasters</a></li>
                 <li><a href="">Automotive Glass Installers and Repairers</a></li>
                 <li><a href="">Locksmiths and Safe Repairers</a></li>
