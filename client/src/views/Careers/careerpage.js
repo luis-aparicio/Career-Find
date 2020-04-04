@@ -11,11 +11,16 @@ const [careername,setCareername] = useState("");
 const [careerselected,setCareerselected] = useState(false);
 
 
+//for demo purposes only
+
+
+
 
 const handleClick = async (title) => {
     setCareerselected(true);
     setCareername(title)
 }
+
 
 
     if (props.clustername === "env" && careerselected === false) { 
@@ -25,7 +30,7 @@ const handleClick = async (title) => {
                 <h1 style={{color: "green"}}>Environmental and Agricultural Sciences</h1>
                 <ListGroup>
                     <ListGroup.Item action onClick = {()=> handleClick("Agricultural Engineer")}>Agricultural Engineer</ListGroup.Item>
-                    <ListGroup.Item action>Park Ranger</ListGroup.Item>
+                    <ListGroup.Item action onClick = {()=> handleClick("Park Ranger")} >Park Ranger</ListGroup.Item>
                 </ListGroup>
             </Container>
        );
@@ -37,8 +42,8 @@ const handleClick = async (title) => {
             <Container>
                 <h1 style={{color: "grey"}}>Communications and Information Systems</h1>
                     <ListGroup>
-                        <ListGroup.Item action>IT Systems Administrator</ListGroup.Item>
-                        <ListGroup.Item action>Performance and Data Analyst</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("IT Systems Administrator")}>IT Systems Administrator</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("Performance and Data Analyst")}>Performance and Data Analyst</ListGroup.Item>
                     </ListGroup>
             </Container>
         
@@ -50,8 +55,8 @@ const handleClick = async (title) => {
             <Container>
                 <h1 style={{color: "orange"}}>Industrial, Manufacturing, and Engineering</h1>
                     <ListGroup>
-                        <ListGroup.Item action>Industrial Engineering Technician</ListGroup.Item>
-                        <ListGroup.Item action>Health and Safety Engineer</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("Industrial Engineering Technician")}>Industrial Engineering Technician</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("Health and Safety Engineer")}>Health and Safety Engineer</ListGroup.Item>
                     </ListGroup>  
             </Container>
         
@@ -63,8 +68,8 @@ const handleClick = async (title) => {
             <Container>
                 <h1 style={{color: "red"}}>Health Sciences</h1>
                     <ListGroup>
-                        <ListGroup.Item action>Pediatrician</ListGroup.Item>
-                        <ListGroup.Item action>Biomedical Scientist</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("Pediatrician")}>Pediatrician</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("Biomedical Scientist")}>Biomedical Scientist</ListGroup.Item>
                     </ListGroup>
             </Container>
         
@@ -76,8 +81,8 @@ const handleClick = async (title) => {
             <Container>
                 <h1 style={{color: "cyan"}}>Human Services and Resources</h1>
                     <ListGroup>
-                        <ListGroup.Item action>School Counselor</ListGroup.Item>
-                        <ListGroup.Item action>Sociologist</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("School Counselor")}>School Counselor</ListGroup.Item>
+                        <ListGroup.Item action onClick = {()=> handleClick("Sociologist")}>Sociologist</ListGroup.Item>
                     </ListGroup>
             </Container>
         
@@ -89,8 +94,8 @@ const handleClick = async (title) => {
             <Container>
                  <h1 style={{color: "blue"}}>Business, Marketing and Management</h1>
                     <ListGroup>
-                         <ListGroup.Item action>Digital Marketing Manager</ListGroup.Item>
-                         <ListGroup.Item action>Sports Marketing Executive</ListGroup.Item>
+                         <ListGroup.Item action onClick = {()=> handleClick("Digital Marketing Manager")}>Digital Marketing Manager</ListGroup.Item>
+                         <ListGroup.Item action onClick = {()=> handleClick("Sports Marketing Executive")}>Sports Marketing Executive</ListGroup.Item>
                      </ListGroup>
             </Container>
         
@@ -118,6 +123,7 @@ const handleClick = async (title) => {
 <span>Residential Pest Control Technician, Certified Pest Control Technician, Termite Technician, 
     Commercial Pest Control Technician, Pest Technician, 
     Pest Control Technician, Pest Control Operator, Pest Control Chemical Technician, Pest Control Applicator, Exterminator</span>
+    
         </div>
     </div>
    

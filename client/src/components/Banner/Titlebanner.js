@@ -11,6 +11,7 @@ const Banner = () => {
                 <polygon id="tri2" className="st2" points="0.11,59.91 66.73,59.83 0,9.95 	"/>
                 <polygon id="tri1" className="st2" points="728,59.9 728,9.93 661.38,59.9 	"/>
                 <text className="hashtag" x="25%" y="65%" >#careerfind</text>
+                <text className="cap" x="50%" y="50%">"Find a career that suits you best"</text>
             </g>
         </svg>
         
