@@ -3,7 +3,7 @@ const express = require('express');
 
 const careerRouter = express.Router();
 
-careerRouter.route('/:career').post(career.clearAndRefill);
+careerRouter.route('/:career').post(career.fill);
 
 module.exports = careerRouter;
 

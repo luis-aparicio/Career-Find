@@ -6,7 +6,7 @@ const config = require ('../config/config');
 const async = require ('async');
 
 
-exports.clearAndRefill = () =>{
+exports.fill = () =>{
     mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
     Career.deleteMany({}, (err) =>{
@@ -29,7 +29,7 @@ exports.clearAndRefill = () =>{
                     throw err;
                 }
                 
-                //console.log(careersData);
+                console.log(careersData);
                 callback();
                 return;
             }); 
@@ -39,9 +39,7 @@ exports.clearAndRefill = () =>{
     })
 }
 
-exports.jsonTOMongo = () =>{
-    
-}
+
 exports.create = async (req, res) =>{
     let career = new Career(req.body);
     await clearAndRefill();

@@ -1,191 +1,189 @@
 //import mongoose from 'mongoose';
-const mongoose = require("mongoose");
+const mongoose = require( "mongoose" );
 
 const CareerSchema = new mongoose.Schema ({
-  "OccupationDetail": [
-    {
-      "OnetTitle": "String",
-      "OnetCode": "String",
-      "OnetDescription": "String",
-      "Wages": {
-        "NationalWagesList": [
+  
+    
+      OnetTitle: String,
+      OnetCode: String,
+      OnetDescription:  String ,
+       Wages : {
+         NationalWagesList : [
           {
-            "RateType": "String",
-            "Pct10": "String",
-            "Pct25": "String",
-            "Median": "String",
-            "Pct75": "String",
-            "Pct90": "String",
-            "StFips": "String",
-            "Area": "String",
-            "AreaName": "String"
+             RateType :  String ,
+             Pct10 :  String ,
+             Pct25 :  String ,
+             Median :  String ,
+             Pct75 :  String ,
+             Pct90 :  String ,
+             StFips :  String ,
+             Area :  String ,
+             AreaName :  String 
           }
         ],
-        "StateWagesList": [
+         StateWagesList : [
           {
-            "RateType": "String",
-            "Pct10": "String",
-            "Pct25": "String",
-            "Median": "String",
-            "Pct75": "String",
-            "Pct90": "String",
-            "StFips": "String",
-            "Area": "String",
-            "AreaName": "String"
+             RateType :  String ,
+             Pct10 :  String ,
+             Pct25 :  String ,
+             Median :  String ,
+             Pct75 :  String ,
+             Pct90 :  String ,
+             StFips :  String ,
+             Area :  String ,
+             AreaName :  String 
           }
         ],
-        "BLSAreaWagesList": [
+         BLSAreaWagesList : [
           {
-            "RateType": "String",
-            "Pct10": "String",
-            "Pct25": "String",
-            "Median": "String",
-            "Pct75": "String",
-            "Pct90": "String",
-            "StFips": "String",
-            "Area": "String",
-            "AreaName": "String"
+             RateType :  String ,
+             Pct10 :  String ,
+             Pct25 :  String ,
+             Median :  String ,
+             Pct75 :  String ,
+             Pct90 :  String ,
+             StFips :  String ,
+             Area :  String ,
+             AreaName :  String 
           }
         ],
-        "WageYear": "String",
-        "SocData": "String",
-        "SocWageInfo": {
-          "SocCode": "String",
-          "SocTitle": "String",
-          "SocDescription": "String"
+         WageYear :  String ,
+         SocData :  String ,
+         SocWageInfo : {
+           SocCode :  String ,
+           SocTitle :  String ,
+           SocDescription :  String 
         }
       },
-      "BrightOutlook": "String",
-      "Green": "String",
-      "COSVideoURL": "String",
-      "EducationTraining": {
-        "EducationType": [
+       BrightOutlook :  String ,
+       Green :  String ,
+       COSVideoURL :  String ,
+       EducationTraining : {
+         EducationType : [
           {
-            "EducationLevel": "String",
-            "Value": "String"
+             EducationLevel :  String ,
+             Value :  String 
           }
         ],
-        "EducationCode": "String",
-        "EducationTitle": "String",
-        "ExperienceCode": "String",
-        "ExperienceTitle": "String",
-        "TrainingCode": "String",
-        "TrainingTitle": "String",
-        "OccupationTitle": "String"
+         EducationCode :  String ,
+         EducationTitle :  String ,
+         ExperienceCode :  String ,
+         ExperienceTitle :  String ,
+         TrainingCode :  String ,
+         TrainingTitle :  String ,
+         OccupationTitle :  String 
       },
-      "BrightOutlookCategory": "String",
-      "Tasks": [
+       BrightOutlookCategory :  String ,
+       Tasks : [
         {
-          "TaskDescription": "String",
-          "TaskId": "String",
-          "DataValue": "String"
+           TaskDescription :  String ,
+           TaskId :  String ,
+           DataValue :  String 
         }
       ],
-      "Dwas": [
+       Dwas : [
         {
-          "DwaTitle": "String",
-          "DwaId": "String",
-          "DataValue": "String",
-          "TaskId": "String"
+           DwaTitle :  String ,
+           DwaId :  String ,
+           DataValue :  String ,
+           TaskId :  String 
         }
       ],
-      "AlternateTitles": [
-        "String"
+       AlternateTitles : [
+         String 
       ],
-      "StFips": "String",
-      "Location": "String",
-      "Video": [
+       StFips :  String ,
+       Location :  String ,
+       Video : [
         {
-          "VideoCode": "String",
-          "VideoTitle": "String",
-          "VideoType": "String"
+           VideoCode :  String ,
+           VideoTitle :  String ,
+           VideoType :  String 
         }
       ],
-      "InterestDataList": [
+       InterestDataList : [
         {
-          "ElementId": "String",
-          "ElementName": "String",
-          "ElementDescription": "String",
-          "DataValue": "String",
-          "Importance": "String"
+           ElementId :  String ,
+           ElementName :  String ,
+           ElementDescription :  String ,
+           DataValue :  String ,
+           Importance :  String 
         }
       ],
-      "SocInfo": {
-        "SocCode": "String",
-        "SocTitle": "String",
-        "SocDescription": "String"
+       SocInfo : {
+         SocCode :  String ,
+         SocTitle :  String ,
+         SocDescription :  String 
       },
-      "Projections": {
-        "EstimatedYear": "String",
-        "ProjectedYear": "String",
-        "OccupationTitle": "String",
-        "Projections": [
+       Projections : {
+         EstimatedYear :  String ,
+         ProjectedYear :  String ,
+         OccupationTitle :  String ,
+         Projections : [
           {
-            "StateName": "String",
-            "Stfips": "String",
-            "EstimatedEmployment": "String",
-            "ProjectedEmployment": "String",
-            "PerCentChange": "String",
-            "ProjectedAnnualJobOpening": "String"
+             StateName :  String ,
+             Stfips :  String ,
+             EstimatedEmployment :  String ,
+             ProjectedEmployment :  String ,
+             PerCentChange :  String ,
+             ProjectedAnnualJobOpening :  String 
           }
         ]
       },
-      "OOHs": {
-        "Title": "String",
-        "OOHUrl": "String"
+       OOHs : {
+         Title :  String ,
+         OOHUrl :  String 
       },
-      "StateResourcesLinks": {
-        "StateWebResource": [
+       StateResourcesLinks : {
+         StateWebResource : [
           {
-            "Title": "String",
-            "Url": "String",
-            "Type": "String",
-            "StateName": "String"
+             Title :  String ,
+             Url :  String ,
+             Type :  String ,
+             StateName :  String 
           }
         ]
       },
-      "RelatedOnetTitles": [
+       RelatedOnetTitles : [
         {
-          "Key": "String",
-          "Value": "String"
+           Key :  String ,
+           Value :  String 
         }
       ],
-      "SkillsDataList": [
+       SkillsDataList : [
         {
-          "ElementId": "String",
-          "ElementName": "String",
-          "ElementDescription": "String",
-          "DataValue": "String",
-          "Importance": "String"
+           ElementId :  String ,
+           ElementName :  String ,
+           ElementDescription :  String ,
+           DataValue :  String ,
+           Importance :  String 
         }
       ],
-      "KnowledgeDataList": [
+       KnowledgeDataList : [
         {
 
-          "ElementId": "String",
-          "ElementName": "String",
-          "ElementDescription": "String",
-          "DataValue": "String",
-          "Importance": "String"
+           ElementId :  String ,
+           ElementName :  String ,
+           ElementDescription :  String ,
+           DataValue :  String ,
+           Importance :  String 
         }
       ],
-      "AbilityDataList": [
+       AbilityDataList : [
         {
-          "ElementId": "String",
-          "ElementName": "String",
-          "ElementDescription": "String",
-          "DataValue": "String",
-          "Importance": "String"
+           ElementId :  String ,
+           ElementName :  String ,
+           ElementDescription :  String ,
+           DataValue :  String ,
+           Importance :  String 
         }
       ],
-      "TrainingPrograms": [
-        "String"
-      ]
-    }
-  ],
-  "RecordCount": "",
-  "DidYouMean": "String",
-  "AutoCorrection": "String"
+       TrainingPrograms : String,
+        
+ 
+   RecordCount : Number,
+   DidYouMean :  String,
+   AutoCorrection :  String 
 })
 
-module.exports = User = mongoose.model("Career", CareerSchema);
+module.exports = User = mongoose.model( "Career" , CareerSchema);
