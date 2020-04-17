@@ -16,14 +16,14 @@ const LoginUser = (props) => {
         };
 
         return(
-            <Card>
+            
                     <Button
                     onClick ={handleClick}
                     variant="primary"
-                    size="lg">
+                    size="lg" className="login">
                     {buttonText}
                     </Button>
-            </Card>    
+             
         );
     }
     return null;

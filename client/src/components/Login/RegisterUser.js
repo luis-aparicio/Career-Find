@@ -1,4 +1,4 @@
-
+import './Login.css';
 import React from 'react';
 import { Button, Card } from "react-bootstrap";
 
@@ -19,14 +19,15 @@ const RegisterUser = (props) => {
         };
 
         return(
-            <Card>
+            
                     <Button
                     onClick ={handleClick}
                     variant="primary"
-                    size="lg">
+                    size="lg"
+                    className="register">
                     {buttonText}
                     </Button>
-            </Card>      
+                 
         );
     }
     return null;

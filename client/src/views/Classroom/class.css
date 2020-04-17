@@ -1,0 +1,36 @@
+.text1
+{
+    margin-top: 5%;
+}
+
+.button
+{
+    width:200px;
+    background-color: #3A82EF;
+    color: white;
+    border-color: none;
+    border-radius: 5px;
+}
+
+.button1
+{
+    margin-top: 2%;
+    margin-left: 45%;
+    width:200px;
+    background-color: #3A82EF;
+    color: white;
+    border-color: none;
+    border-radius: 5px;
+}
+
+.group
+{
+    background-color: #3A82EF;
+}
+
+.label
+{
+    background-color: #3A82EF;
+    color: black;
+    width: 200px;
+}
