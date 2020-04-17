@@ -26,9 +26,9 @@ exports.create = async(req, res, next) => {
         errString += "    Username already exists";
     } 
 
-    
+    const newUser = req.body;
    
-   newUser.password = await getHash(newUser.password);
+    newUser.password = await getHash(newUser.password);
     
     // Saving new user to the database
     await newUser.save(function(err){
@@ -43,12 +43,25 @@ exports.create = async(req, res, next) => {
 
 };
 
+exports.remove  = async(req, res) =>{
+
+    let user = req.body;
+
+    User.findOneAndRemove({user, function(err, user) {
+        if(err){
+            res.status(200).send('error: User could not be removed.')
+        }        
+        else{
+            res.send(user);
+        }
+    }})
+}
 
 exports.login = async (req, res) =>{
 
     let userExists = false;
     
-passport.authenticate('jwt', function(err,user,info){
+//passport.authenticate('jwt', async function(err,user,info){
 
     /*if(err){
         throw err;
@@ -68,73 +81,48 @@ passport.authenticate('jwt', function(err,user,info){
 
             userExists = true;
             
-             bcrypt.compare(req.body.password, user.password, function(err, isMatch){
-                    if(err){
-                        throw err;
-                    }
-                    if (isMatch){
+            bcrypt.compare(req.body.password, user.password, function(err, isMatch){
+                    
+                if(err){
+                    throw err;
+                }
+                    
+                if (isMatch){
     
-                        const payload = {
-                            id: user.username,
-                            name: user.name
-                        };
+                    const payload = {
+                        id: user.username,
+                        name: user.name
+                    };
     
-                        jwt.sign(
-                            payload,
-                            keys.secretOrKey,{
-                                expiresIn: 360000
-                            },
+                    jwt.sign(
+                        payload,
+                        keys.secretOrKey,{
+                            expiresIn: 360000
+                        },
     
-                            (err, token) =>{
-                                if(err){
-                                    throw err;
-                                }
-                                else{
-                                    res.status(200).send({
-                                        auth: true,
-                                        token: token,
-                                        message: "User logged in!"
-                                    });
-    
-                                    res.status(200).send("Success");
-    
-                                }
-                                
+                        (err, token) =>{
+                            if(err){
+                                throw err;
                             }
-                        );
+                            else{
+                                res.status(200).send({
+                                    auth: true,
+                                    token: token,
+                                    message: "User logged in!"
+                                });
     
-                    }
-                    else{
-                        return res.status(200).json("Wrong Password.");
-                    }
+                                res.status(200).send("Success");
+    
+                            }                                
+                        }
+                    );
+    
+                }
+                else{
+                    return res.status(200).json("Wrong Password.");
+                }
 
-})
-
-
-            }
-        })
-
-
-   
+            })
+        }
     })
-    
-        
-
-    
-
-    //we have to set up a client key for our side first. lets put this off for later need private key
-    //looks like we need to generate a secret key and store in config and pass this
-    //let token = await jwt.sign({ id: user.username, name: user.name}, #secretHere, #algorithmHere);
-    // let {token, err} = await jwt.sign({ id: user.username, name: user.name})
-    /*if(err) {
-    console.log(err);
-        throw err;
-    }*/
-
-
-
-
-
-
-        
 };

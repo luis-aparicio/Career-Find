@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import {globalState} from '../../state/globalState'
+//import jwt_decode from 'jwt-decode';
+import jwt from 'jsonwebtoken'
 
 
 
@@ -13,39 +15,74 @@ const LoginForm = (props) => {
     const globalStateLogin = React.useContext(globalState);
     const { dispatch } = globalStateLogin;
 
+    //Change made by Moise 
+    const [user, setUser] = useState({id:"", name:"", status:""});
+    const [isAuth, setAuth] = useState(false);
+
+
+    const setAuthToken = token =>{
+        if(token){
+            setAuth(true);
+            axios.defaults.headers.common["Authorization"] = token;
+        }
+        else{
+            delete axios.defaults.headers.common["Authorization"];
+        }
+    }
+
 
     const handleLoginSubmit = async(event) => {
         event.preventDefault();
-        let user = {
+        let userInfo = {
             username: formLoginInput.username,
             password: formLoginInput.password
         };
-        await axios.post('/api/user/:login', user).then((response) => {
+        await axios.post('/api/user/:login', userInfo).then((response) => {
             //console.log(response.data);
-            //Issue with the if statement as it will always failed the login 
-            //You can see the implemented if statement at the bottom and make change as needed to better it
-            
-            /*if(response.data == "Success"){
+            if(response.data !== true){
                 setErrorString(response.data);
                 dispatch({ type: 'logout' })
             } else {
                // console.log("Success!");
                 //const userUrl = '/user/' + formInput.username + '/';
-                dispatch({ type:'login', payload:formLoginInput.username });
-            }*/
+                const {token} = response.data.token;
+                console.log(token);
+                localStorage.setItem("jwtToken", JSON.stringify(token));
+                setAuthToken(token);
+                const dcdToken = jwt.decode(token);
+                setUser(dcdToken);
 
-            if(response.data == null){
-                setErrorString(response.data);
-                dispatch({ type: 'logout' })
-            } else {
-               // console.log("Success!");
-                //const userUrl = '/user/' + formInput.username + '/';
-                dispatch({ type:'login', payload:formLoginInput.username });
+                dispatch({
+                    type:'login', 
+                    payload: {
+                        username: formLoginInput.username,
+                        //setUser(dcdToken) 
+                    }
+                    
+                });
             }
         });
-       // console.log(user);
 
+       
     };
+
+    const getAuth = () =>{
+        if(isAuth === true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    const logout =()=>{
+        //destroying the token after logout
+        localStorage.removeItem("jwtToken");
+        setAuth(false);
+        setAuthToken(false);
+        dispatch(setUser({}));
+    }
+
 
     const handleLoginChange = (event) => {
         event.persist();

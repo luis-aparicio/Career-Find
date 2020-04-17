@@ -1,164 +1,191 @@
 //import mongoose from 'mongoose';
-const mongoose = require(mongoose);
+const mongoose = require("mongoose");
 
-const CareerSchema = new mongoose.Schema{
-    OccupationDetail: [
-      {
-        OnetTitle: string,
-        OnetCode: string,
-        OnetDescription: string,
-        Wages: {
-          NationalWagesList: [
-            {
-              RateType: string,
-              Pct10: string,
-              Pct25: string,
-              Median: string,
-              Pct75: string,
-              Pct90: string,
-              StFips: string,
-              Area: string,
-              AreaName: string
-            }
-          ],
-          StateWagesList: [
-            {
-              RateType: string,
-              Pct10: string,
-              Pct25: string,
-              Median: string,
-              Pct75: string,
-              Pct90: string,
-              StFips: string,
-              Area: string,
-              AreaName: string
-            }
-          ],
-          BLSAreaWagesList: [
-            {
-              RateType: string,
-              Pct10: string,
-              Pct25: string,
-              Median: string,
-              Pct75: string,
-              Pct90: string,
-              StFips: string,
-              Area: string,
-              AreaName: string
-            }
-          ],
-          WageYear: string,
-          SocData: string,
-          SocWageInfo: {
-            SocCode: string,
-            SocTitle: string,
-            SocDescription: string
-          }
-        },
-        BrightOutlook: string,
-        Green: string,
-        COSVideoURL: string,
-        EducationTraining: {
-          EducationType: [
-            {
-              EducationLevel: string,
-              Value: string
-            }
-          ],
-          EducationCode: string,
-          EducationTitle: string,
-          ExperienceCode: string,
-          ExperienceTitle: string,
-          TrainingCode: string,
-          TrainingTitle: string,
-          OccupationTitle: string
-        },
-        BrightOutlookCategory: string,
-        Tasks: [
+const CareerSchema = new mongoose.Schema ({
+  "OccupationDetail": [
+    {
+      "OnetTitle": "String",
+      "OnetCode": "String",
+      "OnetDescription": "String",
+      "Wages": {
+        "NationalWagesList": [
           {
-            TaskDescription: string,
-            TaskId: string,
-            DataValue: string
+            "RateType": "String",
+            "Pct10": "String",
+            "Pct25": "String",
+            "Median": "String",
+            "Pct75": "String",
+            "Pct90": "String",
+            "StFips": "String",
+            "Area": "String",
+            "AreaName": "String"
           }
         ],
-        AlternateTitles: [
-          string
-        ],
-        StFips: string,
-        Location: string,
-        Video: [
+        "StateWagesList": [
           {
-            VideoCode: string,
-            VideoTitle: string,
-            VideoType: string
+            "RateType": "String",
+            "Pct10": "String",
+            "Pct25": "String",
+            "Median": "String",
+            "Pct75": "String",
+            "Pct90": "String",
+            "StFips": "String",
+            "Area": "String",
+            "AreaName": "String"
           }
         ],
-        Projections: {
-          EstimatedYear: string,
-          ProjectedYear: string,
-          OccupationTitle: string,
-          Projections: [
-            {
-              StateName: string,
-              Stfips: string,
-              EstimatedEmployment: string,
-              ProjectedEmployment: string,
-              PerCentChange: string,
-              ProjectedAnnualJobOpening: string
-            }
-          ]
-        },
-        StateResourcesLinks: {
-          StateWebResource: [
-            {
-              Title: string,
-              Url: string,
-              Type: string,
-              StateName: string
-            }
-          ]
-        },
-        RelatedOnetTitles: [
+        "BLSAreaWagesList": [
           {
-            Key: string,
-            Value: string
+            "RateType": "String",
+            "Pct10": "String",
+            "Pct25": "String",
+            "Median": "String",
+            "Pct75": "String",
+            "Pct90": "String",
+            "StFips": "String",
+            "Area": "String",
+            "AreaName": "String"
           }
         ],
-        SkillsDataList: [
+        "WageYear": "String",
+        "SocData": "String",
+        "SocWageInfo": {
+          "SocCode": "String",
+          "SocTitle": "String",
+          "SocDescription": "String"
+        }
+      },
+      "BrightOutlook": "String",
+      "Green": "String",
+      "COSVideoURL": "String",
+      "EducationTraining": {
+        "EducationType": [
           {
-            ElementId: string,
-            ElementName: string,
-            ElementDescription: string,
-            DataValue: string,
-            Importance: string
+            "EducationLevel": "String",
+            "Value": "String"
           }
         ],
-        KnowledgeDataList: [
+        "EducationCode": "String",
+        "EducationTitle": "String",
+        "ExperienceCode": "String",
+        "ExperienceTitle": "String",
+        "TrainingCode": "String",
+        "TrainingTitle": "String",
+        "OccupationTitle": "String"
+      },
+      "BrightOutlookCategory": "String",
+      "Tasks": [
+        {
+          "TaskDescription": "String",
+          "TaskId": "String",
+          "DataValue": "String"
+        }
+      ],
+      "Dwas": [
+        {
+          "DwaTitle": "String",
+          "DwaId": "String",
+          "DataValue": "String",
+          "TaskId": "String"
+        }
+      ],
+      "AlternateTitles": [
+        "String"
+      ],
+      "StFips": "String",
+      "Location": "String",
+      "Video": [
+        {
+          "VideoCode": "String",
+          "VideoTitle": "String",
+          "VideoType": "String"
+        }
+      ],
+      "InterestDataList": [
+        {
+          "ElementId": "String",
+          "ElementName": "String",
+          "ElementDescription": "String",
+          "DataValue": "String",
+          "Importance": "String"
+        }
+      ],
+      "SocInfo": {
+        "SocCode": "String",
+        "SocTitle": "String",
+        "SocDescription": "String"
+      },
+      "Projections": {
+        "EstimatedYear": "String",
+        "ProjectedYear": "String",
+        "OccupationTitle": "String",
+        "Projections": [
           {
-            ElementId: string,
-            ElementName: string,
-            ElementDescription: string,
-            DataValue: string,
-            Importance: string
+            "StateName": "String",
+            "Stfips": "String",
+            "EstimatedEmployment": "String",
+            "ProjectedEmployment": "String",
+            "PerCentChange": "String",
+            "ProjectedAnnualJobOpening": "String"
           }
-        ],
-        AbilityDataList: [
-          {
-            ElementId: string,
-            ElementName: string,
-            ElementDescription: string,
-            DataValue: string,
-            Importance: string
-          }
-        ],
-        TrainingPrograms: [
-          string
         ]
-      }
-    ],
-    RecordCount: number,
-    DidYouMean: string,
-    AutoCorrection: string
-}
+      },
+      "OOHs": {
+        "Title": "String",
+        "OOHUrl": "String"
+      },
+      "StateResourcesLinks": {
+        "StateWebResource": [
+          {
+            "Title": "String",
+            "Url": "String",
+            "Type": "String",
+            "StateName": "String"
+          }
+        ]
+      },
+      "RelatedOnetTitles": [
+        {
+          "Key": "String",
+          "Value": "String"
+        }
+      ],
+      "SkillsDataList": [
+        {
+          "ElementId": "String",
+          "ElementName": "String",
+          "ElementDescription": "String",
+          "DataValue": "String",
+          "Importance": "String"
+        }
+      ],
+      "KnowledgeDataList": [
+        {
+
+          "ElementId": "String",
+          "ElementName": "String",
+          "ElementDescription": "String",
+          "DataValue": "String",
+          "Importance": "String"
+        }
+      ],
+      "AbilityDataList": [
+        {
+          "ElementId": "String",
+          "ElementName": "String",
+          "ElementDescription": "String",
+          "DataValue": "String",
+          "Importance": "String"
+        }
+      ],
+      "TrainingPrograms": [
+        "String"
+      ]
+    }
+  ],
+  "RecordCount": "",
+  "DidYouMean": "String",
+  "AutoCorrection": "String"
+})
 
 module.exports = User = mongoose.model("Career", CareerSchema);

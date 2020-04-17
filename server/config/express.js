@@ -6,6 +6,7 @@ const path = require('path'),
     passport = require('passport'),
     //exampleRouter = require('../routes/examples.server.routes'),
     usersRouter = require('../routes/usersRouter');
+    careerRouter = require('../routes/careerRouter');
 
 module.exports.init = () => {
     /* 
@@ -32,6 +33,7 @@ module.exports.init = () => {
     // add a router
     //app.use('/api/example', exampleRouter);
     app.use('/api/user', usersRouter);
+    app.use('/api/career', careerRouter);
 
     // Using passport
     app.use(passport.initialize());

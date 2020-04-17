@@ -1,0 +1,1005 @@
+{
+  
+    "OccupationDetail": [
+      {
+        "OnetTitle": "Animal Scientists",
+        "OnetCode": "19-1011.00",
+        "OnetDescription": "Conduct research in the genetics, nutrition, reproduction, growth, and development of domestic farm animals.",
+        "Wages": {
+          "NationalWagesList": [
+            {
+              "RateType": "Hourly",
+              "Pct10": "17.44",
+              "Pct25": "21.8",
+              "Median": "28.07",
+              "Pct75": "37.61",
+              "Pct90": "54.53",
+              "StFips": "00",
+              "Area": "000000",
+              "AreaName": "United States"
+            },
+            {
+              "RateType": "Annual",
+              "Pct10": "36270",
+              "Pct25": "45350",
+              "Median": "58380",
+              "Pct75": "78230",
+              "Pct90": "113430",
+              "StFips": "00",
+              "Area": "000000",
+              "AreaName": "United States"
+            }
+          ],
+          "StateWagesList": [],
+          "BLSAreaWagesList": [],
+          "WageYear": "2018",
+          "SocData": "Yes",
+          "SocWageInfo": {
+            "SocCode": "191011",
+            "SocTitle": "Animal Scientists",
+            "SocDescription": ""
+          }
+        },
+        "BrightOutlook": "Bright",
+        "Green": "No",
+        "COSVideoURL": "https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=19101100&op=y",
+        "EducationTraining": {
+          "EducationType": [
+            {
+              "EducationLevel": "Less than high school diploma",
+              "Value": "0"
+            },
+            {
+              "EducationLevel": "High school diploma or equivalent",
+              "Value": "0"
+            },
+            {
+              "EducationLevel": "Some college, no degree",
+              "Value": "0"
+            },
+            {
+              "EducationLevel": "Associate's degree",
+              "Value": "0"
+            },
+            {
+              "EducationLevel": "Bachelor's degree",
+              "Value": "54.5"
+            },
+            {
+              "EducationLevel": "Master's degree",
+              "Value": "28.2"
+            },
+            {
+              "EducationLevel": "Doctoral or professional degree",
+              "Value": "17.3"
+            }
+          ],
+          "EducationCode": "3",
+          "EducationTitle": "Bachelor's degree",
+          "ExperienceCode": "3",
+          "ExperienceTitle": "No work experience",
+          "TrainingCode": "6",
+          "TrainingTitle": "No on-the-job training",
+          "OccupationTitle": "Animal scientists"
+        },
+        "BrightOutlookCategory": "Rapid Growth",
+        "AlternateTitles": [
+          "Research Nutritionist",
+          "Research Scientist",
+          "Dairy Nutrition Consultant",
+          "Animal Nutrition Consultant",
+          "Research Center Partner",
+          "Beef Cattle Specialist",
+          "Research and Development Director (R&D Director)",
+          "Animal Scientist",
+          "Nutritionist",
+          "Animal Nutritionist"
+        ],
+        "StFips": "00",
+        "Location": "US",
+        "InterestDataList": [
+          {
+            "ElementId": "1.B.1.h",
+            "ElementName": "Realistic",
+            "ElementDescription": "Occupations with Realistic interests frequently involve practical, hands-on problems and solutions. They often deal with plants, animals, and real-world materials like wood, tools, and machinery. Many require working outside, and do not involve a lot of paperwork or working closely with others.",
+            "DataValue": "1",
+            "Importance": null
+          },
+          {
+            "ElementId": "1.B.1.g",
+            "ElementName": "Investigative",
+            "ElementDescription": "Occupations with Investigative interests frequently involve working with ideas, and require an extensive amount of thinking. They often involve research and figuring out problems mentally.",
+            "DataValue": "2",
+            "Importance": null
+          }
+        ],
+        "SocInfo": {
+          "SocCode": "191011",
+          "SocTitle": "Animal Scientists",
+          "SocDescription": "Conduct research in the genetics, nutrition, reproduction, growth, and development of domestic farm animals."
+        },
+        "Projections": {
+          "EstimatedYear": "2018",
+          "ProjectedYear": "2028",
+          "OccupationTitle": "Animal scientists",
+          "Projections": [
+            {
+              "StateName": "United States",
+              "Stfips": "00",
+              "EstimatedEmployment": "           2,700",
+              "ProjectedEmployment": "           2,800",
+              "PerCentChange": "       7",
+              "ProjectedAnnualJobOpening": "300"
+            }
+          ]
+        },
+        "RelatedOnetTitles": {
+          "19-1023.00": "Zoologists and Wildlife Biologists",
+          "25-1041.00": "Agricultural Sciences Teachers, Postsecondary",
+          "25-9021.00": "Farm and Home Management Advisors",
+          "19-1022.00": "Microbiologists",
+          "19-1012.00": "Food Scientists and Technologists",
+          "25-1043.00": "Forestry and Conservation Science Teachers, Postsecondary",
+          "19-1029.03": "Geneticists",
+          "19-1031.01": "Soil and Water Conservationists",
+          "25-1053.00": "Environmental Science Teachers, Postsecondary",
+          "19-1031.02": "Range Managers"
+        },
+        "SkillsDataList": [
+          {
+            "ElementId": "2.B.1.d",
+            "ElementName": "Negotiation",
+            "ElementDescription": "Bringing people together to solve differences.",
+            "DataValue": "2.75",
+            "Importance": "44"
+          },
+          {
+            "ElementId": "2.B.1.e",
+            "ElementName": "Instructing",
+            "ElementDescription": "Teaching people how to do something.",
+            "DataValue": "3.12",
+            "Importance": "53"
+          },
+          {
+            "ElementId": "2.B.1.f",
+            "ElementName": "Service Orientation",
+            "ElementDescription": "Looking for ways to help people.",
+            "DataValue": "2.88",
+            "Importance": "47"
+          },
+          {
+            "ElementId": "2.B.2.i",
+            "ElementName": "Complex Problem Solving",
+            "ElementDescription": "Noticing a problem and figuring out the best way to solve it.",
+            "DataValue": "3.88",
+            "Importance": "72"
+          },
+          {
+            "ElementId": "2.B.5.c",
+            "ElementName": "Management of Material Resources",
+            "ElementDescription": "Managing equipment and materials.",
+            "DataValue": "1.88",
+            "Importance": "22"
+          },
+          {
+            "ElementId": "2.B.3.e",
+            "ElementName": "Programming",
+            "ElementDescription": "Writing computer programs.",
+            "DataValue": "1.88",
+            "Importance": "22"
+          },
+          {
+            "ElementId": "2.B.3.a",
+            "ElementName": "Operations Analysis",
+            "ElementDescription": "Figuring out what a product or service needs to be able to do.",
+            "DataValue": "2.88",
+            "Importance": "47"
+          },
+          {
+            "ElementId": "2.B.5.d",
+            "ElementName": "Management of Personnel Resources",
+            "ElementDescription": "Selecting and managing the best workers for a job.",
+            "DataValue": "2.88",
+            "Importance": "47"
+          },
+          {
+            "ElementId": "2.A.1.a",
+            "ElementName": "Reading Comprehension",
+            "ElementDescription": "Reading work-related information.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "2.B.3.g",
+            "ElementName": "Operation Monitoring",
+            "ElementDescription": "Watching gauges, dials, or display screens to make sure a machine is working.",
+            "DataValue": "2.5",
+            "Importance": "38"
+          },
+          {
+            "ElementId": "2.B.3.b",
+            "ElementName": "Technology Design",
+            "ElementDescription": "Making equipment and technology useful for customers.",
+            "DataValue": "1.88",
+            "Importance": "22"
+          },
+          {
+            "ElementId": "2.A.1.b",
+            "ElementName": "Active Listening",
+            "ElementDescription": "Listening to others, not interrupting, and asking good questions.",
+            "DataValue": "3.88",
+            "Importance": "72"
+          },
+          {
+            "ElementId": "2.B.3.h",
+            "ElementName": "Operation and Control",
+            "ElementDescription": "Using equipment or systems.",
+            "DataValue": "2.12",
+            "Importance": "28"
+          },
+          {
+            "ElementId": "2.A.1.e",
+            "ElementName": "Mathematics",
+            "ElementDescription": "Using math to solve problems.",
+            "DataValue": "3.38",
+            "Importance": "60"
+          },
+          {
+            "ElementId": "2.B.1.b",
+            "ElementName": "Coordination",
+            "ElementDescription": "Changing what is done based on other people's actions.",
+            "DataValue": "3.25",
+            "Importance": "56"
+          },
+          {
+            "ElementId": "2.B.5.a",
+            "ElementName": "Time Management",
+            "ElementDescription": "Managing your time and the time of other people.",
+            "DataValue": "3.12",
+            "Importance": "53"
+          },
+          {
+            "ElementId": "2.B.3.c",
+            "ElementName": "Equipment Selection",
+            "ElementDescription": "Deciding what kind of tools and equipment are needed to do a job.",
+            "DataValue": "1",
+            "Importance": "0"
+          },
+          {
+            "ElementId": "2.A.1.c",
+            "ElementName": "Writing",
+            "ElementDescription": "Writing things for co-workers or customers.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "2.B.4.g",
+            "ElementName": "Systems Analysis",
+            "ElementDescription": "Figuring out how a system should work and how changes in the future will affect it.",
+            "DataValue": "3.62",
+            "Importance": "66"
+          },
+          {
+            "ElementId": "2.B.3.j",
+            "ElementName": "Equipment Maintenance",
+            "ElementDescription": "Planning and doing the basic maintenance on equipment.",
+            "DataValue": "1",
+            "Importance": "0"
+          },
+          {
+            "ElementId": "2.A.1.f",
+            "ElementName": "Science",
+            "ElementDescription": "Using scientific rules and strategies to solve problems.",
+            "DataValue": "4.38",
+            "Importance": "85"
+          },
+          {
+            "ElementId": "2.B.3.l",
+            "ElementName": "Repairing",
+            "ElementDescription": "Repairing machines or systems using the right tools.",
+            "DataValue": "1",
+            "Importance": "0"
+          },
+          {
+            "ElementId": "2.A.2.b",
+            "ElementName": "Active Learning",
+            "ElementDescription": "Figuring out how to use new ideas or things.",
+            "DataValue": "3.88",
+            "Importance": "72"
+          },
+          {
+            "ElementId": "2.B.1.c",
+            "ElementName": "Persuasion",
+            "ElementDescription": "Talking people into changing their minds or their behavior.",
+            "DataValue": "2.88",
+            "Importance": "47"
+          },
+          {
+            "ElementId": "2.B.5.b",
+            "ElementName": "Management of Financial Resources",
+            "ElementDescription": "Making spending decisions and keeping track of what is spent.",
+            "DataValue": "1.75",
+            "Importance": "19"
+          },
+          {
+            "ElementId": "2.B.3.d",
+            "ElementName": "Installation",
+            "ElementDescription": "Installing equipment, machines, wiring, or computer programs.",
+            "DataValue": "1",
+            "Importance": "0"
+          },
+          {
+            "ElementId": "2.A.1.d",
+            "ElementName": "Speaking",
+            "ElementDescription": "Talking to others.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "2.B.1.a",
+            "ElementName": "Social Perceptiveness",
+            "ElementDescription": "Understanding people's reactions.",
+            "DataValue": "3",
+            "Importance": "50"
+          },
+          {
+            "ElementId": "2.B.4.h",
+            "ElementName": "Systems Evaluation",
+            "ElementDescription": "Measuring how well a system is working and how to improve it.",
+            "DataValue": "3.25",
+            "Importance": "56"
+          },
+          {
+            "ElementId": "2.B.4.e",
+            "ElementName": "Judgment and Decision Making",
+            "ElementDescription": "Thinking about the pros and cons of different options and picking the best one.",
+            "DataValue": "3.88",
+            "Importance": "72"
+          },
+          {
+            "ElementId": "2.B.3.k",
+            "ElementName": "Troubleshooting",
+            "ElementDescription": "Figuring out what is causing equipment, machines, wiring, or computer programs to not work.",
+            "DataValue": "1.88",
+            "Importance": "22"
+          },
+          {
+            "ElementId": "2.A.2.a",
+            "ElementName": "Critical Thinking",
+            "ElementDescription": "Thinking about the pros and cons of different ways to solve a problem.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "2.A.2.d",
+            "ElementName": "Monitoring",
+            "ElementDescription": "Keeping track of how well people and/or groups are doing in order to make improvements.",
+            "DataValue": "3.5",
+            "Importance": "63"
+          },
+          {
+            "ElementId": "2.B.3.m",
+            "ElementName": "Quality Control Analysis",
+            "ElementDescription": "Testing how well a product or service works.",
+            "DataValue": "2.88",
+            "Importance": "47"
+          },
+          {
+            "ElementId": "2.A.2.c",
+            "ElementName": "Learning Strategies",
+            "ElementDescription": "Using the best training or teaching strategies for learning new things.",
+            "DataValue": "3.25",
+            "Importance": "56"
+          }
+        ],
+        "KnowledgeDataList": [
+          {
+            "ElementId": "2.C.3.b",
+            "ElementName": "Engineering and Technology",
+            "ElementDescription": "Knowledge of the practical application of engineering science and technology. This includes applying principles, techniques, procedures, and equipment to the design and production of various goods and services.",
+            "DataValue": "3",
+            "Importance": "50"
+          },
+          {
+            "ElementId": "2.C.3.c",
+            "ElementName": "Design",
+            "ElementDescription": "Knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models.",
+            "DataValue": "2.3",
+            "Importance": "33"
+          },
+          {
+            "ElementId": "2.C.7.c",
+            "ElementName": "Fine Arts",
+            "ElementDescription": "Knowledge of the theory and techniques required to compose, produce, and perform works of music, dance, visual arts, drama, and sculpture.",
+            "DataValue": "1.04",
+            "Importance": "1"
+          },
+          {
+            "ElementId": "2.C.3.d",
+            "ElementName": "Building and Construction",
+            "ElementDescription": "Knowledge of materials, methods, and the tools involved in the construction or repair of houses, buildings, or other structures such as highways and roads.",
+            "DataValue": "2.27",
+            "Importance": "32"
+          },
+          {
+            "ElementId": "2.C.1.c",
+            "ElementName": "Economics and Accounting",
+            "ElementDescription": "Knowledge of economic and accounting principles and practices, the financial markets, banking and the analysis and reporting of financial data.",
+            "DataValue": "2.7",
+            "Importance": "43"
+          },
+          {
+            "ElementId": "2.C.4.d",
+            "ElementName": "Biology",
+            "ElementDescription": "Knowledge of plant and animal organisms, their tissues, cells, functions, interdependencies, and interactions with each other and the environment.",
+            "DataValue": "4.63",
+            "Importance": "91"
+          },
+          {
+            "ElementId": "2.C.2.a",
+            "ElementName": "Production and Processing",
+            "ElementDescription": "Knowledge of raw materials, production processes, quality control, costs, and other techniques for maximizing the effective manufacture and distribution of goods.",
+            "DataValue": "3.11",
+            "Importance": "53"
+          },
+          {
+            "ElementId": "2.C.7.d",
+            "ElementName": "History and Archeology",
+            "ElementDescription": "Knowledge of historical events and their causes, indicators, and effects on civilizations and cultures.",
+            "DataValue": "1.62",
+            "Importance": "16"
+          },
+          {
+            "ElementId": "2.C.3.e",
+            "ElementName": "Mechanical",
+            "ElementDescription": "Knowledge of machines and tools, including their designs, uses, repair, and maintenance.",
+            "DataValue": "2.37",
+            "Importance": "34"
+          },
+          {
+            "ElementId": "2.C.1.d",
+            "ElementName": "Sales and Marketing",
+            "ElementDescription": "Knowledge of principles and methods for showing, promoting, and selling products or services. This includes marketing strategy and tactics, product demonstration, sales techniques, and sales control systems.",
+            "DataValue": "3",
+            "Importance": "50"
+          },
+          {
+            "ElementId": "2.C.8.b",
+            "ElementName": "Law and Government",
+            "ElementDescription": "Knowledge of laws, legal codes, court procedures, precedents, government regulations, executive orders, agency rules, and the democratic political process.",
+            "DataValue": "2.77",
+            "Importance": "44"
+          },
+          {
+            "ElementId": "2.C.4.e",
+            "ElementName": "Psychology",
+            "ElementDescription": "Knowledge of human behavior and performance; individual differences in ability, personality, and interests; learning and motivation; psychological research methods; and the assessment and treatment of behavioral and affective disorders.",
+            "DataValue": "2.33",
+            "Importance": "33"
+          },
+          {
+            "ElementId": "2.C.2.b",
+            "ElementName": "Food Production",
+            "ElementDescription": "Knowledge of techniques and equipment for planting, growing, and harvesting food products (both plant and animal) for consumption, including storage/handling techniques.",
+            "DataValue": "4.04",
+            "Importance": "76"
+          },
+          {
+            "ElementId": "2.C.7.a",
+            "ElementName": "English Language",
+            "ElementDescription": "Knowledge of the structure and content of the English language including the meaning and spelling of words, rules of composition, and grammar.",
+            "DataValue": "4.26",
+            "Importance": "82"
+          },
+          {
+            "ElementId": "2.C.7.e",
+            "ElementName": "Philosophy and Theology",
+            "ElementDescription": "Knowledge of different philosophical systems and religions. This includes their basic principles, values, ethics, ways of thinking, customs, practices, and their impact on human culture.",
+            "DataValue": "1.81",
+            "Importance": "20"
+          },
+          {
+            "ElementId": "2.C.4.a",
+            "ElementName": "Mathematics",
+            "ElementDescription": "Knowledge of arithmetic, algebra, geometry, calculus, statistics, and their applications.",
+            "DataValue": "4.07",
+            "Importance": "77"
+          },
+          {
+            "ElementId": "2.C.1.e",
+            "ElementName": "Customer and Personal Service",
+            "ElementDescription": "Knowledge of principles and processes for providing customer and personal services. This includes customer needs assessment, meeting quality standards for services, and evaluation of customer satisfaction.",
+            "DataValue": "3.22",
+            "Importance": "56"
+          },
+          {
+            "ElementId": "2.C.9.a",
+            "ElementName": "Telecommunications",
+            "ElementDescription": "Knowledge of transmission, broadcasting, switching, control, and operation of telecommunications systems.",
+            "DataValue": "2.19",
+            "Importance": "30"
+          },
+          {
+            "ElementId": "2.C.4.f",
+            "ElementName": "Sociology and Anthropology",
+            "ElementDescription": "Knowledge of group behavior and dynamics, societal trends and influences, human migrations, ethnicity, cultures and their history and origins.",
+            "DataValue": "1.96",
+            "Importance": "24"
+          },
+          {
+            "ElementId": "2.C.3.a",
+            "ElementName": "Computers and Electronics",
+            "ElementDescription": "Knowledge of circuit boards, processors, chips, electronic equipment, and computer hardware and software, including applications and programming.",
+            "DataValue": "3.33",
+            "Importance": "58"
+          },
+          {
+            "ElementId": "2.C.7.b",
+            "ElementName": "Foreign Language",
+            "ElementDescription": "Knowledge of the structure and content of a foreign (non-English) language including the meaning and spelling of words, rules of composition and grammar, and pronunciation.",
+            "DataValue": "2.07",
+            "Importance": "27"
+          },
+          {
+            "ElementId": "2.C.1.b",
+            "ElementName": "Clerical",
+            "ElementDescription": "Knowledge of administrative and clerical procedures and systems such as word processing, managing files and records, stenography and transcription, designing forms, and other office procedures and terminology.",
+            "DataValue": "2.7",
+            "Importance": "43"
+          },
+          {
+            "ElementId": "2.C.4.c",
+            "ElementName": "Chemistry",
+            "ElementDescription": "Knowledge of the chemical composition, structure, and properties of substances and of the chemical processes and transformations that they undergo. This includes uses of chemicals and their interactions, danger signs, production techniques, and disposal methods.",
+            "DataValue": "4.07",
+            "Importance": "77"
+          },
+          {
+            "ElementId": "2.C.1.f",
+            "ElementName": "Personnel and Human Resources",
+            "ElementDescription": "Knowledge of principles and procedures for personnel recruitment, selection, training, compensation and benefits, labor relations and negotiation, and personnel information systems.",
+            "DataValue": "2.52",
+            "Importance": "38"
+          },
+          {
+            "ElementId": "2.C.8.a",
+            "ElementName": "Public Safety and Security",
+            "ElementDescription": "Knowledge of relevant equipment, policies, procedures, and strategies to promote effective local, state, or national security operations for the protection of people, data, property, and institutions.",
+            "DataValue": "2.68",
+            "Importance": "42"
+          },
+          {
+            "ElementId": "2.C.6",
+            "ElementName": "Education and Training",
+            "ElementDescription": "Knowledge of principles and methods for curriculum and training design, teaching and instruction for individuals and groups, and the measurement of training effects.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "2.C.1.a",
+            "ElementName": "Administration and Management",
+            "ElementDescription": "Knowledge of business and management principles involved in strategic planning, resource allocation, human resources modeling, leadership technique, production methods, and coordination of people and resources.",
+            "DataValue": "3.26",
+            "Importance": "57"
+          },
+          {
+            "ElementId": "2.C.4.b",
+            "ElementName": "Physics",
+            "ElementDescription": "Knowledge and prediction of physical principles, laws, their interrelationships, and applications to understanding fluid, material, and atmospheric dynamics, and mechanical, electrical, atomic and sub- atomic structures and processes.",
+            "DataValue": "2.85",
+            "Importance": "46"
+          },
+          {
+            "ElementId": "2.C.10",
+            "ElementName": "Transportation",
+            "ElementDescription": "Knowledge of principles and methods for moving people or goods by air, rail, sea, or road, including the relative costs and benefits.",
+            "DataValue": "2.78",
+            "Importance": "45"
+          },
+          {
+            "ElementId": "2.C.5.b",
+            "ElementName": "Therapy and Counseling",
+            "ElementDescription": "Knowledge of principles, methods, and procedures for diagnosis, treatment, and rehabilitation of physical and mental dysfunctions, and for career counseling and guidance.",
+            "DataValue": "1.74",
+            "Importance": "19"
+          },
+          {
+            "ElementId": "2.C.9.b",
+            "ElementName": "Communications and Media",
+            "ElementDescription": "Knowledge of media production, communication, and dissemination techniques and methods. This includes alternative ways to inform and entertain via written, oral, and visual media.",
+            "DataValue": "2.92",
+            "Importance": "48"
+          },
+          {
+            "ElementId": "2.C.5.a",
+            "ElementName": "Medicine and Dentistry",
+            "ElementDescription": "Knowledge of the information and techniques needed to diagnose and treat human injuries, diseases, and deformities. This includes symptoms, treatment alternatives, drug properties and interactions, and preventive health-care measures.",
+            "DataValue": "2.59",
+            "Importance": "40"
+          },
+          {
+            "ElementId": "2.C.4.g",
+            "ElementName": "Geography",
+            "ElementDescription": "Knowledge of principles and methods for describing the features of land, sea, and air masses, including their physical characteristics, locations, interrelationships, and distribution of plant, animal, and human life.",
+            "DataValue": "2.37",
+            "Importance": "34"
+          }
+        ],
+        "AbilityDataList": [
+          {
+            "ElementId": "1.A.3.a.2",
+            "ElementName": "Explosive Strength",
+            "ElementDescription": "Jumping, sprinting, or throwing something.",
+            "DataValue": "1.38",
+            "Importance": "10"
+          },
+          {
+            "ElementId": "1.A.4.a.2",
+            "ElementName": "Far Vision",
+            "ElementDescription": "Seeing details that are far away.",
+            "DataValue": "2.88",
+            "Importance": "47"
+          },
+          {
+            "ElementId": "1.A.3.c.1",
+            "ElementName": "Extent Flexibility",
+            "ElementDescription": "Bending, stretching, twisting, or reaching with your body, arms, and/or legs.",
+            "DataValue": "1.38",
+            "Importance": "10"
+          },
+          {
+            "ElementId": "1.A.3.a.3",
+            "ElementName": "Dynamic Strength",
+            "ElementDescription": "Exercising for a long time without your muscles getting tired.",
+            "DataValue": "1.38",
+            "Importance": "10"
+          },
+          {
+            "ElementId": "1.A.4.a.3",
+            "ElementName": "Visual Color Discrimination",
+            "ElementDescription": "Noticing the difference between colors, including shades and brightness.",
+            "DataValue": "2.62",
+            "Importance": "41"
+          },
+          {
+            "ElementId": "1.A.3.c.2",
+            "ElementName": "Dynamic Flexibility",
+            "ElementDescription": "Quickly and repeatedly bending, stretching, twisting, or reaching out with your body, arms, and/or legs.",
+            "DataValue": "1",
+            "Importance": "0"
+          },
+          {
+            "ElementId": "1.A.4.a.6",
+            "ElementName": "Depth Perception",
+            "ElementDescription": "Deciding which thing is closer or farther away from you, or deciding how far away it is from you.",
+            "DataValue": "2.12",
+            "Importance": "28"
+          },
+          {
+            "ElementId": "1.A.2.a.1",
+            "ElementName": "Arm-Hand Steadiness",
+            "ElementDescription": "Keeping your arm or hand steady.",
+            "DataValue": "1.62",
+            "Importance": "16"
+          },
+          {
+            "ElementId": "1.A.1.b.3",
+            "ElementName": "Problem Sensitivity",
+            "ElementDescription": "Noticing when problems happen.",
+            "DataValue": "3.88",
+            "Importance": "72"
+          },
+          {
+            "ElementId": "1.A.3.a.4",
+            "ElementName": "Trunk Strength",
+            "ElementDescription": "Using your lower back and stomach.",
+            "DataValue": "2.12",
+            "Importance": "28"
+          },
+          {
+            "ElementId": "1.A.1.g.1",
+            "ElementName": "Selective Attention",
+            "ElementDescription": "Paying attention to something without being distracted.",
+            "DataValue": "3",
+            "Importance": "50"
+          },
+          {
+            "ElementId": "1.A.4.a.4",
+            "ElementName": "Night Vision",
+            "ElementDescription": "Seeing at night or under low light.",
+            "DataValue": "1.25",
+            "Importance": "6"
+          },
+          {
+            "ElementId": "1.A.2.b.3",
+            "ElementName": "Response Orientation",
+            "ElementDescription": "Quickly deciding if you should move your hand, foot, or other body part.",
+            "DataValue": "1.5",
+            "Importance": "13"
+          },
+          {
+            "ElementId": "1.A.2.b.1",
+            "ElementName": "Control Precision",
+            "ElementDescription": "Quickly changing the controls of a machine, car, truck or boat.",
+            "DataValue": "2",
+            "Importance": "25"
+          },
+          {
+            "ElementId": "1.A.3.c.3",
+            "ElementName": "Gross Body Coordination",
+            "ElementDescription": "Moving your arms, legs, and mid-section together while your whole body is moving.",
+            "DataValue": "1.5",
+            "Importance": "13"
+          },
+          {
+            "ElementId": "1.A.4.a.7",
+            "ElementName": "Glare Sensitivity",
+            "ElementDescription": "Seeing something even if there is a glare or very bright light.",
+            "DataValue": "1.5",
+            "Importance": "13"
+          },
+          {
+            "ElementId": "1.A.2.a.2",
+            "ElementName": "Manual Dexterity",
+            "ElementDescription": "Holding or moving items with your hands.",
+            "DataValue": "1.12",
+            "Importance": "3"
+          },
+          {
+            "ElementId": "1.A.2.c.1",
+            "ElementName": "Reaction Time",
+            "ElementDescription": "Quickly moving your hand, finger, or foot based on a sound, light, picture or other command.",
+            "DataValue": "1.5",
+            "Importance": "13"
+          },
+          {
+            "ElementId": "1.A.4.b.2",
+            "ElementName": "Auditory Attention",
+            "ElementDescription": "Paying attention to one sound while there are other distracting sounds.",
+            "DataValue": "2.5",
+            "Importance": "38"
+          },
+          {
+            "ElementId": "1.A.1.e.2",
+            "ElementName": "Flexibility of Closure",
+            "ElementDescription": "Seeing hidden patterns.",
+            "DataValue": "3",
+            "Importance": "50"
+          },
+          {
+            "ElementId": "1.A.1.c.1",
+            "ElementName": "Mathematical Reasoning",
+            "ElementDescription": "Choosing the right type of math to solve a problem.",
+            "DataValue": "3.38",
+            "Importance": "60"
+          },
+          {
+            "ElementId": "1.A.1.b.4",
+            "ElementName": "Deductive Reasoning",
+            "ElementDescription": "Using rules to solve problems.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "1.A.1.a.1",
+            "ElementName": "Oral Comprehension",
+            "ElementDescription": "Listening and understanding what people say.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "1.A.3.a.1",
+            "ElementName": "Static Strength",
+            "ElementDescription": "Lifting, pushing, pulling, or carrying.",
+            "DataValue": "1.5",
+            "Importance": "13"
+          },
+          {
+            "ElementId": "1.A.4.a.1",
+            "ElementName": "Near Vision",
+            "ElementDescription": "Seeing details up close.",
+            "DataValue": "3.88",
+            "Importance": "72"
+          },
+          {
+            "ElementId": "1.A.3.b.1",
+            "ElementName": "Stamina",
+            "ElementDescription": "Exercising for a long time without getting out of breath.",
+            "DataValue": "1.38",
+            "Importance": "10"
+          },
+          {
+            "ElementId": "1.A.4.b.5",
+            "ElementName": "Speech Clarity",
+            "ElementDescription": "Speaking clearly.",
+            "DataValue": "3.75",
+            "Importance": "69"
+          },
+          {
+            "ElementId": "1.A.1.g.2",
+            "ElementName": "Time Sharing",
+            "ElementDescription": "Doing two or more things at the same time.",
+            "DataValue": "2.62",
+            "Importance": "41"
+          },
+          {
+            "ElementId": "1.A.1.b.2",
+            "ElementName": "Originality",
+            "ElementDescription": "Creating new and original ideas.",
+            "DataValue": "3.12",
+            "Importance": "53"
+          },
+          {
+            "ElementId": "1.A.1.f.2",
+            "ElementName": "Visualization",
+            "ElementDescription": "Imagining how something will look after it is moved around or changed.",
+            "DataValue": "3",
+            "Importance": "50"
+          },
+          {
+            "ElementId": "1.A.4.a.5",
+            "ElementName": "Peripheral Vision",
+            "ElementDescription": "Seeing something to your side when your are looking ahead.",
+            "DataValue": "1.25",
+            "Importance": "6"
+          },
+          {
+            "ElementId": "1.A.2.b.4",
+            "ElementName": "Rate Control",
+            "ElementDescription": "Changing when and how fast you move based on how something else is moving.",
+            "DataValue": "1.38",
+            "Importance": "10"
+          },
+          {
+            "ElementId": "1.A.4.b.1",
+            "ElementName": "Hearing Sensitivity",
+            "ElementDescription": "Telling the difference between sounds.",
+            "DataValue": "1.88",
+            "Importance": "22"
+          },
+          {
+            "ElementId": "1.A.1.e.1",
+            "ElementName": "Speed of Closure",
+            "ElementDescription": "Quickly knowing what you are looking at.",
+            "DataValue": "2.38",
+            "Importance": "35"
+          },
+          {
+            "ElementId": "1.A.1.b.7",
+            "ElementName": "Category Flexibility",
+            "ElementDescription": "Grouping things in different ways.",
+            "DataValue": "3.88",
+            "Importance": "72"
+          },
+          {
+            "ElementId": "1.A.2.b.2",
+            "ElementName": "Multilimb Coordination",
+            "ElementDescription": "Using your arms and/or legs together while sitting, standing, or lying down.",
+            "DataValue": "2",
+            "Importance": "25"
+          },
+          {
+            "ElementId": "1.A.2.c.3",
+            "ElementName": "Speed of Limb Movement",
+            "ElementDescription": "Quickly moving your arms and legs.",
+            "DataValue": "1",
+            "Importance": "0"
+          },
+          {
+            "ElementId": "1.A.3.c.4",
+            "ElementName": "Gross Body Equilibrium",
+            "ElementDescription": "Keeping your balance or staying upright.",
+            "DataValue": "1.25",
+            "Importance": "6"
+          },
+          {
+            "ElementId": "1.A.4.b.4",
+            "ElementName": "Speech Recognition",
+            "ElementDescription": "Recognizing spoken words.",
+            "DataValue": "3.75",
+            "Importance": "69"
+          },
+          {
+            "ElementId": "1.A.1.b.1",
+            "ElementName": "Fluency of Ideas",
+            "ElementDescription": "Coming up with lots of ideas.",
+            "DataValue": "3.62",
+            "Importance": "66"
+          },
+          {
+            "ElementId": "1.A.1.f.1",
+            "ElementName": "Spatial Orientation",
+            "ElementDescription": "Knowing where things are around you.",
+            "DataValue": "1.75",
+            "Importance": "19"
+          },
+          {
+            "ElementId": "1.A.2.a.3",
+            "ElementName": "Finger Dexterity",
+            "ElementDescription": "Putting together small parts with your fingers.",
+            "DataValue": "2",
+            "Importance": "25"
+          },
+          {
+            "ElementId": "1.A.1.d.1",
+            "ElementName": "Memorization",
+            "ElementDescription": "Remembering words, numbers, pictures, or steps.",
+            "DataValue": "2.75",
+            "Importance": "44"
+          },
+          {
+            "ElementId": "1.A.1.b.6",
+            "ElementName": "Information Ordering",
+            "ElementDescription": "Ordering or arranging things.",
+            "DataValue": "3.75",
+            "Importance": "69"
+          },
+          {
+            "ElementId": "1.A.2.c.2",
+            "ElementName": "Wrist-Finger Speed",
+            "ElementDescription": "Making fast, simple, repeated movements of your fingers, hands, and wrists.",
+            "DataValue": "1.62",
+            "Importance": "16"
+          },
+          {
+            "ElementId": "1.A.4.b.3",
+            "ElementName": "Sound Localization",
+            "ElementDescription": "Noticing the direction that a sound came from.",
+            "DataValue": "1.25",
+            "Importance": "6"
+          },
+          {
+            "ElementId": "1.A.1.a.4",
+            "ElementName": "Written Expression",
+            "ElementDescription": "Communicating by writing.",
+            "DataValue": "4",
+            "Importance": "75"
+          },
+          {
+            "ElementId": "1.A.1.e.3",
+            "ElementName": "Perceptual Speed",
+            "ElementDescription": "Quickly comparing groups of letters, numbers, pictures, or other things.",
+            "DataValue": "2.75",
+            "Importance": "44"
+          },
+          {
+            "ElementId": "1.A.1.c.2",
+            "ElementName": "Number Facility",
+            "ElementDescription": "Adding, subtracting, multiplying, or dividing.",
+            "DataValue": "3.25",
+            "Importance": "56"
+          },
+          {
+            "ElementId": "1.A.1.b.5",
+            "ElementName": "Inductive Reasoning",
+            "ElementDescription": "Making general rules or coming up with answers from lots of detailed information.",
+            "DataValue": "4.12",
+            "Importance": "78"
+          },
+          {
+            "ElementId": "1.A.1.a.3",
+            "ElementName": "Oral Expression",
+            "ElementDescription": "Communicating by speaking.",
+            "DataValue": "4.12",
+            "Importance": "78"
+          },
+          {
+            "ElementId": "1.A.1.a.2",
+            "ElementName": "Written Comprehension",
+            "ElementDescription": "Reading and understanding what is written.",
+            "DataValue": "4",
+            "Importance": "75"
+          }
+        ],
+        "TrainingPrograms": null
+      }
+    ],
+    "RecordCount": 1,
+    "DidYouMean": "",
+    "AutoCorrection": ""
+    
+  }
+
+  
+    
+  
