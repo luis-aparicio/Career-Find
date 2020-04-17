@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
     },
     passwordConfirmation:{
         type: String,
-        required: false
+        required: true
     },
     date:{
         type: Date,

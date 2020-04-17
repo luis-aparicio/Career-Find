@@ -22,7 +22,19 @@ const LoginForm = (props) => {
         };
         await axios.post('/api/user/:login', user).then((response) => {
             //console.log(response.data);
-            if(response.data !=="Success"){
+            //Issue with the if statement as it will always failed the login 
+            //You can see the implemented if statement at the bottom and make change as needed to better it
+            
+            /*if(response.data == "Success"){
+                setErrorString(response.data);
+                dispatch({ type: 'logout' })
+            } else {
+               // console.log("Success!");
+                //const userUrl = '/user/' + formInput.username + '/';
+                dispatch({ type:'login', payload:formLoginInput.username });
+            }*/
+
+            if(response.data == null){
                 setErrorString(response.data);
                 dispatch({ type: 'logout' })
             } else {
