@@ -21,7 +21,7 @@ exports.fill = () =>{
             throw err;
         }
         let careersData = JSON.parse(data);
-       // console.log(data);
+       //console.log(careersData);
 
         async.forEach(careersData.OccupationDetail, (doc, callback) => {
             Career.create(doc, (err) =>{
