@@ -1,4 +1,4 @@
-import './Login.css';
+import './loginstyling.css';
 import React from 'react';
 import { Button, Card } from "react-bootstrap";
 
@@ -24,7 +24,7 @@ const RegisterUser = (props) => {
                     onClick ={handleClick}
                     variant="primary"
                     size="lg"
-                    className="register">
+                    className="reguserbtn">
                     {buttonText}
                     </Button>
                  

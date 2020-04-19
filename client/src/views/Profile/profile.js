@@ -1,34 +1,42 @@
 import React, { Fragment } from 'react';
 import logo from '../../assets/logo.svg';
-import './style.css';
+import './prof.css';
 import hum from './human.jpg'
+import { Link } from 'react-router-dom';
 
 
-function Home() {
+function Profile() {
     return (
         <Fragment>
         <div className="App">
             <header className="App-header"></header>
         </div>
-        <div className="container">
-<div className="column1">
+        <div className="cont">
+<div className="col1">
     <div classname="avatar">
-        <center><h1 className="heading">Avatar</h1></center>
+        <center><h1 className="headig">Avatar</h1></center>
         <img src={hum} className="profimg" height="450" width="600">
         </img>
        
     </div>
-    <button name="edit" className="editbtn">Edit Profile</button>
+    <Link className="editbtn" to='/Home'>Edit Profile</Link>
+    <Link className="editbtn" to='/EditAvatar'>Edit Avatar</Link>
 </div>
-<div className="column2">
+<div className="col2">
 <h3 className="username">Jose Bautista</h3>
-<h3 className="subheading">Preferred courses</h3>
+<h3 className="subheadig">Preferred Career</h3>
 <ul className="bullet">
     <li>Operating system</li>
     <li>Software Engineering</li>
     <li>Web design</li>
 </ul>
-<h3 className="subheading">About you</h3>
+<h3 className="subheadig">Preferred courses</h3>
+<ul className="bullet">
+    <li>Operating system</li>
+    <li>Software Engineering</li>
+    <li>Web design</li>
+</ul>
+<h3 className="subheadig">About you</h3>
 <p className="desc">
 lorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem 
 Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsum
@@ -41,4 +49,4 @@ lorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlor
     );
 }
 
-export default Home;
+export default Profile;

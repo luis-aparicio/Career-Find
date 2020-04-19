@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from "react-bootstrap/Button";
 import Card from 'react-bootstrap/Card'
+import './loginstyling.css';
 
 const LoginUser = (props) => {
     if(props.returningUser === false){
@@ -20,7 +21,7 @@ const LoginUser = (props) => {
                     <Button
                     onClick ={handleClick}
                     variant="primary"
-                    size="lg" className="login">
+                    size="lg" className="loginbtn">
                     {buttonText}
                     </Button>
              

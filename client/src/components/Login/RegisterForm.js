@@ -49,7 +49,7 @@ const RegisterForm = (props) => {
                     <h2>{errorString}</h2>
                     <Form onSubmit={handleSubmit} onChange={handleChange}>
                         <Form.Group controlId="formRegisterUserUsername">
-                            <Form.Label className="label">Username:</Form.Label>
+                            <Form.Label className="lab">Username:</Form.Label>
                             <Form.Control
                                 name="username"
                                 type="text"
@@ -59,7 +59,7 @@ const RegisterForm = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group controlId="formRegisterUserEmail">
-                            <Form.Label className="label">Email:</Form.Label>
+                            <Form.Label className="lab">Email:</Form.Label>
                             <Form.Control
                                 name="email"
                                 type="email"
@@ -69,28 +69,28 @@ const RegisterForm = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group controlId="formRegisterUserPassword">
-                            <Form.Label className="label">Enter Password:</Form.Label>
+                            <Form.Label className="lab">Enter Password:</Form.Label>
                             <Form.Control
                                 name="password"
                                 type="password"
                                 placeholder="Enter username"/>
                         </Form.Group>
                         <Form.Group controlId="formRegisterUserValidPass">
-                            <Form.Label className="label">Confirm Password</Form.Label>
+                            <Form.Label className="lab">Confirm Password</Form.Label>
                             <Form.Control
                                 name="confirm"
                                 type="password"
                                 placeholder="Enter username"/>
                         </Form.Group>
                         <Form.Group controlId="formRegisterUserFirst">
-                            <Form.Label className="label">First Name:</Form.Label>
+                            <Form.Label className="lab">First Name:</Form.Label>
                             <Form.Control
                                 name="firstname"
                                 type="text"
                                 placeholder="Enter first name"/>
                         </Form.Group>
                         <Form.Group controlId="formRegisterUserLast">
-                            <Form.Label className="label">Last Name:</Form.Label>
+                            <Form.Label className="lab">Last Name:</Form.Label>
                             <Form.Control
                                 name="lastname"
                                 type="text"
@@ -99,7 +99,7 @@ const RegisterForm = (props) => {
                         <Button
                             type="submit"
                             variant="success"
-                            size="lg" className="center">
+                            size="lg" className="center1">
                             Submit
                         </Button>
                     </Form>

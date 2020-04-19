@@ -1,0 +1,69 @@
+@font-face {
+    font-family: atma;
+    src: url(../../assets/Atma-Medium.ttf);
+  }
+.avtrcont
+{
+    display: flex;
+    flex-direction: column;
+    margin-top:-45%;
+}
+.avtrheadig
+{
+    margin-left: 8%;
+    color: #3A82EF;
+    font-size: 58px;
+    margin-bottom: 5%;
+    letter-spacing: 0.05em;
+    font-family: atma;
+}
+.avatrow
+{
+    padding-top: 5%;
+    background-color: rgb(148, 235, 255);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+}
+.pnts
+{
+    display: flex;
+    flex-direction: row;  
+    padding-left: 10%;
+    margin-left: 15%;
+    margin-bottom: 5%;
+}
+.pntshead
+{
+    color: #3A82EF;
+    margin-right: 5%;
+}
+.scorehead
+{
+    color: #3A82EF;
+    font-weight: bolder;
+    margin-right: 15%;
+}
+.purbtn
+{
+    background-color: #3A82EF;
+    border-radius: 6px;
+    width: 400px;
+    padding: 5px;
+    height: 50px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    
+}
+.purbtn:hover{
+    font-weight: bolder;
+}
+.avtrimg
+{
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}

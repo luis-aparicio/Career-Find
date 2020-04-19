@@ -46,7 +46,7 @@ const LoginForm = (props) => {
                 <h2>{errorString}</h2>
                 <Form onSubmit={handleLoginSubmit} onChange={handleLoginChange}>
                     <Form.Group controlId="formRegisterUserUsername">
-                        <Form.Label className="label">Username:</Form.Label>
+                        <Form.Label className="lab">Username:</Form.Label>
                         <Form.Control
                             name="username"
                             type="text"
@@ -58,7 +58,7 @@ const LoginForm = (props) => {
                         </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group controlId="formRegisterUserPassword">
-                        <Form.Label className="label">Password:</Form.Label>
+                        <Form.Label className="lab">Password:</Form.Label>
                         <Form.Control
                             name="password"
                             type="password"
@@ -71,7 +71,7 @@ const LoginForm = (props) => {
                         type="submit"
                         variant="success"
                         size="lg"
-                        className="center">
+                        className="center1">
                         Submit
                     </Button>
                 </Form>

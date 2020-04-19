@@ -1,0 +1,85 @@
+@font-face {
+    font-family: atma;
+    src: url(../../assets/Atma-Medium.ttf);
+  }
+.conteditav
+{
+    display: flex;
+    flex-direction: row;
+}
+.avtrcol1
+{
+    width: 50%;
+    margin-top:-45%;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 15%;
+    flex-direction: column;
+    height: 100%;
+}
+.avtrcol2
+{
+   
+    margin-top:-45%;
+    box-sizing: border-box;
+    display: flex;
+  
+    flex-direction: column;
+    height: 100%;
+}
+.avtrheading
+{
+    font-size: 58px;
+    color:#3A82EF;
+    font-family:atma;
+    margin-bottom: 55%;
+}
+.arrowimg
+{
+    margin-top: 10%;
+}
+.editavtrrow
+{
+    display: flex;
+    flex-direction: row;
+height: 60%;
+}
+.avtrsave
+{
+    background-color: #3A82EF;
+    border-radius: 6px;
+    width: 400px;
+    padding: 5px;
+    height: 50px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 10%;
+
+    padding-left: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+.avtrsave:hover{
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+}
+.box1
+{
+    width: 50%;
+   height: 200px;
+    background-color: red;
+}
+.box2
+{
+    width: 50%;
+    height: 200px;
+    background-color: green;
+}
+.box3
+{
+    width: 50%;
+    height: 200px;
+    background-color: blue;
+}
