@@ -13,16 +13,52 @@ import Button from'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import Careerpage from './careerpage'
 import './careers.css';
+import axios from 'axios'
 
 function Careers() {
 
     const [clustername,setClustername] = useState("");
     const [clusterselected,setClusterselected] = useState(false);
+    const [allcareers,setAllcareers] = useState({careers:[]});
+    const [reducedcareers,setReducedcareers] = useState({careers:[]});
+    const [loaded,setloaded] = useState(false);
     
-    const handleClick = async (title) => {
-        setClusterselected(true);
-        setClustername(title)
+
+    const fetchCareers = async () =>{
+        if(!loaded){
+          await axios.get('/api/career/get')
+        .then(response => {
+        //console.log(response.data);
+        
+        setAllcareers(response.data);
+        setloaded(true);
+        
+            })  
+        }
+
+        
+        
     }
+
+    fetchCareers();
+    
+    const handleClick = async (code) => {
+        
+        if(loaded){
+        await setReducedcareers(allcareers
+        .filter(career =>{
+            return career.OnetCode.includes(code);
+        }));
+
+        setClusterselected(true);
+        setClustername(code);
+        }
+
+        
+
+    }
+
+    
 
     if (clusterselected === false)
     {
@@ -39,7 +75,7 @@ function Careers() {
                         <Card.Text>
                         Careers in Agricultural, Food, and Natural Resources
                         </Card.Text>
-                        <Button variant="light" size="lg" block onClick = {()=> handleClick("env")} >
+                        <Button variant="light" size="lg" block onClick = {()=> handleClick("19-")} >
                             Career List
                         </Button>
                         </Card.Body>
@@ -52,7 +88,7 @@ function Careers() {
                         <Card.Text>
                         Careers in IT, Computer Science, and Data Analysis
                         </Card.Text>
-                        <Button variant="light" size="lg" block onClick = {()=> handleClick("it")} >
+                        <Button variant="light" size="lg" block onClick = {()=> handleClick("15-")} >
                             Career List
                         </Button>
                         </Card.Body>
@@ -65,7 +101,7 @@ function Careers() {
                         <Card.Text>
                         Careers in Equiptment Manufacturing, Technical, and Fabricated Services
                         </Card.Text>
-                        <Button variant="light" size="lg" block onClick = {()=> handleClick("man")} >
+                        <Button variant="light" size="lg" block onClick = {()=> handleClick("47-")} >
                             Career List
                         </Button>
                         </Card.Body>
@@ -83,7 +119,7 @@ function Careers() {
                         <Card.Text>
                         Careers in Health Administration, Technologist, and Interpreter 
                         </Card.Text>
-                        <Button variant="light" size="lg" block onClick = {()=> handleClick("heal")} >
+                        <Button variant="light" size="lg" block onClick = {()=> handleClick("29-")} >
                             Career List
                         </Button>
                         </Card.Body>
@@ -95,7 +131,7 @@ function Careers() {
                         <Card.Text>
                         Careers in Psychology, Social, and Youth Work
                         </Card.Text>
-                        <Button variant="light" size="lg" block onClick = {()=> handleClick("human")} >
+                        <Button variant="light" size="lg" block onClick = {()=> handleClick("21-")} >
                             Career List
                         </Button>
                         </Card.Body>
@@ -107,7 +143,7 @@ function Careers() {
                         <Card.Text>
                         Careers in Marketing Coordination, Graphic Design, and Public Relations Management
                         </Card.Text>
-                        <Button variant="light" size="lg" block onClick = {()=> handleClick("bus")} >
+                        <Button variant="light" size="lg" block onClick = {()=> handleClick("13-")} >
                             Career List
                         </Button>
                         </Card.Body>
@@ -120,14 +156,17 @@ function Careers() {
     }
 
     else {
-
-        return (
-        <div>
-            <Careerpage clustername={clustername}
-            />
-        </div>
-            
-        )
+        
+          return (
+                    <div>
+                        <Careerpage clustername={clustername}
+                        allcareers = {allcareers}
+                        reducedcareers = {reducedcareers}
+                        />
+                    </div>
+                
+            )
+        
     }
 }
 

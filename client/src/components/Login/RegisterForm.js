@@ -73,14 +73,14 @@ const RegisterForm = (props) => {
                             <Form.Control
                                 name="password"
                                 type="password"
-                                placeholder="Enter username"/>
+                                placeholder="Enter password"/>
                         </Form.Group>
                         <Form.Group controlId="formRegisterUserValidPass">
                             <Form.Label className="lab">Confirm Password</Form.Label>
                             <Form.Control
                                 name="confirm"
                                 type="password"
-                                placeholder="Enter username"/>
+                                placeholder="Confirm password"/>
                         </Form.Group>
                         <Form.Group controlId="formRegisterUserFirst">
                             <Form.Label className="lab">First Name:</Form.Label>
