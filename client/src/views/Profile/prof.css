@@ -1,24 +1,26 @@
-.contain
+.cont
 {
     display: flex;
     flex-direction: row;
     height: 100%;
     width: 100%;
+    margin-bottom: 10%;
 }
-.column1
+.col1
 {
     width: 50%;
    height: 20%;
     display: flex;
     flex-direction: column;
-   margin-top:-60%;
+   margin-top:-45%;
    box-sizing: border-box;
 }
-.heading
+.headig
 {
     margin-left: -35%;
     color: #3A82EF;
     font-size: 58px;
+    margin-bottom: 1%;
     letter-spacing: 0.05em;
     font-family: Georgia, Times, 'Times New Roman', serif;
 }
@@ -31,7 +33,7 @@
     letter-spacing: 0.05em;
     font-family: Georgia, Times, 'Times New Roman', serif;
 }
-.subheading
+.subheadig
 {
     margin-left: 15%;
     color: #3A82EF;
@@ -54,7 +56,7 @@
 .profimg
 {
     border-radius: 5px;
-    margin-left: -15%;
+    margin-left: 10%;
     margin-bottom: 5%;
 }
 
@@ -68,16 +70,17 @@
     color: white;
     border: none;
     font-size: 20px;
+    margin-left: 25%;
 }
 .editbtn:hover{
     font-weight: bolder;
 }
-.column2
+.col2
 {
     height: 20%;
     display: flex;
     width: 50%;
     flex-direction: column;
-   margin-top:-60%;
+   margin-top:-45%;
    box-sizing: border-box;
 }

@@ -1,0 +1,48 @@
+.text1
+{
+    margin-top: 5%;
+}
+
+.butn
+{
+    width:200px;
+    background-color: #3A82EF;
+    color: white;
+    border-color: none;
+    border-radius: 5px;
+}
+
+.button1
+{
+    margin-top: 2%;
+    margin-left: 45%;
+    width:200px;
+    background-color: #3A82EF;
+    color: white;
+    border-color: none;
+    border-radius: 5px;
+}
+
+.button3
+{
+    margin-top: 2%;
+    margin-left: 45%;
+    width:200px;
+    margin-bottom: 5%;
+    background-color: #3A82EF;
+    color: white;
+    border-color: none;
+    border-radius: 5px;
+}
+
+.grp
+{
+    background-color: #3A82EF;
+}
+
+.label1
+{
+    background-color: #3A82EF;
+    color: white;
+    width: 200px;
+}

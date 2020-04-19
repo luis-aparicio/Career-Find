@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import { Row, Col } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
-
+import './classrom.css';
 
 
 
@@ -28,93 +28,94 @@ function Classroom() {
 
 if (classroomview === false){
     return (
-        <div>
+        <div className="text1">
             <Container>
                 <InputGroup className="mb-3">
                     <FormControl
                     placeholder="Career Name/Code"
                     aria-label="Career Name/Codes"
                     aria-describedby="basic-addon2"
+                    
                     />
                     <InputGroup.Append>
-                    <Button variant="outline-secondary">Set</Button>
+                    <Button variant="outline-secondary" className="butn">Set</Button>
                     </InputGroup.Append>
                 </InputGroup>
     
-                <InputGroup>
+                <InputGroup >
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Description</InputGroup.Text>
+                    <InputGroup.Text className="label1">Description</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Salary</InputGroup.Text>
+                    <InputGroup.Text className="label1">Salary</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Video Link</InputGroup.Text>
+                    <InputGroup.Text className="label1">Video Link</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Experience</InputGroup.Text>
+                    <InputGroup.Text className="label1">Experience</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Activities</InputGroup.Text>
+                    <InputGroup.Text className="label1">Activities</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Knowledge</InputGroup.Text>
+                    <InputGroup.Text className="label1">Knowledge</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Required Skills</InputGroup.Text>
+                    <InputGroup.Text className="label1">Required Skills</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Required Abilities</InputGroup.Text>
+                    <InputGroup.Text className="label1">Required Abilities</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
     
                 <InputGroup>
                     <InputGroup.Prepend>
-                    <InputGroup.Text>Related</InputGroup.Text>
+                    <InputGroup.Text className="label1">Related</InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl as="textarea" aria-label="With textarea" />
                 </InputGroup>
             </Container>
     
             
-                <Row>
-                        <Button type="submit" >
+             
+                        <Button type="submit" className="button1">
                                 Update
                         </Button>
-                        
-                        <Button variant="primary" size="sm" onClick = {() => toTable()}>
+                        <br></br> 
+                        <Button variant="primary" size="sm" onClick = {() => toTable()} className="button3">
                         Switch to Class List
                         </Button>
-                </Row>         
+                  
         </div> 
         );
 }

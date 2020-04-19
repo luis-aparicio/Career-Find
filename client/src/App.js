@@ -3,7 +3,7 @@ import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./views/Home/Home";
 import Careers from "./views/Careers/careers"
 import Classroom from "./views/Classroom/classroom"
-import Profile from "./views/Profile/Profile"
+import Profile from "./views/Profile/profile"
 import Rewards from "./views/Rewards/rewards"
 import Chat from "./views/Chat/chat"
 import Login from "./views/Login/login"
