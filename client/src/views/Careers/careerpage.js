@@ -94,6 +94,16 @@ async function handleClick (data) {
         
        );
     }
+    if (props.clustername === "-" && careerselected === false) { 
+        
+        return (
+            <Container>
+                 <h1 style={{color: "black"}}>All</h1>
+                 {map}
+            </Container>
+        
+       );
+    }
 
     else if(careerselected) {
 

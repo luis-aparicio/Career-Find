@@ -150,6 +150,9 @@ function Careers() {
                     </Card>
                     </CardDeck>
             </Row>
+            <Row>
+            <Button variant="outline-dark" onClick = {()=> handleClick("-")}>All Careers</Button>
+            </Row>
             </Container>
             </div>
         );
