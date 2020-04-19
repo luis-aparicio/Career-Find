@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./views/Home/Home";
 import Careers from "./views/Careers/careers"
@@ -15,9 +15,25 @@ import Ban from "./components/Banner/Titlebanner";
 import careerpage from './views/Careers/careerpage';
 import EditAvatar from './views/EditAvatar/editavatar';
 import { StateProvider } from "./state/globalState"; /*provider for global context*/
+import axios from 'axios';
 
 
 const App = () => {
+
+    const [loaded,setloaded] = useState(false);
+
+
+    if(!loaded){
+        axios.post('/api/career/fill')
+      .then(response => {
+    
+      setloaded(true);
+      
+          })  
+      }
+
+
+
     return (
         <div>
             <StateProvider>
