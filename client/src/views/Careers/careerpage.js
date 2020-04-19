@@ -5,104 +5,97 @@ import Container from 'react-bootstrap/Container'
 import Figure from 'react-bootstrap/Figure'
 import business from './business.jpg'
 
+
 const Careerpage = (props) => {
 
 const [careername,setCareername] = useState("");
 const [careerselected,setCareerselected] = useState(false);
+const [careerdata,setCareerdata] = useState({career:[]});
 
 
-//for demo purposes only
+let careermap;
+
+let map = props.reducedcareers.map(career => 
+    <ListGroup>
+        <ListGroup.Item action onClick = {()=> handleClick([career])}>{career.OnetTitle}</ListGroup.Item>
+    </ListGroup>
+)
 
 
 
+async function handleClick (data) {
 
-const handleClick = async (title) => {
-    setCareerselected(true);
-    setCareername(title)
+    setCareerdata(data);
+    setCareername(data[0].OnetTitle);
+    setCareerselected(true);    
+    
+    
 }
 
+    
 
-
-    if (props.clustername === "env" && careerselected === false) { 
+    if (props.clustername === "19-" && careerselected === false) { 
         
         return (
             <Container>
                 <h1 style={{color: "green"}}>Environmental and Agricultural Sciences</h1>
-                <ListGroup>
-                    <ListGroup.Item action onClick = {()=> handleClick("Agricultural Engineer")}>Agricultural Engineer</ListGroup.Item>
-                    <ListGroup.Item action onClick = {()=> handleClick("Park Ranger")} >Park Ranger</ListGroup.Item>
-                </ListGroup>
+                {map}
             </Container>
        );
     }
 
-    if (props.clustername === "it" && careerselected === false) { 
+    if (props.clustername === "15-" && careerselected === false) { 
         
         return (
             <Container>
                 <h1 style={{color: "grey"}}>Communications and Information Systems</h1>
-                    <ListGroup>
-                        <ListGroup.Item action onClick = {()=> handleClick("IT Systems Administrator")}>IT Systems Administrator</ListGroup.Item>
-                        <ListGroup.Item action onClick = {()=> handleClick("Performance and Data Analyst")}>Performance and Data Analyst</ListGroup.Item>
-                    </ListGroup>
+                {map}
             </Container>
         
        );
     }
-    if (props.clustername === "man" && careerselected === false) { 
+    if (props.clustername === "47-" && careerselected === false) { 
         
         return (
             <Container>
                 <h1 style={{color: "orange"}}>Industrial, Manufacturing, and Engineering</h1>
-                    <ListGroup>
-                        <ListGroup.Item action onClick = {()=> handleClick("Industrial Engineering Technician")}>Industrial Engineering Technician</ListGroup.Item>
-                        <ListGroup.Item action onClick = {()=> handleClick("Health and Safety Engineer")}>Health and Safety Engineer</ListGroup.Item>
-                    </ListGroup>  
+                {map}
             </Container>
         
        );
     }
-    if (props.clustername === "heal" && careerselected === false) { 
+    if (props.clustername === "29-" && careerselected === false) { 
         
         return (
             <Container>
                 <h1 style={{color: "red"}}>Health Sciences</h1>
-                    <ListGroup>
-                        <ListGroup.Item action onClick = {()=> handleClick("Pediatrician")}>Pediatrician</ListGroup.Item>
-                        <ListGroup.Item action onClick = {()=> handleClick("Biomedical Scientist")}>Biomedical Scientist</ListGroup.Item>
-                    </ListGroup>
+                {map}
             </Container>
         
        );
     }
-    if (props.clustername === "human" && careerselected === false) { 
+    if (props.clustername === "21-" && careerselected === false) { 
         
         return (
             <Container>
                 <h1 style={{color: "cyan"}}>Human Services and Resources</h1>
-                    <ListGroup>
-                        <ListGroup.Item action onClick = {()=> handleClick("School Counselor")}>School Counselor</ListGroup.Item>
-                        <ListGroup.Item action onClick = {()=> handleClick("Sociologist")}>Sociologist</ListGroup.Item>
-                    </ListGroup>
+                {map}
             </Container>
         
        );
     }
-    if (props.clustername === "bus" && careerselected === false) { 
+    if (props.clustername === "13-" && careerselected === false) { 
         
         return (
             <Container>
                  <h1 style={{color: "blue"}}>Business, Marketing and Management</h1>
-                    <ListGroup>
-                         <ListGroup.Item action onClick = {()=> handleClick("Digital Marketing Manager")}>Digital Marketing Manager</ListGroup.Item>
-                         <ListGroup.Item action onClick = {()=> handleClick("Sports Marketing Executive")}>Sports Marketing Executive</ListGroup.Item>
-                     </ListGroup>
+                 {map}
             </Container>
         
        );
     }
 
-    else {
+    else if(careerselected) {
 
    //this is the actual career page template
     return (
@@ -115,22 +108,18 @@ const handleClick = async (title) => {
         <div className="leftcol">
             <img src={business} alt="171x180" height="180" width="171" className="careerimg"></img>
         </div>
+        {careerdata.map(career =>
         <div className="rightcol">
-            <h3>What does an Environmental engineer do?</h3>
-            <p>Apply or release chemical solutions or toxic gases and set traps 
-                to kill or remove pests and vermin that infest buildings and surrounding areas.</p>
-                <h5>Also known as:</h5>
-<span>Residential Pest Control Technician, Certified Pest Control Technician, Termite Technician, 
-    Commercial Pest Control Technician, Pest Technician, 
-    Pest Control Technician, Pest Control Operator, Pest Control Chemical Technician, Pest Control Applicator, Exterminator</span>
-    
+        <h3>Description</h3>
+        <p>{career.OnetDescription}</p>
         </div>
+        )}
     </div>
    
     <div className="careerrow">
         <div className="leftcol">
         <h3>Salary</h3>
-            <p>Annual wages for Pest Control Workers in United States</p>
+            <p>Annual wages in United States</p>
                 <table>
                     <tr>
                         <td><b>Location</b></td>
@@ -138,57 +127,50 @@ const handleClick = async (title) => {
                     </tr>
                     <tr>
                         <td><b>10%</b></td>
-                        <td>$23230</td>
+                        <td>${careerdata[0].Wages.NationalWagesList[1].Pct10}</td>
                     </tr>
                     <tr>
-                        <td><b>10%</b></td>
-                        <td>$23230</td>
+                        <td><b>25%</b></td>
+                        <td>${careerdata[0].Wages.NationalWagesList[1].Pct25}</td>
                     </tr>
                     <tr>
-                        <td><b>10%</b></td>
-                        <td>$23230</td>
+                        <td><b>Median</b></td>
+                        <td>${careerdata[0].Wages.NationalWagesList[1].Median}</td>
                     </tr>
                     <tr>
-                        <td><b>10%</b></td>
-                        <td>$23230</td>
+                        <td><b>75%</b></td>
+                        <td>${careerdata[0].Wages.NationalWagesList[1].Pct75}</td>
                     </tr>
                     <tr>
-                        <td><b>10%</b></td>
-                        <td>$23230</td>
+                        <td><b>90%</b></td>
+                        <td>${careerdata[0].Wages.NationalWagesList[1].Pct90}</td>
                     </tr>
                 </table>
         </div>
         <div className="rightcol">
             <h3>Watch a Video</h3>
-        <iframe src="http://www.careeronestop.org/videos/Careeronestop-videos-content.aspx?videocode=37202100" width="500" height="300" frameborder="0" scrolling="no" allowfullscreen/>
+        <iframe src={"http://www.careeronestop.org/videos/Careeronestop-videos-content.aspx?videocode="+careerdata[0].Video[0].VideoCode} width="500" height="300" frameborder="0" scrolling="no" allowfullscreen/>
         </div>
         </div>
+
+        
        
         <div className="careerrow">
         <div className="leftcol">
-        <h3>Required Education and Experience</h3>
-            <p>People starting in this career usually have:</p>
- <ol>
-     <li>High school diploma or equivalent</li>
-     <li>No work experience</li>
-     <li>1 to 12 months on-the-job training</li>
-     </ol>
-               
+        
+        <h3>Required Abilities</h3>
+            <p>People in this career often have talent in:</p>
+            {careerdata[0].AbilityDataList.map(data => 
+            <ol>
+                <li>{data.ElementName}</li>
+            </ol>)} 
         </div>
         <div className="rightcol">
             <h3>Activities you might do in a day</h3>
+            {careerdata[0].Tasks.map(data => 
             <ol>
-                <li>Document work hours or activities.</li>
-                <li>Inspect buildings or grounds to determine condition.</li>
-                <li>Recommend products or services to customers.</li>
-                <li>Treat greenery or surfaces with protective substances.</li>
-                <li>Clean facilities or sites.</li>
-                <li>Drive trucks or other vehicles to or at work sites.</li>
-                <li>Estimate maintenance service requirements or costs.</li>
-                <li>Evaluate reports or designs to determine work needs.</li>
-                <li>Treat facilities to eliminate pests.</li>
-                <li>Supervise maintenance workers.</li>
-            </ol>
+                <li>{data.TaskDescription}</li>
+            </ol>)}
         </div>
         </div>
 
@@ -196,67 +178,31 @@ const handleClick = async (title) => {
         <div className="leftcol">
         <h3>Required Knowlegde</h3>
             <p>People in this career often know a lot about:</p>
- <ol>
-     <li>Customer and Personal Service - Knowledge of principles and processes for providing 
-         customer and personal services. This includes customer needs assessment, 
-         meeting quality standards for services, and evaluation of customer satisfaction.</li>
-     </ol>
+            {careerdata[0].KnowledgeDataList.map(data => 
+            <ol>
+                <li>{data.ElementName}</li>
+            </ol>)}
                
         </div>
         <div className="rightcol">
             <h3>Required Skills</h3>
             <p>People in this career often have these skills:</p>
-            <ol id="activities">
-                <li>Critical Thinking - Thinking about the pros and cons of different ways to solve a problem.</li>
-                <li>Active Listening - Listening to others, not interrupting, and asking good questions.</li>
-                <li>Monitoring - Keeping track of how well people and/or groups are doing in order to make improvements.</li>
-                <li>Writing - Writing things for co-workers or customers.</li>
-                <li>Speaking - Talking to others.</li>
-                <li>Time Management - Managing your time and the time of other people.</li>
-                <li>Social Perceptiveness - Understanding people's reactions.</li>
-            </ol>
+            {careerdata[0].SkillsDataList.map(data => 
+            <ol>
+                <li>{data.ElementName}</li>
+            </ol>)}
         </div>
         </div>
 
-        <div className="careerrow">
-        <div className="leftcol">
-        <h3>Required Abilities</h3>
-            <p>People in this career often have talent in:</p>
- <ol>
-     <li>Near Vision - Seeing details up close.</li>
-<li>Oral Expression - Communicating by speaking.</li>
-                <li>Oral Comprehension - Listening and understanding what people say.</li>
-                <li>Speech Clarity - Speaking clearly.</li>
-                <li>Written Expression - Communicating by writing.</li>
-                <li>Deductive Reasoning - Using rules to solve problems.</li>
-                <li>Speech Recognition - Recognizing spoken words.</li>
-                <li>Problem Sensitivity - Noticing when problems happen.</li>
-                <li>Far Vision - Seeing details that are far away.</li>
-                <li>Inductive Reasoning - Making general rules or coming up with answers from lots of detailed information.</li>
-     </ol>
-               
-        </div>
-        <div className="rightcol">
-            <h3>Related Occupations</h3>
-            <ol id="activities">
-                <li><a href="">First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers</a></li>
-                <li><a href="">Explosives Workers, Ordnance Handling Experts, and Blasters</a></li>
-                <li><a href="">Automotive Glass Installers and Repairers</a></li>
-                <li><a href="">Locksmiths and Safe Repairers</a></li>
-                <li><a href="">Animal Control Workers</a></li>
-                <li><a href="">Hazardous Materials Removal Workers</a></li>
-                <li><a href="">Non-Destructive Testing Specialists</a></li>
-                <li><a href="">Tree Trimmers and Pruners</a></li>
-                <li><a href="">Pesticide Handlers, Sprayers, and Applicators, Vegetation</a></li>
-                <li><a href="">Forest and Conservation Workers</a></li>
-            </ol>
-        </div>
-        </div>
+        
     </Fragment>  
             
           
         ); 
     }
+
+    else
+    return 0;
 }
 
 

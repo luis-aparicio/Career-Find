@@ -21,7 +21,6 @@ exports.fill = () =>{
             throw err;
         }
         let careersData = JSON.parse(data);
-       //console.log(careersData);
 
         async.forEach(careersData.OccupationDetail, (doc, callback) => {
             Career.create(doc, (err) =>{
@@ -53,6 +52,22 @@ exports.create = async (req, res) =>{
             return;
         }
     })
+};
+
+exports.get = async (req, res) =>{
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    Career.find({}, function(err, allCareers) {
+        if (err){
+            throw err;
+        }
+        else{
+            res.send(allCareers);  
+            //console.log(allCareers);
+            return;
+        }
+        
+      });
+   
 };
 
 
