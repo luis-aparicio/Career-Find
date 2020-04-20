@@ -28,7 +28,7 @@ exports.fill = () =>{
                     throw err;
                 }
                 
-                console.log(careersData);
+                //console.log(careersData);
                 callback();
                 return;
             }); 
