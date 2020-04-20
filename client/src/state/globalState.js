@@ -7,7 +7,7 @@ import React, {createContext, useReducer} from 'react';
 const initialState = {
     isAuthenticated: false,
     user: null,
-    //token: null,
+    token: null,
 };
 const globalState = createContext(initialState);
 const { Provider } = globalState;
@@ -16,20 +16,21 @@ const StateProvider = ( { children } ) => {
     const [state, dispatch] = useReducer((state, action) => {
         switch(action.type) {
             case 'login':
-                localStorage.setItem("user", action.payload);
-                //localStorage.setItem("token", JSON.stringify(action.payload.token));
+                localStorage.setItem("user", action.payload.user);
+                localStorage.setItem("token", JSON.stringify(action.payload.token));
                 console.log("Logged In!");
                 return {
                     ...state,
                     isAuthenticated: true,
                     user: action.payload,
-                    //token: action.payload.token
+                    token: action.payload.token
                 };
             case 'logout':
                 localStorage.clear();
                 return {
                     ...state,
                     isAuthenticated: false,
+                    token:null,
                     user: null
                 };
             default:

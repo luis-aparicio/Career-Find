@@ -4,8 +4,6 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import {globalState} from '../../state/globalState'
-//import jwt_decode from 'jwt-decode';
-import jwt from 'jsonwebtoken'
 
 
 
@@ -15,74 +13,35 @@ const LoginForm = (props) => {
     const globalStateLogin = React.useContext(globalState);
     const { dispatch } = globalStateLogin;
 
-    //Change made by Moise 
-    const [user, setUser] = useState({id:"", name:"", status:""});
-    const [isAuth, setAuth] = useState(false);
-
-
-    const setAuthToken = token =>{
-        if(token){
-            setAuth(true);
-            axios.defaults.headers.common["Authorization"] = token;
-        }
-        else{
-            delete axios.defaults.headers.common["Authorization"];
-        }
-    }
-
-
     const handleLoginSubmit = async(event) => {
         event.preventDefault();
-        let userInfo = {
+        let user = {
             username: formLoginInput.username,
             password: formLoginInput.password
         };
-        await axios.post('/api/user/:login', userInfo).then((response) => {
-            //console.log(response.data);
-            if(response.data !== true){
+        await axios.post('/api/user/:login', user).then((response) => {
+            console.log("Response: ");
+            console.log(response.data);
+            console.log("end response");
+            const token = response.data.token;
+            console.log(token);
+
+            if(response.data !=="Success" || !token){
+                delete axios.defaults.headers.common["Authorization"];
                 setErrorString(response.data);
                 dispatch({ type: 'logout' })
             } else {
-               // console.log("Success!");
-                //const userUrl = '/user/' + formInput.username + '/';
-                const {token} = response.data.token;
-                console.log(token);
-                localStorage.setItem("jwtToken", JSON.stringify(token));
-                setAuthToken(token);
-                const dcdToken = jwt.decode(token);
-                setUser(dcdToken);
-
-                dispatch({
+                axios.defaults.headers.common["Authorization"] = token;
+                dispatch({ 
                     type:'login', 
                     payload: {
-                        username: formLoginInput.username,
-                        //setUser(dcdToken) 
+                        user: formLoginInput.username,
+                        token: response.data.token
                     }
-                    
-                });
+                 });
             }
         });
-
-       
     };
-
-    const getAuth = () =>{
-        if(isAuth === true){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    const logout =()=>{
-        //destroying the token after logout
-        localStorage.removeItem("jwtToken");
-        setAuth(false);
-        setAuthToken(false);
-        dispatch(setUser({}));
-    }
-
 
     const handleLoginChange = (event) => {
         event.persist();

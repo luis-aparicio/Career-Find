@@ -80,9 +80,10 @@ exports.login = async (req, res) =>{
         else{
 
             userExists = true;
-            
+            console.log("." + req.body.password + ".");
+            console.log("." + user.password + ".");
             bcrypt.compare(req.body.password, user.password, function(err, isMatch){
-                    
+                console.log(isMatch);
                 if(err){
                     throw err;
                 }
@@ -108,10 +109,10 @@ exports.login = async (req, res) =>{
                                 res.status(200).send({
                                     auth: true,
                                     token: token,
-                                    message: "User logged in!"
+                                    message: "Success"
                                 });
     
-                                res.status(200).send("Success");
+                                //res.status(200).send("Success");
     
                             }                                
                         }
