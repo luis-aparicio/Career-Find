@@ -16,22 +16,27 @@ function EditAvatar() {
             <div className="avtrcol1">
     <div className="editavtrrow">
     <img src={arrow2} className="arrowimg" height="80" width="100"></img>
-    <div className="box1"></div>
+    <div className="box1">Head</div>
     <img src={arrow} className="arrowimg" height="80" width="100"></img>
     </div>
     <div className="editavtrrow">
     <img src={arrow2} className="arrowimg" height="80" width="100"></img>
-    <div className="box2"></div>
+    <div className="box2">Outfit</div>
     <img src={arrow} className="arrowimg" height="80" width="100"></img>
     </div>
     <div className="editavtrrow">
     <img src={arrow2} className="arrowimg" height="80" width="100"></img>
-    <div className="box3"></div>
+    <div className="box3">Gender</div>
     <img src={arrow} className="arrowimg" height="80" width="100"></img>
     </div>
     </div>
     <div className="avtrcol2">
         <h1 className="avtrheading">Edit Avatar</h1>
+        
+        <img src={0} className="profimg" height="450" width="600">
+        </img>
+       
+    
         <button name="save" className="avtrsave">Save</button>
         <button name="cancel" className="avtrsave">Cancel</button>
     </div>
