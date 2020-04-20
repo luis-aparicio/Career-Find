@@ -165,6 +165,7 @@ function Careers() {
                         <Careerpage clustername={clustername}
                         allcareers = {allcareers}
                         reducedcareers = {reducedcareers}
+                        setClusterselected = {setClusterselected}
                         />
                     </div>
                 

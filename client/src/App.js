@@ -20,6 +20,19 @@ import axios from 'axios';
 
 const App = () => {
 
+    const [loaded,setloaded] = useState(false);
+
+// we need a solution to this
+/*
+    if(!loaded){
+        axios.post('/api/career/fill')
+      .then(response => {
+    
+      setloaded(true);
+      
+          })  
+      }
+*/
 
 
     return (

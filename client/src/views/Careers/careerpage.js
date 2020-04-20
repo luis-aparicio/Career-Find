@@ -1,9 +1,10 @@
 
-import ListGroup from 'react-bootstrap/ListGroup'
+import ListGroup from 'react-bootstrap/ListGroup';
 import React, {useState, useEffect, Fragment} from 'react';
-import Container from 'react-bootstrap/Container'
-import Figure from 'react-bootstrap/Figure'
-import business from './business.jpg'
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Figure from 'react-bootstrap/Figure';
+import business from './business.jpg';
 
 
 const Careerpage = (props) => {
@@ -13,9 +14,8 @@ const [careerselected,setCareerselected] = useState(false);
 const [careerdata,setCareerdata] = useState({career:[]});
 
 
-let careermap;
-
 let map = props.reducedcareers.map(career => 
+    
     <ListGroup>
         <ListGroup.Item action onClick = {()=> handleClick([career])}>{career.OnetTitle}</ListGroup.Item>
     </ListGroup>
@@ -40,6 +40,7 @@ async function handleClick (data) {
             <Container>
                 <h1 style={{color: "green"}}>Environmental and Agricultural Sciences</h1>
                 {map}
+                <center><Button className = "editbtn" variant="outline-danger" onClick = {()=> props.setClusterselected(false)}>Back</Button></center>
             </Container>
        );
     }
@@ -50,6 +51,7 @@ async function handleClick (data) {
             <Container>
                 <h1 style={{color: "grey"}}>Communications and Information Systems</h1>
                 {map}
+                <center><Button className = "editbtn" variant="outline-danger" onClick = {()=> props.setClusterselected(false)}>Back</Button></center>
             </Container>
         
        );
@@ -60,6 +62,7 @@ async function handleClick (data) {
             <Container>
                 <h1 style={{color: "orange"}}>Industrial, Manufacturing, and Engineering</h1>
                 {map}
+                <center><Button className = "editbtn" variant="outline-danger" onClick = {()=> props.setClusterselected(false)}>Back</Button></center>
             </Container>
         
        );
@@ -70,6 +73,7 @@ async function handleClick (data) {
             <Container>
                 <h1 style={{color: "red"}}>Health Sciences</h1>
                 {map}
+                <center><Button className = "editbtn" variant="outline-danger" onClick = {()=> props.setClusterselected(false)}>Back</Button></center>
             </Container>
         
        );
@@ -80,6 +84,7 @@ async function handleClick (data) {
             <Container>
                 <h1 style={{color: "cyan"}}>Human Services and Resources</h1>
                 {map}
+                <center><Button className = "editbtn" variant="outline-danger" onClick = {()=> props.setClusterselected(false)}>Back</Button></center>
             </Container>
         
        );
@@ -90,6 +95,7 @@ async function handleClick (data) {
             <Container>
                  <h1 style={{color: "blue"}}>Business, Marketing and Management</h1>
                  {map}
+                 <center><Button className = "editbtn" variant="outline-danger" onClick = {()=> props.setClusterselected(false)}>Back</Button></center>
             </Container>
         
        );
@@ -100,6 +106,7 @@ async function handleClick (data) {
             <Container>
                  <h1 style={{color: "black"}}>All</h1>
                  {map}
+                 <center><Button className = "editbtn" variant="outline-danger" onClick = {()=> props.setClusterselected(false)}>Back</Button></center>
             </Container>
         
        );
@@ -109,11 +116,14 @@ async function handleClick (data) {
 
    //this is the actual career page template
     return (
+
         <Fragment>
         <div className="careerheader">
-        <center><h1>{careername}</h1></center>
+       
+        <center> <Button variant="outline-danger" onClick = {()=> setCareerselected(false)}>Back</Button><h1>{careername}</h1></center>
+        
     </div>
-   
+    
     <div className="careerrow">
         <div className="leftcol">
             <img src={business} alt="171x180" height="180" width="171" className="careerimg"></img>
