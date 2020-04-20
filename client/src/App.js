@@ -22,7 +22,8 @@ const App = () => {
 
     const [loaded,setloaded] = useState(false);
 
-
+// we need a solution to this
+/*
     if(!loaded){
         axios.post('/api/career/fill')
       .then(response => {
@@ -31,7 +32,7 @@ const App = () => {
       
           })  
       }
-
+*/
 
 
     return (
