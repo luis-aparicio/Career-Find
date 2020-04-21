@@ -26,7 +26,7 @@ const LoginForm = (props) => {
             const token = response.data.token;
             console.log(token);
 
-            if(response.data !=="Success" || !token){
+            if(response.data.message !=="Success" || !token){
                 delete axios.defaults.headers.common["Authorization"];
                 setErrorString(response.data);
                 dispatch({ type: 'logout' })

@@ -26,6 +26,7 @@ const RegisterForm = (props) => {
             if(response.data !=="Success"){
                 setErrorString(response.data);
                 dispatch({ type: 'logout' })
+                console.log("error");
             } else {
                 console.log("Success!");
                 //const userUrl = '/user/' + formInput.username + '/';

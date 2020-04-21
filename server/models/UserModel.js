@@ -29,8 +29,7 @@ const UserSchema = new mongoose.Schema({
         required: 'Please enter your password!'
     },
     passwordConfirmation:{
-        type: String,
-        required: true
+        type: String
     },
     date:{
         type: Date,
