@@ -28,7 +28,7 @@ let outfit = libmoji.randOutfit(libmoji.getOutfits(libmoji.randBrand(libmoji.get
 <div className="col1">
     <div classname="avatar">
         <center><h1 className="headig">Avatar</h1></center>
-        <img src={libmoji.buildPreviewUrl("head",3,gender[1],style[1],0,traits,outfit)} className="profimg" height="450" width="600">
+        <img src={libmoji.buildPreviewUrl("body",3,gender[1],style[1],0,traits,outfit)} className="profimg" height="450" width="600">
         </img>
        
     </div>
