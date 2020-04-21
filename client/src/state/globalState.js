@@ -22,7 +22,7 @@ const StateProvider = ( { children } ) => {
                 return {
                     ...state,
                     isAuthenticated: true,
-                    user: action.payload,
+                    user: action.payload.user,
                     token: action.payload.token
                 };
             case 'logout':
