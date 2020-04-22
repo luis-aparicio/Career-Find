@@ -4,6 +4,8 @@ import './NavBar.css';
 import { globalState } from "../../state/globalState";
 import logo from '../../assets/logo.svg'
 
+//taken out for  now:
+                /*<Link className = "nav-link" to='/Chat'>Chat</Link>*/
 
 const NavBar = () => {
     /*check context to see if user is loggedin*/
@@ -13,9 +15,10 @@ const NavBar = () => {
     React.useEffect(() => {
         loggedIn = globalStateLogin.state.isAuthenticated;
     });
+    
 
     return (
-        <div className = "header">
+        <div className = "header"> 
             {/* Logo */}
             <Link className = "nav-title" to="/">
                 <img className = "nav-logo" src={logo} alt="React logo" />
@@ -28,7 +31,6 @@ const NavBar = () => {
                 <Link className = "nav-link" to='/Classroom'>Classroom</Link>
                 <Link className = "nav-link" to='/Profile'>Profile</Link>
                 <Link className = "nav-link" to='/Rewards'>Rewards</Link>
-                <Link className = "nav-link" to='/Chat'>Chat</Link>
                 <Link className = "nav-link" to= '/Login'>
                     { loggedIn ? 'Logout ' + globalStateLogin.state.user : 'Login/Register'}
                 </Link>

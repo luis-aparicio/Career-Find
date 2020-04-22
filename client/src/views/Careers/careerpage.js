@@ -5,13 +5,20 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Figure from 'react-bootstrap/Figure';
 import business from './business.jpg';
+import { globalState } from "../../state/globalState";
+import FavoriteButton from './FavoriteButton';
 
 
 const Careerpage = (props) => {
 
 const [careername,setCareername] = useState("");
+const [isFavorite, setIsFavorite] = useState(false);
 const [careerselected,setCareerselected] = useState(false);
 const [careerdata,setCareerdata] = useState({career:[]});
+
+//const globalStateVars = React.useContext(globalState);
+//const { dispatch } = globalStateVars;
+
 
 
 let map = props.reducedcareers.map(career => 
@@ -22,7 +29,6 @@ let map = props.reducedcareers.map(career =>
 )
 
 
-
 async function handleClick (data) {
 
     setCareerdata(data);
@@ -30,9 +36,8 @@ async function handleClick (data) {
     setCareerselected(true);    
     
     
-}
+};
 
-    
 
     if (props.clustername === "19-" && careerselected === false) { 
         
@@ -120,7 +125,19 @@ async function handleClick (data) {
         <Fragment>
         <div className="careerheader">
        
-        <center> <Button variant="outline-danger" onClick = {()=> setCareerselected(false)}>Back</Button><h1>{careername}</h1></center>
+        <center> 
+            <Button 
+                variant="outline-danger" 
+                onClick = {()=> setCareerselected(false)}>
+                    Back To Category
+            </Button>
+            <FavoriteButton 
+                careername={careername}
+                isFavorite={setIsFavorite}
+                setIsFavorite={setIsFavorite}
+            />
+            <h1>{careername}</h1>
+        </center>
         
     </div>
     
