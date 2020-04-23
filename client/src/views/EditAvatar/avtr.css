@@ -83,3 +83,10 @@ height: 60%;
     height: 200px;
     background-color: blue;
 }
+
+.avatarimg
+{
+    border-radius: 5px;
+    margin-left: -11.25%;
+    margin-top: -50%;
+}
