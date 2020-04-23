@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { globalState } from "../../state/globalState";
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 
 
 const NavBar = () => {
