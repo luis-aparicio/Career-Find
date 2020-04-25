@@ -56,19 +56,19 @@ const StateProvider = ( { children } ) => {
                 localStorage.setItem("favorites", action.payload.favorites);
                 return {
                     ...state,
-                    points: action.payload.favorites
+                    favorites: action.payload.favorites
                 };
             case 'update_avatar':
                 localStorage.setItem("avatar", action.payload.avatar);
                 return {
                     ...state,
-                    points: action.payload.favorites
+                    avatar: action.payload.favorites
                 };
             case 'load_careers':
                 localStorage.setItem("allCareers", action.payload.careers);
                 return {
                     ...state,
-                    points: action.payload.favorites
+                    allCareers: action.payload.favorites
                 };
             default:
                 return state;
