@@ -6,22 +6,19 @@ import Button from 'react-bootstrap/Button';
 import Figure from 'react-bootstrap/Figure';
 import business from './business.jpg';
 import { globalState } from "../../state/globalState";
-//import FavoriteButton from './FavoriteButton';
 
 
 const Careerpage = (props) => {
 
 const [careername,setCareername] = useState("");
-const [isFavorite, setIsFavorite] = useState(false);
 const [careerselected,setCareerselected] = useState(false);
 const [careerdata,setCareerdata] = useState({career:[]});
+const [isFavorite, setIsFavorite] = useState(false);
 
 const globalStateVars = React.useContext(globalState);
 const { dispatch } = globalStateVars;
 let currFavorites = globalStateVars.state.favorites;
 let newFavorites = currFavorites;
-
-
 
 
 let map = props.reducedcareers.map(career => 
@@ -30,6 +27,26 @@ let map = props.reducedcareers.map(career =>
         <ListGroup.Item action onClick = {()=> handleClick([career])}>{career.OnetTitle}</ListGroup.Item>
     </ListGroup>
 )
+
+
+
+async function handleClick (data) {
+
+    setCareerdata(data);
+    setCareername(data[0].OnetTitle);
+    setCareerselected(true);
+    
+    //initialize favorite button
+    for(let i in newFavorites) {
+        let found = false;
+        if(newFavorites[i] === careername){
+            setIsFavorite(true);
+            found = true;
+        }
+        if(found === false)
+            setIsFavorite(false);
+    }  
+}
 
 async function handleFavoriteClick () {
     console.log(isFavorite);
@@ -49,29 +66,9 @@ async function handleFavoriteClick () {
         setIsFavorite(true);
     }
     //update global state var
-};
+}
 
-
-
-async function handleClick (data) {
-
-    setCareerdata(data);
-    setCareername(data[0].OnetTitle);
-    setCareerselected(true); 
-    console.log("career click" + newFavorites)
-    for(let i in newFavorites) {
-        let found = false;
-        if(newFavorites[i] === careername){
-            setIsFavorite(true);
-            found = true;
-        }
-        if(found === false)
-            setIsFavorite(false);
-    }   
     
-    
-};
-
 
     if (props.clustername === "19-" && careerselected === false) { 
         
@@ -160,14 +157,11 @@ async function handleClick (data) {
         <div className="careerheader">
        
         <center> 
-            <Button 
-                className = "editbtn"
-                variant="outline-danger" 
-                onClick = {()=> setCareerselected(false)}>
-                    Back To Category
+            <Button variant="outline-danger" 
+                    onClick = {()=> setCareerselected(false)}>
+                Back
             </Button>
             <Button
-                className = "editbtn"
                 variant="outline-danger"
                 onClick = {()=> handleFavoriteClick()}>
                     { isFavorite ? 'Remove Favorite' : 'Add Favorite'}
@@ -233,11 +227,10 @@ async function handleClick (data) {
         
         <h3>Required Abilities</h3>
             <p>People in this career often have talent in:</p>
-            {careerdata[0].AbilityDataList.filter(ability =>  {
-                
-                var importance = parseInt(ability.Importance,10);
-                
-                return  }).map(data => 
+            {careerdata[0].AbilityDataList.filter(ability => {
+
+                return ability.Importance > 70
+            }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
             </ol>)} 
@@ -255,7 +248,10 @@ async function handleClick (data) {
         <div className="leftcol">
         <h3>Required Knowlegde</h3>
             <p>People in this career often know a lot about:</p>
-            {careerdata[0].KnowledgeDataList.map(data => 
+            {careerdata[0].KnowledgeDataList.filter(knowledge => {
+
+                return knowledge.Importance > 70
+            }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
             </ol>)}
@@ -264,7 +260,10 @@ async function handleClick (data) {
         <div className="rightcol">
             <h3>Required Skills</h3>
             <p>People in this career often have these skills:</p>
-            {careerdata[0].SkillsDataList.map(data => 
+            {careerdata[0].SkillsDataList.filter(skills => {
+
+                return skills.Importance > 70
+            }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
             </ol>)}
