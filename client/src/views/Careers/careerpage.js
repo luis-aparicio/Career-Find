@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Figure from 'react-bootstrap/Figure';
 import business from './business.jpg';
 import { globalState } from "../../state/globalState";
-import FavoriteButton from './FavoriteButton';
+//import FavoriteButton from './FavoriteButton';
 
 
 const Careerpage = (props) => {
@@ -16,8 +16,11 @@ const [isFavorite, setIsFavorite] = useState(false);
 const [careerselected,setCareerselected] = useState(false);
 const [careerdata,setCareerdata] = useState({career:[]});
 
-//const globalStateVars = React.useContext(globalState);
-//const { dispatch } = globalStateVars;
+const globalStateVars = React.useContext(globalState);
+const { dispatch } = globalStateVars;
+let currFavorites = globalStateVars.state.favorites;
+let newFavorites = currFavorites;
+
 
 
 
@@ -28,12 +31,43 @@ let map = props.reducedcareers.map(career =>
     </ListGroup>
 )
 
+async function handleFavoriteClick () {
+    console.log(isFavorite);
+    if(isFavorite) {//already a favorite, un-favorite on click
+        console.log("favorite removed");
+        for(let i in newFavorites) {
+            if(newFavorites[i] === careername) {
+                newFavorites.splice(i,1);
+                //add code here to update back end
+            }
+        }
+        setIsFavorite(false); //in case problem finding
+    } else {
+        console.log("favorites" + newFavorites);
+        console.log ("career: " + careername);
+        newFavorites.push(careername);
+        setIsFavorite(true);
+    }
+    //update global state var
+};
+
+
 
 async function handleClick (data) {
 
     setCareerdata(data);
     setCareername(data[0].OnetTitle);
-    setCareerselected(true);    
+    setCareerselected(true); 
+    console.log("career click" + newFavorites)
+    for(let i in newFavorites) {
+        let found = false;
+        if(newFavorites[i] === careername){
+            setIsFavorite(true);
+            found = true;
+        }
+        if(found === false)
+            setIsFavorite(false);
+    }   
     
     
 };
@@ -131,11 +165,10 @@ async function handleClick (data) {
                 onClick = {()=> setCareerselected(false)}>
                     Back To Category
             </Button>
-            <FavoriteButton 
-                careername={careername}
-                isFavorite={setIsFavorite}
-                setIsFavorite={setIsFavorite}
-            />
+            <Button
+                    action onClick = {handleFavoriteClick()}>
+                    { isFavorite ? 'Remove Favorite' : 'Add Favorite'}
+                </Button>
             <h1>{careername}</h1>
         </center>
         
@@ -197,7 +230,11 @@ async function handleClick (data) {
         
         <h3>Required Abilities</h3>
             <p>People in this career often have talent in:</p>
-            {careerdata[0].AbilityDataList.map(data => 
+            {careerdata[0].AbilityDataList.filter(ability =>  {
+                
+                var importance = parseInt(ability.Importance,10);
+                
+                return  }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
             </ol>)} 
