@@ -22,17 +22,40 @@ const RegisterForm = (props) => {
             email: formInput.email,
             password: formInput.password
         };
-        await axios.post('/api/user/', user).then((response) => {
-            if(response.data !=="Success"){
-                setErrorString(response.data);
-                dispatch({ type: 'logout' })
-                console.log("error");
-            } else {
-                console.log("Success!");
+        let response = await axios.post('/api/user/', user);
+        
+        if(response.data !=="Success"){
+            setErrorString(response.data);
+            dispatch({ type: 'logout' })
+            console.log("error");
+        } else {
+            console.log("Success!");
+            await axios.post('/api/user/:login', user).then((response) => {
+                console.log("Response: ");
+                console.log(response.data);
+                console.log("end response");
+                const token = response.data.token;
+                console.log(token);
+    
+                if(response.data.message !=="Success" || !token){
+                    delete axios.defaults.headers.common["Authorization"];
+                    setErrorString(response.data);
+                    dispatch({ type: 'logout' })
+                } else {
+                    axios.defaults.headers.common["Authorization"] = token;
+                    dispatch({ 
+                        type:'login', 
+                        payload: {
+                            user: formInput.firstname,
+                            token: response.data.token
+                        }
+                        });
+                }
+                
                 //const userUrl = '/user/' + formInput.username + '/';
                 //dispatch({ type:'login', payload:formInput.username });
-            }
-        });
+            });
+        }
         console.log(user);
 
     };

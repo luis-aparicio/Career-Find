@@ -19,13 +19,14 @@ exports.update = async(req, res) => {
     let changeProp = {}
 
     user = await User.findOne({username: req.body.username});
-
+    console.log('contents'+ contents);
     if(user && props && contents){
         changeProp[props] = contents;   //this creates the {name: value} pair
         
         await user.updateOne(changeProp);
 
-    res.status(200).send(user[props]);
+        res.status(200).send(user[props]);
+        console.log('contents'+ contents);
     }
     else {
         if(!user)
