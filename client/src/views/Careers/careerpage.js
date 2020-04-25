@@ -182,7 +182,7 @@ async function handleClick (data) {
             <p>People in this career often have talent in:</p>
             {careerdata[0].AbilityDataList.filter(ability => {
 
-                return ability.Importance > 70
+                return ability.Importance > 50
             }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
@@ -203,7 +203,7 @@ async function handleClick (data) {
             <p>People in this career often know a lot about:</p>
             {careerdata[0].KnowledgeDataList.filter(knowledge => {
 
-                return knowledge.Importance > 70
+                return knowledge.Importance > 50
             }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
@@ -215,7 +215,7 @@ async function handleClick (data) {
             <p>People in this career often have these skills:</p>
             {careerdata[0].SkillsDataList.filter(skills => {
 
-                return skills.Importance > 70
+                return skills.Importance > 50
             }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
