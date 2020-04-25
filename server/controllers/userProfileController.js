@@ -38,3 +38,33 @@ exports.update = async(req, res) => {
             res.status(200).send("ERROR-generic");
     }
 }
+
+exports.getValue = async(req, res) => {
+    /*req format-
+        body.username,
+        body.property, - name of property in username to lookup
+    res format - 
+        returns  value if found
+        else returns ERROR with specific info to error*/
+    
+        let user, contents;
+        const props = req.body.property;
+    
+        user = await User.findOne({username: req.body.username});
+
+        if(user && props){
+
+            contents = user[props];   //get value of that property
+            if(contents)
+                res.status(200).send(contents);
+            else
+                res.status(200).send("ERROR-VALUE NOT FOUND");
+        } else {
+            if(!user)
+                res.status(200).send("ERROR-USER NOT FOUND");
+            else if(!props)
+                res.status(200).send("ERROR-PROPERTY_NAME");
+            else
+                res.status(200).send("ERROR-generic");
+        }
+}
