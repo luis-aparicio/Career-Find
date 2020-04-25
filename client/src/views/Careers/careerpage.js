@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Figure from 'react-bootstrap/Figure';
 import business from './business.jpg';
+import { globalState } from "../../state/globalState";
 
 
 const Careerpage = (props) => {
@@ -12,6 +13,12 @@ const Careerpage = (props) => {
 const [careername,setCareername] = useState("");
 const [careerselected,setCareerselected] = useState(false);
 const [careerdata,setCareerdata] = useState({career:[]});
+const [isFavorite, setIsFavorite] = useState(false);
+
+const globalStateVars = React.useContext(globalState);
+const { dispatch } = globalStateVars;
+let currFavorites = globalStateVars.state.favorites;
+let newFavorites = currFavorites;
 
 
 let map = props.reducedcareers.map(career => 
@@ -27,9 +34,38 @@ async function handleClick (data) {
 
     setCareerdata(data);
     setCareername(data[0].OnetTitle);
-    setCareerselected(true);    
+    setCareerselected(true);
     
-    
+    //initialize favorite button
+    for(let i in newFavorites) {
+        let found = false;
+        if(newFavorites[i] === careername){
+            setIsFavorite(true);
+            found = true;
+        }
+        if(found === false)
+            setIsFavorite(false);
+    }  
+}
+
+async function handleFavoriteClick () {
+    console.log(isFavorite);
+    if(isFavorite) {//already a favorite, un-favorite on click
+        console.log("favorite removed");
+        for(let i in newFavorites) {
+            if(newFavorites[i] === careername) {
+                newFavorites.splice(i,1);
+                //add code here to update back end
+            }
+        }
+        setIsFavorite(false); //in case problem finding
+    } else {
+        console.log("favorites" + newFavorites);
+        console.log ("career: " + careername);
+        newFavorites.push(careername);
+        setIsFavorite(true);
+    }
+    //update global state var
 }
 
     
@@ -120,7 +156,18 @@ async function handleClick (data) {
         <Fragment>
         <div className="careerheader">
        
-        <center> <Button variant="outline-danger" onClick = {()=> setCareerselected(false)}>Back</Button><h1>{careername}</h1></center>
+        <center> 
+            <Button variant="outline-danger" 
+                    onClick = {()=> setCareerselected(false)}>
+                Back
+            </Button>
+            <Button
+                variant="outline-danger"
+                onClick = {()=> handleFavoriteClick()}>
+                    { isFavorite ? 'Remove Favorite' : 'Add Favorite'}
+            </Button>
+            <h1>{careername}</h1>
+        </center>
         
     </div>
     
@@ -180,7 +227,10 @@ async function handleClick (data) {
         
         <h3>Required Abilities</h3>
             <p>People in this career often have talent in:</p>
-            {careerdata[0].AbilityDataList.map(data => 
+            {careerdata[0].AbilityDataList.filter(ability => {
+
+                return ability.Importance > 50
+            }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
             </ol>)} 
@@ -198,7 +248,10 @@ async function handleClick (data) {
         <div className="leftcol">
         <h3>Required Knowlegde</h3>
             <p>People in this career often know a lot about:</p>
-            {careerdata[0].KnowledgeDataList.map(data => 
+            {careerdata[0].KnowledgeDataList.filter(knowledge => {
+
+                return knowledge.Importance > 50
+            }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
             </ol>)}
@@ -207,7 +260,10 @@ async function handleClick (data) {
         <div className="rightcol">
             <h3>Required Skills</h3>
             <p>People in this career often have these skills:</p>
-            {careerdata[0].SkillsDataList.map(data => 
+            {careerdata[0].SkillsDataList.filter(skills => {
+
+                return skills.Importance > 50
+            }).map(data => 
             <ol>
                 <li>{data.ElementName}</li>
             </ol>)}

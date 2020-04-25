@@ -29,11 +29,13 @@ exports.fill = () =>{
                 if (err){
                     throw err;
                 }
-                
-                //console.log(careersData);
+            
                 callback();
                 return;
             }); 
+            
+
+
         }, () =>{
             mongoose.connection.close();
         });
@@ -58,14 +60,14 @@ exports.create = async (req, res) =>{
 
 // Retrieve all the careers in the db
 exports.get = async (req, res) =>{
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    
     Career.find({}, function(err, allCareers) {
         if (err){
             throw err;
         }
         else{
             res.send(allCareers);  
-            //console.log(allCareers);
+            
             return;
         }
         

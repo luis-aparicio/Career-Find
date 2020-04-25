@@ -28,12 +28,24 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: 'Please enter your password!'
     },
-    passwordConfirmation:{
-        type: String
-    },
     date:{
         type: Date,
         default: Date.now
+    },
+    points:{
+        type:Number,
+        default: 0
+    },
+    favoriteCareers:[
+        {
+            title:{
+                type: String
+            }
+        }
+    ],
+    avatar:{
+        type:String,
+        default:""
     }
 });
 

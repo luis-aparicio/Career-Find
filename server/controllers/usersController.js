@@ -67,8 +67,7 @@ exports.login = async (req, res) =>{
             console.log(req.body.password);
             console.log(user.password);
             bcrypt.compare(req.body.password, user.password, function(err, isMatch){
-                console.log(isMatch);
-                console.log(err);
+
                 if(err){
                     throw err;
                 }
@@ -90,7 +89,10 @@ exports.login = async (req, res) =>{
                                 res.status(200).send({
                                     auth: true,
                                     token: token,
-                                    message: "Success"
+                                    message: "Success",
+                                    points:user.points,
+                                    favorites:user.favorites,
+                                    avatar:user.avatar
                                 });
                                 
                             }                                

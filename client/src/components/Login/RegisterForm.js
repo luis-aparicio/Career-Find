@@ -30,7 +30,7 @@ const RegisterForm = (props) => {
             } else {
                 console.log("Success!");
                 //const userUrl = '/user/' + formInput.username + '/';
-                dispatch({ type:'login', payload:formInput.username });
+                //dispatch({ type:'login', payload:formInput.username });
             }
         });
         console.log(user);

@@ -56,3 +56,4 @@ yarn-error.log*
 .idea/*
 .vs/Career-Find/v15/.suo
 .vs/slnx.sqlite
+client/debug.log

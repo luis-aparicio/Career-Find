@@ -4,94 +4,50 @@ const mongoose = require( "mongoose" );
 const CareerSchema = new mongoose.Schema ({
   
     
-      OnetTitle: String,
-      OnetCode: String,
-      OnetDescription:  String ,
-       Wages : {
-         NationalWagesList : [
-          {
-             RateType :  String ,
-             Pct10 :  String ,
-             Pct25 :  String ,
-             Median :  String ,
-             Pct75 :  String ,
-             Pct90 :  String ,
-             StFips :  String ,
-             Area :  String ,
-             AreaName :  String 
-          }
-        ],
-         StateWagesList : [
-          {
-             RateType :  String ,
-             Pct10 :  String ,
-             Pct25 :  String ,
-             Median :  String ,
-             Pct75 :  String ,
-             Pct90 :  String ,
-             StFips :  String ,
-             Area :  String ,
-             AreaName :  String 
-          }
-        ],
-         BLSAreaWagesList : [
-          {
-             RateType :  String ,
-             Pct10 :  String ,
-             Pct25 :  String ,
-             Median :  String ,
-             Pct75 :  String ,
-             Pct90 :  String ,
-             StFips :  String ,
-             Area :  String ,
-             AreaName :  String 
-          }
-        ],
-         WageYear :  String ,
-         SocData :  String ,
-         SocWageInfo : {
-           SocCode :  String ,
-           SocTitle :  String ,
-           SocDescription :  String 
-        }
-      },
-       BrightOutlook :  String ,
-       Green :  String ,
-       COSVideoURL :  String ,
-       EducationTraining : {
-         EducationType : [
-          {
-             EducationLevel :  String ,
-             Value :  String 
-          }
-        ],
-         EducationCode :  String ,
-         EducationTitle :  String ,
-         ExperienceCode :  String ,
-         ExperienceTitle :  String ,
-         TrainingCode :  String ,
-         TrainingTitle :  String ,
-         OccupationTitle :  String 
-      },
-       BrightOutlookCategory :  String ,
-       Tasks : [
-        {
-           TaskDescription :  String ,
-           TaskId :  String ,
-           DataValue :  String 
-        }
+   OnetTitle: String,
+   OnetCode: String,
+   OnetDescription:  String ,
+      Wages : {
+      NationalWagesList : [
+         {
+            RateType :  String ,
+            Pct10 :  String ,
+            Pct25 :  String ,
+            Median :  String ,
+            Pct75 :  String ,
+            Pct90 :  String ,
+            StFips :  String ,
+            Area :  String ,
+            AreaName :  String 
+         }
       ],
-       Dwas : [
-        {
-           DwaTitle :  String ,
-           DwaId :  String ,
-           DataValue :  String ,
-           TaskId :  String 
-        }
+      StateWagesList : [
+         {
+            RateType :  String ,
+            Pct10 :  String ,
+            Pct25 :  String ,
+            Median :  String ,
+            Pct75 :  String ,
+            Pct90 :  String ,
+            StFips :  String ,
+            Area :  String ,
+            AreaName :  String 
+         }
       ],
-       AlternateTitles : [
-         String 
+      BLSAreaWagesList : [
+         {
+            RateType :  String ,
+            Pct10 :  String ,
+            Pct25 :  String ,
+            Median :  String ,
+            Pct75 :  String ,
+            Pct90 :  String ,
+            StFips :  String ,
+            Area :  String ,
+            AreaName :  String 
+         }
       ],
+<<<<<<< HEAD
        StFips :  String ,
        Location :  String ,
        Video : [
@@ -111,6 +67,11 @@ const CareerSchema = new mongoose.Schema ({
         }
       ],
        SocInfo : {
+=======
+      WageYear :  String ,
+      SocData :  String ,
+      SocWageInfo : {
+>>>>>>> 2fda22364149fb2c193855b9e0c4befe50a9d0cb
          SocCode :  String ,
          SocTitle :  String ,
          SocDescription :  String 
@@ -159,8 +120,102 @@ const CareerSchema = new mongoose.Schema ({
            Importance :  Number 
         }
       ],
-       KnowledgeDataList : [
-        {
+      EducationCode :  String ,
+      EducationTitle :  String ,
+      ExperienceCode :  String ,
+      ExperienceTitle :  String ,
+      TrainingCode :  String ,
+      TrainingTitle :  String ,
+      OccupationTitle :  String 
+   },
+      BrightOutlookCategory :  String ,
+      Tasks : [
+      {
+         TaskDescription :  String ,
+         TaskId :  String ,
+         DataValue :  String 
+      }
+   ],
+      Dwas : [
+      {
+         DwaTitle :  String ,
+         DwaId :  String ,
+         DataValue :  String ,
+         TaskId :  String 
+      }
+   ],
+      AlternateTitles : [
+      String 
+   ],
+      StFips :  String ,
+      Location :  String ,
+      Video : [
+      {
+         VideoCode :  String ,
+         VideoTitle :  String ,
+         VideoType :  String 
+      }
+   ],
+      InterestDataList : [
+      {
+         ElementId :  String ,
+         ElementName :  String ,
+         ElementDescription :  String ,
+         DataValue :  String ,
+         Importance :  String 
+      }
+   ],
+      SocInfo : {
+      SocCode :  String ,
+      SocTitle :  String ,
+      SocDescription :  String 
+   },
+      Projections : {
+      EstimatedYear :  String ,
+      ProjectedYear :  String ,
+      OccupationTitle :  String ,
+      Projections : [
+         {
+            StateName :  String ,
+            Stfips :  String ,
+            EstimatedEmployment :  String ,
+            ProjectedEmployment :  String ,
+            PerCentChange :  String ,
+            ProjectedAnnualJobOpening :  String 
+         }
+      ]
+   },
+      OOHs : {
+      Title :  String ,
+      OOHUrl :  String 
+   },
+      StateResourcesLinks : {
+      StateWebResource : [
+         {
+            Title :  String ,
+            Url :  String ,
+            Type :  String ,
+            StateName :  String 
+         }
+      ]
+   },
+      RelatedOnetTitles : [
+      {
+         Key :  String ,
+         Value :  String 
+      }
+   ],
+      SkillsDataList : [
+      {
+         ElementId :  String ,
+         ElementName :  String ,
+         ElementDescription :  String ,
+         DataValue :  String ,
+         Importance: Number
+      }
+   ],
+      KnowledgeDataList : [
+      {
 
            ElementId :  String ,
            ElementName :  String ,
