@@ -107,7 +107,7 @@ const CareerSchema = new mongoose.Schema ({
            ElementName :  String ,
            ElementDescription :  String ,
            DataValue :  String ,
-           Importance :  String 
+           Importance :  Number 
         }
       ],
        SocInfo : {
@@ -156,7 +156,7 @@ const CareerSchema = new mongoose.Schema ({
            ElementName :  String ,
            ElementDescription :  String ,
            DataValue :  String ,
-           Importance :  String 
+           Importance :  Number 
         }
       ],
        KnowledgeDataList : [
@@ -166,7 +166,7 @@ const CareerSchema = new mongoose.Schema ({
            ElementName :  String ,
            ElementDescription :  String ,
            DataValue :  String ,
-           Importance :  String 
+           Importance :  Number 
         }
       ],
        AbilityDataList : [
@@ -175,7 +175,7 @@ const CareerSchema = new mongoose.Schema ({
            ElementName :  String ,
            ElementDescription :  String ,
            DataValue :  String ,
-           Importance :  String 
+           Importance :  Number 
         }
       ],
        TrainingPrograms : String,

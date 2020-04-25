@@ -9,7 +9,14 @@ const async = require ('async');
 exports.fill = () =>{
     mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
- 
+
+    Career.deleteMany({}, (err) =>{
+        if (err){
+            throw err;
+        }
+    });
+
+   
 
     fs.readFile('careers.json', 'utf8', (err, data) =>{
         if (err){
@@ -49,6 +56,7 @@ exports.create = async (req, res) =>{
     })
 };
 
+// Retrieve all the careers in the db
 exports.get = async (req, res) =>{
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     Career.find({}, function(err, allCareers) {
@@ -65,6 +73,7 @@ exports.get = async (req, res) =>{
    
 };
 
+// Updating Career
 exports.update = (req, res) =>{
     const career = req.career;
 
