@@ -24,7 +24,6 @@ exports.fill = () =>{
 
         async.forEach(careersData.OccupationDetail, (doc, callback) => {
             Career.create(doc, (err) =>{
-                console.log('inside career.create... hello!!!!!!!!!!!')
                 if (err){
                     throw err;
                 }

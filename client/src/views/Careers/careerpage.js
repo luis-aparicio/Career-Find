@@ -161,14 +161,17 @@ async function handleClick (data) {
        
         <center> 
             <Button 
+                className = "editbtn"
                 variant="outline-danger" 
                 onClick = {()=> setCareerselected(false)}>
                     Back To Category
             </Button>
             <Button
-                    action onClick = {handleFavoriteClick()}>
+                className = "editbtn"
+                variant="outline-danger"
+                onClick = {()=> handleFavoriteClick()}>
                     { isFavorite ? 'Remove Favorite' : 'Add Favorite'}
-                </Button>
+            </Button>
             <h1>{careername}</h1>
         </center>
         
