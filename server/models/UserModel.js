@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 
 
 const UserSchema = new mongoose.Schema({
+    isAdmin:{
+        type: Boolean,
+        default: false
+    },
     firstName:{
         type: String,
         required: 'Please enter your first name!'

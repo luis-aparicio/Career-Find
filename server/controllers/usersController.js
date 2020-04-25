@@ -58,7 +58,7 @@ exports.login = async (req, res) =>{
         user.password = undefined;
         user.salt = undefined;
     }*/
-    await User.findOne({username: req.body.username}).then(user =>{
+    User.findOne({username: req.body.username}).then(user =>{
         if(!user) {
             res.status(200).send("Username not found!");
         }
