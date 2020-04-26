@@ -23,18 +23,14 @@ const StateProvider = ( { children } ) => {
             case 'login':
                 localStorage.setItem("user", action.payload.user);
                 localStorage.setItem("token", JSON.stringify(action.payload.token));
-                localStorage.setItem("points", action.payload.points);
-                localStorage.setItem("avatar", action.payload.avatar);
-                localStorage.setItem("favorites", action.payload.favorites)
+                
                 console.log("Logged In!");
                 return {
                     ...state,
                     isAuthenticated: true,
                     user: action.payload.user,
                     token: action.payload.token,
-                    points: action.payload.points,
-                    avatar: action.payload.avatar,
-                    favorites: action.payload.favorites
+                    
                 };
             case 'logout':
                 localStorage.clear();
