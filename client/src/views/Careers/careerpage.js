@@ -17,6 +17,7 @@ const [careerselected,setCareerselected] = useState(false);
 const [careerdata,setCareerdata] = useState({career:[]});
 const [isFavorite, setIsFavorite] = useState(false);
 const [video,setVideo] = useState("");
+const [loginString, setLoginString] = useState("");
 
 const globalStateVars = React.useContext(globalState);
 const { dispatch } = globalStateVars;
@@ -63,42 +64,47 @@ async function handleClick (data) {
         }
         if(found === false)
             setIsFavorite(false);
-    }  
+    }
+    setLoginString("");  
 }
 
 
 async function handleFavoriteClick () {
-    console.log(isFavorite);
-    if(isFavorite) {//already a favorite, un-favorite on click
-        console.log("favorite removed");
-        for(let i in newFavorites) {
-            if(newFavorites[i] === careername) {
-                newFavorites.splice(i,1);
-                //add code here to update back end
+    if(globalStateVars.state.isAuthenticated){
+        setLoginString(""); 
+        console.log(isFavorite);
+        if(isFavorite) {//already a favorite, un-favorite on click
+            console.log("favorite removed");
+            for(let i in newFavorites) {
+                if(newFavorites[i] === careername) {
+                    newFavorites.splice(i,1);
+                    //add code here to update back end
+                }
             }
+            setIsFavorite(false); //in case problem finding
+        } else {
+            console.log("favorites" + newFavorites);
+            console.log ("career: " + careername);
+            newFavorites.push(careername);
+            setIsFavorite(true);
         }
-        setIsFavorite(false); //in case problem finding
-    } else {
-        console.log("favorites" + newFavorites);
-        console.log ("career: " + careername);
-        newFavorites.push(careername);
-        setIsFavorite(true);
-    }
-    //update global state var
-    dispatch({
-        type:'update_favorites', 
-        payload: {
-            favorites: newFavorites
-        }
-    });
-    let data = {
-        username: globalStateVars.state.user,
-        property: "favorites",
-        content: newFavorites
-    };
+        //update global state var
+        dispatch({
+            type:'update_favorites', 
+            payload: {
+                favorites: newFavorites
+            }
+        });
+        let data = {
+            username: globalStateVars.state.user,
+            property: "favorites",
+            content: newFavorites
+        };
 
-    await axios.post('/api/user/profile/update', data);
-    
+        await axios.post('/api/user/profile/update', data);
+    } else {
+        setLoginString("Please login to save favorites")
+    }
     
 }
 
@@ -190,7 +196,8 @@ async function handleFavoriteClick () {
         <Fragment>
         <div className="careerheader">
        
-            <center> 
+            <center>
+                <p style={{color: "blue"}}>{loginString}</p> 
                 <Button variant="outline-danger" 
                         onClick = {()=> setCareerselected(false)}>
                 Back
