@@ -25,18 +25,18 @@ exports.update = async(req, res) => {
         
         await user.updateOne(changeProp);
 
-        res.sendStatus(200).send(user[props]);
+        res.status(200).send(user[props]);
         console.log('contents'+ contents);
     }
     else {
         if(!user)
-            res.sendStatus(200).send("ERROR-USER NOT FOUND");
+            res.status(200).send("ERROR-USER NOT FOUND");
         else if(!props)
-            res.sendStatus(200).send("ERROR-PROPERTY_NAME");
+            res.status(200).send("ERROR-PROPERTY_NAME");
         else if(!contents)
-            res.sendStatus(200).send("ERROR-CONTENTS");
+            res.status(200).send("ERROR-CONTENTS");
         else
-            res.sendStatus(200).send("ERROR-generic");
+            res.status(200).send("ERROR-generic");
     }
 }
 

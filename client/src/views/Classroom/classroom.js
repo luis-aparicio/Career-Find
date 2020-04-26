@@ -1,10 +1,11 @@
-import React ,{useState} from 'react';
+import React ,{useState, useContext} from 'react';
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import { Row, Col } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
+import { globalState } from "../../state/globalState";
 import './classrom.css';
 
 
@@ -12,6 +13,7 @@ import './classrom.css';
 function Classroom() {
 
     const [classroomview,setClassroomview] = useState(false);
+    const globalStateVars = React.useContext(globalState);
     
 
     
@@ -26,7 +28,7 @@ function Classroom() {
 
 
 
-if (classroomview === false){
+if (classroomview === false && globalStateVars.state.isAdmin){
     return (
         <div className="text1">
             <Container>
@@ -118,45 +120,31 @@ if (classroomview === false){
                   
         </div> 
         );
-}
+} else if(globalStateVars.state.isAdmin)
+
     return (
     <div>
 
-        <Container>
-               <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <td>3</td>
-                        <td colSpan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </Table>
+    <Container>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                    <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {studentarray.map(student =>  
+                    <tr>
+                    <td>{student.username}</td>
+                    </tr>
+                )}
+                </tbody>
+            </Table>
         </Container>
 
             <Row>
-                <Button type="submit" >
-                        Update
+                <Button type="submit" onClick = {()=> newStudent()}>
+                        New Student
                 </Button>
                             
                 <Button variant="primary" size="sm" onClick = {() => toUpdate()}>
