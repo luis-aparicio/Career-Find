@@ -16,7 +16,7 @@ exports.newStudent = async(req, res) => {
         let response = await userController.create(req.body.userinfo, res);
         if(response === "Success"){
             admin.students.push(req.body.userinfo.username);
-            res.sendStatus(200).send("Success");
+            res.sendStatus(200).send(admin.students);
         } else {
             res.sendStatus(200).send("ERROR-COULD NOT SAVE NEW STUDENT");
         }

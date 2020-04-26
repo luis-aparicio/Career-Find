@@ -41,6 +41,23 @@ const NewStudent = (props) => {
                 console.log("register DB error: " + response.data);
             } else {
                 console.log("Success!");
+                dispatch({ 
+                    type:'students', 
+                    payload: {
+                        user: formInput.username,
+                        isAdmin: isAdminChecked,
+                        token: response.data.token,
+                        points: response.data.points,
+                        favorites: response.data.favorites,
+                        avatar: response.data.avatar,
+                        maleCloset: response.data.maleCloset,
+                        femaleCloset: response.data.femaleCloset,
+                        aboutMe: response.data.aboutMe,
+                        avatarHead: response.data.avatarHead,
+                        lastName: response.data.lastName,
+                        firstName: response.data.firstName
+                    }
+                    });
             }
 
             console.log(user);

@@ -71,7 +71,8 @@ const RegisterForm = (props) => {
                             aboutMe: response.data.aboutMe,
                             avatarHead: response.data.avatarHead,
                             lastName: response.data.lastName,
-                            firstName: response.data.firstName
+                            firstName: response.data.firstName,
+                            students: response.data.students
                         }
                         });
                         let vars = {

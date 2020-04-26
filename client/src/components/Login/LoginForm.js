@@ -46,7 +46,8 @@ const LoginForm = (props) => {
                         avatarHead: response.data.avatarHead,
                         lastName: response.data.lastName,
                         firstName: response.data.firstName,
-                        isAdmin: response.data.isAdmin
+                        isAdmin: response.data.isAdmin,
+                        students: response.data.students
                     }
                  });
                  let vars = {
