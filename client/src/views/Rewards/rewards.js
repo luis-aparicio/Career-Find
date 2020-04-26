@@ -6,7 +6,7 @@ import libmoji from 'libmoji';
 
 function Reward() {
 
-    
+    const[message, setmessage] = useState("");
     const[selected, setSelected] = useState(false);
     const[currentBrand,setCurrentBrand] = useState({});
     const globalStaterewards = React.useContext(globalState);
@@ -18,6 +18,50 @@ function Reward() {
 
     
     console.log(malebrands);
+    console.log(femalebrands);
+
+    function buy(outfit)
+    {
+        console.log(globalStaterewards.points);
+        if(globalStaterewards.points>2)
+        {
+            //male
+            if(outfit.outfit.includes("1"))
+            {
+                if(globalStaterewards.maleCloset.includes(outfit.id))
+                {
+                    setmessage("You already have this item");
+                    return 0;
+                }
+                setmessage("Item purchased!")
+                globalStaterewards.maleCloset.push(outfit.id);
+                globalStaterewards.points = globalStaterewards.points - 2;
+            }
+
+            //female
+            if(outfit.outfit.includes("2"))
+            {
+                if(globalStaterewards.femaleCloset.includes(outfit.id))
+                {
+                    setmessage("You already have this item");
+                    return 0;
+                }
+                setmessage("Item purchased!")
+                globalStaterewards.maleCloset.push(outfit.id);
+                globalStaterewards.points = globalStaterewards.points - 2;
+            }
+
+
+            
+           
+
+
+
+        }
+
+        setmessage("You need more points for this item")
+    }
+    
     function switchview(brand){
         setSelected(true);
         setCurrentBrand(brand);
@@ -36,12 +80,13 @@ function Reward() {
                <center> <h1 className="avtrheadig">List of Available Brands</h1></center>
                <div className="avatrow">
                 <h1>{currentBrand.name}</h1>
-                {currentBrand.outfits.map(outfit => <img src={outfit.image} className="avtrimg" height="70" width="60"></img>)}
+                {currentBrand.outfits.map(outfit => <img src={outfit.image} onClick = {()=> buy(outfit)} className="avtrimg" height="70" width="60"></img>)}
                 </div>
                
                 
                 
                 <div className="pnts">
+                    <h3 className="pntshead">{message}</h3>
                     <h3 className="pntshead">Total Points:</h3>
                     <h3 className="scorehead">{globalStaterewards.points}</h3>
                     <button name="purchase" className="purbtn" onClick = {()=> setSelected(false)}>Back</button>
@@ -72,6 +117,7 @@ function Reward() {
            </div>
             
             <div className="pnts">
+                
                 <h3 className="pntshead">Total Points:</h3>
                 <h3 className="scorehead">{globalStaterewards.points}</h3>
             </div>
