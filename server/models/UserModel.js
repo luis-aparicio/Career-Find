@@ -58,7 +58,11 @@ const UserSchema = new mongoose.Schema({
         {
             type:Number
         }
-    ]
+    ],
+    aboutMe:{
+        type: String,
+        default:""
+    }
 });
 
 module.exports = User = mongoose.model("User", UserSchema);

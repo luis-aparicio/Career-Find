@@ -81,12 +81,7 @@ async function handleFavoriteClick () {
     };
 
     let response = await axios.post('/api/user/profile/update', data);
-    if(!response.includes('ERROR')){
-        
-        console.log('favorites = ' + newFavorites);
-    }else{
-        console.log('Error updating favorites');
-    }
+    
     
 }
 

@@ -92,7 +92,10 @@ exports.login = async (req, res) =>{
                                     message: "Success",
                                     points:user.points,
                                     favorites:user.favorites,
-                                    avatar:user.avatar
+                                    avatar:user.avatar,
+                                    maleCloset: user.maleCloset,
+                                    femaleCloset: user.femaleCloset,
+                                    aboutMe: user.aboutMe
                                 });
                                 
                             }                                

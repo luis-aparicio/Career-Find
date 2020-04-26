@@ -36,7 +36,13 @@ const LoginForm = (props) => {
                     type:'login', 
                     payload: {
                         user: formLoginInput.username,
-                        token: response.data.token
+                        token: response.data.token,
+                        points: response.data.points,
+                        favorites: response.data.favorites,
+                        avatar: response.data.avatar,
+                        maleCloset: response.data.maleCloset,
+                        femaleCloset: response.data.femaleCloset,
+                        aboutMe: response.data.aboutMe
                     }
                  });
             }
