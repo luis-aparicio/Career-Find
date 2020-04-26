@@ -3,8 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import React, {useState, useEffect, Fragment} from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import Figure from 'react-bootstrap/Figure';
-import business from './business.jpg';
+
 import { globalState } from "../../state/globalState";
 import axios from 'axios';
 
@@ -214,7 +213,7 @@ async function handleFavoriteClick () {
     
     <div className="careerrow">
         <div className="leftcol">
-            <img src={business} alt="171x180" height="180" width="171" className="careerimg"></img>
+        <iframe src={"http://www.careeronestop.org/videos/Careeronestop-videos-content.aspx?videocode="+careerdata[0].Video[0].VideoCode} width="500" height="300" frameborder="0" scrolling="no" allowfullscreen/>
         </div>
         {careerdata.map(career =>
         <div className="rightcol">
@@ -256,8 +255,16 @@ async function handleFavoriteClick () {
                 </table>
         </div>
         <div className="rightcol">
-            <h3>Watch a Video</h3>
-        <iframe src={"http://www.careeronestop.org/videos/Careeronestop-videos-content.aspx?videocode="+careerdata[0].Video[0].VideoCode} width="500" height="300" frameborder="0" scrolling="no" allowfullscreen/>
+        <h3>Required Skills</h3>
+            <p>People in this career often have these skills:</p>
+            {careerdata[0].SkillsDataList.filter(skills => {
+
+                return skills.Importance > 50
+            }).map(data => 
+            <ol>
+                <li>{data.ElementName}</li>
+            </ol>)}
+        
         </div>
         </div>
 
@@ -299,15 +306,7 @@ async function handleFavoriteClick () {
                
         </div>
         <div className="rightcol">
-            <h3>Required Skills</h3>
-            <p>People in this career often have these skills:</p>
-            {careerdata[0].SkillsDataList.filter(skills => {
-
-                return skills.Importance > 50
-            }).map(data => 
-            <ol>
-                <li>{data.ElementName}</li>
-            </ol>)}
+            
         </div>
         </div>
 
