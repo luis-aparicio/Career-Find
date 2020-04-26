@@ -10,6 +10,7 @@ import {globalState} from '../../state/globalState'
 const RegisterForm = (props) => {
     const [formInput, setFormInput] = useState({});
     const[errorString, setErrorString] = useState("");
+    const[isAdminChecked, setIsAdminChecked] = useState(false);
     const globalStateLogin = React.useContext(globalState);
     const { dispatch } = globalStateLogin;
 
@@ -21,12 +22,15 @@ const RegisterForm = (props) => {
 
     const handleSubmit = async(event) => {
         event.preventDefault();
+
+
         let user = {
             firstName: formInput.firstname,
             lastName: formInput.lastname,
             username: formInput.username,
             email: formInput.email,
             password: formInput.password,
+            isAdmin: isAdminChecked,
             maleCloset: maleCloset,
             femaleCloset: femaleCloset,
             Avatar: "https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender=1&style=5&rotation=0&hair=1305&hat=-1&mouth=2337&nose=1435&beard=-1&cheek_details=-1&ear=1424&eye=1610&eyelash=-1&eye_details=-1&face_lines=-1&glasses=-1&beard_tone=0&brow_tone=0&eyeshadow_tone=-1&hair_tone=2039326&lipstick_tone=-1&pupil_tone=5977116&skin_tone=9655597&body=0&face_proportion=1&brow=1537&outfit=1018506",
@@ -57,6 +61,7 @@ const RegisterForm = (props) => {
                         type:'login', 
                         payload: {
                             user: formInput.username,
+                            isAdmin: isAdminChecked,
                             token: response.data.token,
                             points: response.data.points,
                             favorites: response.data.favorites,
@@ -64,7 +69,9 @@ const RegisterForm = (props) => {
                             maleCloset: response.data.maleCloset,
                             femaleCloset: response.data.femaleCloset,
                             aboutMe: response.data.aboutMe,
-                            avatarHead: response.data.avatarHead
+                            avatarHead: response.data.avatarHead,
+                            lastName: response.data.lastName,
+                            firstName: response.data.firstName
                         }
                         });
                         let vars = {
@@ -86,6 +93,9 @@ const RegisterForm = (props) => {
 
     const handleChange = (event) => {
         event.persist();
+        if(event.target.name === "isAdmin")
+            setIsAdminChecked(!isAdminChecked);
+
         setFormInput(formInput => ({...formInput, [event.target.name]: event.target.value}));
     }
 
@@ -143,6 +153,13 @@ const RegisterForm = (props) => {
                                 name="lastname"
                                 type="text"
                                 placeholder="Enter last name"/>
+                        </Form.Group>
+                        <Form.Group  controlId="formIsAdmin">
+                            <Form.Label className="lab">Register as Admin?</Form.Label>
+                            <Form.Control 
+                                name="isAdmin"
+                                type='checkbox'
+                            />
                         </Form.Group>
                         <Button
                             type="submit"

@@ -43,7 +43,10 @@ const LoginForm = (props) => {
                         maleCloset: response.data.maleCloset,
                         femaleCloset: response.data.femaleCloset,
                         aboutMe: response.data.aboutMe,
-                        avatarHead: response.data.avatarHead
+                        avatarHead: response.data.avatarHead,
+                        lastName: response.data.lastName,
+                        firstName: response.data.firstName,
+                        isAdmin: response.data.isAdmin
                     }
                  });
                  let vars = {
