@@ -40,6 +40,7 @@ const StateProvider = ( { children } ) => {
                 localStorage.setItem("lastName", action.payload.lastName);
                 localStorage.setItem("firstName", action.payload.firstName);
                 localStorage.setItem("students", action.payload.students);
+                
 
                 console.log("Logged In!");
                 return {

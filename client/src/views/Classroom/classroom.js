@@ -1,5 +1,6 @@
 import React ,{useState, useContext} from 'react';
 import FormGroup from 'react-bootstrap/FormGroup'
+import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -7,7 +8,8 @@ import { Row, Col } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
 import { globalState } from "../../state/globalState";
 import './classrom.css';
-import NewStudent from '../../components/NewStudent/NewStudent'
+import NewStudent from '../../components/NewStudent/NewStudent';
+import axios from 'axios';
 
 
 
@@ -32,11 +34,11 @@ function Classroom() {
     const submitCareer = async(event) => {
 
         event.preventDefault();
-        let career = {
-            OnetCode: formInput.Code,
-            OnetDescription: formInput.Description
+        let careerPayload = {
+            OnetCode: careerInput.Code,
+            OnetDescription: careerInput.Description
         };
-        let career = await axios.post('/api/career/career/new', career);
+        let career = await axios.post('/api/career/career/new', careerPayload);
             console.log("Success!");
         toTable();
     }
@@ -80,8 +82,11 @@ if (classroomview === false && globalStateVars.state.isAdmin){
                   
         </div> 
         );
-} else if(globalStateVars.state.isAdmin)
-    let studentarray = globalStateVars.state.studentarray;
+} else if(globalStateVars.state.isAdmin){
+    let studentarray = globalStateVars.state.students;
+    console.log('studentarry = ' + studentarray)
+    if(studentarray === undefined || studentarray === null)
+        studentarray=[];
     return (
     <div>
 
@@ -121,7 +126,7 @@ if (classroomview === false && globalStateVars.state.isAdmin){
     </div> 
     );
 
-
+                }
 
 }
 

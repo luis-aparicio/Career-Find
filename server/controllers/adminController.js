@@ -39,7 +39,7 @@ exports.newStudent = async(req, res) => {
     }
 }
 
-exports.getStudent = async(req, res) => {
+exports.getStudents = async(req, res) => {
     /*req format-
         body.adminname,
     res format - 
