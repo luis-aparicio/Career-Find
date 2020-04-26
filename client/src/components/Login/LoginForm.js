@@ -37,7 +37,7 @@ const LoginForm = (props) => {
                     payload: {
                         user: formLoginInput.username,
                         token: response.data.token,
-                        points: response.data.points,
+                        points: response.data.points + 1,
                         favorites: response.data.favorites,
                         avatar: response.data.avatar,
                         maleCloset: response.data.maleCloset,
@@ -45,6 +45,13 @@ const LoginForm = (props) => {
                         aboutMe: response.data.aboutMe
                     }
                  });
+                 let vars = {
+                    username: formLoginInput.username,
+                    property: "points",
+                    content: response.data.points + 1
+                };
+            
+                axios.post('/api/user/profile/update', vars);
             }
         });
     };

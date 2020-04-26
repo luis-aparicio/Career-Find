@@ -38,6 +38,20 @@ async function handleClick (data) {
     setCareerdata(data);
     setCareername(data[0].OnetTitle);
     setCareerselected(true);
+
+    dispatch({
+        type:'update_points', 
+        payload: {
+            points: globalStateVars.state.points + 1
+        }
+    });
+    let pointsdata = {
+        username: globalStateVars.state.user,
+        property: "points",
+        content: globalStateVars.state.points + 1
+    };
+
+    await axios.post('/api/user/profile/update', pointsdata);
     
     
     //initialize favorite button

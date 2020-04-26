@@ -31,7 +31,7 @@ const RegisterForm = (props) => {
             console.log("register DB error: " + response.data);
         } else {
             console.log("Success!");
-            await axios.post('/api/user/:login', user).then((response) => {
+            await axios.post('/api/user/:login', user).then(async (response) => {
                 console.log("Response: ");
                 console.log(response.data);
                 console.log("end response");
@@ -57,6 +57,13 @@ const RegisterForm = (props) => {
                             aboutMe: response.data.aboutMe
                         }
                         });
+                        let vars = {
+                            username: formInput.username,
+                            property: "points",
+                            content: response.data.points + 1
+                        };
+                    
+                        await axios.post('/api/user/profile/update', vars);
                 }
                 
                 //const userUrl = '/user/' + formInput.username + '/';
