@@ -8,6 +8,7 @@ import libmoji from 'libmoji';
 import Dropdown from 'react-bootstrap/Dropdown';
 import {globalState} from '../../state/globalState';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
      
         
 function EditAvatar() {
@@ -105,10 +106,6 @@ async function save()
     await axios.post('/api/user/profile/update', headdata);
 }
 
-function loadUserdata()
-{
-
-}
 
 function switchMale(){
     setSelectedgender(0);
@@ -307,9 +304,14 @@ function makechange(value){
         <Fragment>
         <div className="App">
             <header className="App-header"></header>
+            <h1 className="avtrheading2">Old Avatar</h1>
         </div>
         <div className="conteditav">
+        
+        <img src={globalStateVars.state.avatar} className="avatarimgold" height="450" width="500">
+        </img>
             <div className="avtrcol1">
+        
     <div className="editavtrrow">
         <img src={arrow2} onClick = {()=> makechange("-")} className="arrowimg" height="80" width="100" ></img>
         <Dropdown>
@@ -354,14 +356,14 @@ function makechange(value){
    
     </div>
     <div className="avtrcol2">
-        <h1 className="avtrheading">Edit Avatar</h1>
+        <h1 className="avtrheading">Edit New Avatar</h1>
         
         <img src={Avatar} className="avatarimg" height="450" width="500">
         </img>
         
         
         <button name="save" className="avtrsave" onClick = {()=> save()}>Save</button>
-        <button name="cancel" className="avtrsave">Cancel</button>
+        <Link className="avtrsave" to='/Profile' >Cancel</Link>
     </div>
 </div>
 </Fragment>
