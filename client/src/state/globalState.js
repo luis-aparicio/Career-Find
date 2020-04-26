@@ -6,6 +6,9 @@ import React, {createContext, useReducer} from 'react';
 
 const initialState = {
     isAuthenticated: false,
+    isAdmin: false,
+    firstName: "",
+    lastName: "",
     user: null,
     token: null,
     favorites: [],
@@ -31,7 +34,10 @@ const StateProvider = ( { children } ) => {
                 localStorage.setItem("maleCloset", action.payload.maleCloset);
                 localStorage.setItem("femaleCloset", action.payload.femaleCloset);
                 localStorage.setItem("aboutMe", action.payload.aboutMe);
-                localStorage.setItem("avatarHead", action.payload.aboutMe);
+                localStorage.setItem("avatarHead", action.payload.avatarHead);
+                localStorage.setItem("isAdmin", action.payload.isAdmin);
+                localStorage.setItem("lastName", action.payload.lastName);
+                localStorage.setItem("firstName", action.payload.firstName);
 
 
                 
@@ -47,7 +53,10 @@ const StateProvider = ( { children } ) => {
                     maleCloset: action.payload.maleCloset,
                     femaleCloset: action.payload.femaleCloset,
                     aboutMe: action.payload.aboutMe,
-                    avatarHead: action.payload.avatarHead
+                    avatarHead: action.payload.avatarHead,
+                    isAdmin: action.payload.isAdmin,
+                    lastName: action.payload.lastName,
+                    firstName: action.payload.firstName
                     
                 };
             case 'logout':
