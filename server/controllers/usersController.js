@@ -96,7 +96,10 @@ exports.login = async (req, res) =>{
                                     maleCloset: user.maleCloset,
                                     femaleCloset: user.femaleCloset,
                                     aboutMe: user.aboutMe,
-                                    avatarHead: user.avatarHead
+                                    avatarHead: user.avatarHead,
+                                    lastName: user.lastName,
+                                    firstName: user.firstName,
+                                    isAdmin: user.isAdmin
                                 });
                                 
                             }                                
