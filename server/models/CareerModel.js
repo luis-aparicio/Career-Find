@@ -47,7 +47,6 @@ const CareerSchema = new mongoose.Schema ({
             AreaName :  String 
          }
       ],
-<<<<<<< HEAD
        StFips :  String ,
        Location :  String ,
        Video : [
@@ -67,11 +66,6 @@ const CareerSchema = new mongoose.Schema ({
         }
       ],
        SocInfo : {
-=======
-      WageYear :  String ,
-      SocData :  String ,
-      SocWageInfo : {
->>>>>>> 2fda22364149fb2c193855b9e0c4befe50a9d0cb
          SocCode :  String ,
          SocTitle :  String ,
          SocDescription :  String 

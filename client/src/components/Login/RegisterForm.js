@@ -20,10 +20,12 @@ const RegisterForm = (props) => {
             lastName: formInput.lastname,
             username: formInput.username,
             email: formInput.email,
-            password: formInput.password
+            password: formInput.password,
+            avatar: "https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender=1&style=5&rotation=0&beard=2212&brow=1555&cheek_details=1356&ear=1423&eye=1614&eyelash=-1&eye_details=1352&face_lines=1366&glasses=2465&hair=1723&hat=2495&jaw=1400&mouth=2338&nose=1482&beard_tone=8678208&blush_tone=16754088&brow_tone=6772090&eyeshadow_tone=-1&hair_tone=8637550&hair_treatment_tone=10513945&lipstick_tone=16740668&pupil_tone=5793385&skin_tone=9657655&body=1&face_proportion=13&eye_spacing=0&eye_size=2&outfit=990491"
         };
         await axios.post('/api/user/', user).then((response) => {
             if(response.data !=="Success"){
+                
                 setErrorString(response.data);
                 dispatch({ type: 'logout' })
                 console.log("error");

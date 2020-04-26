@@ -3,7 +3,7 @@ import {Button} from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
-import {globalState} from '../../state/globalState'
+import {globalState} from '../../state/globalState';
 
 
 
