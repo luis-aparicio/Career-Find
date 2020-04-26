@@ -16,6 +16,7 @@ const RegisterForm = (props) => {
 
     const maleCloset = [];
     const femaleCloset = [];
+    const currStudents = [];
 
     maleCloset.push(1018506);
     femaleCloset.push(1018485);
@@ -32,6 +33,7 @@ const RegisterForm = (props) => {
             password: formInput.password,
             isAdmin: isAdminChecked,
             maleCloset: maleCloset,
+            students:currStudents,
             femaleCloset: femaleCloset,
             Avatar: "https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender=1&style=5&rotation=0&hair=1305&hat=-1&mouth=2337&nose=1435&beard=-1&cheek_details=-1&ear=1424&eye=1610&eyelash=-1&eye_details=-1&face_lines=-1&glasses=-1&beard_tone=0&brow_tone=0&eyeshadow_tone=-1&hair_tone=2039326&lipstick_tone=-1&pupil_tone=5977116&skin_tone=9655597&body=0&face_proportion=1&brow=1537&outfit=1018506",
             avatarHead: "https://preview.bitmoji.com/avatar-builder-v3/preview/head?scale=3&gender=1&style=5&rotation=0&hair=1305&hat=-1&mouth=2337&nose=1435&beard=-1&cheek_details=-1&ear=1424&eye=1610&eyelash=-1&eye_details=-1&face_lines=-1&glasses=-1&beard_tone=0&brow_tone=0&eyeshadow_tone=-1&hair_tone=2039326&lipstick_tone=-1&pupil_tone=5977116&skin_tone=9655597&body=0&face_proportion=1&brow=1537&outfit=1018485"
@@ -71,7 +73,8 @@ const RegisterForm = (props) => {
                             aboutMe: response.data.aboutMe,
                             avatarHead: response.data.avatarHead,
                             lastName: response.data.lastName,
-                            firstName: response.data.firstName
+                            firstName: response.data.firstName,
+                            students: response.data.students
                         }
                         });
                         let vars = {

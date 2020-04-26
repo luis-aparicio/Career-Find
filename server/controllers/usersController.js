@@ -23,6 +23,7 @@ exports.create = async(req, res) => {
     } 
     const newUser = new User(req.body);
     newUser.password = await getHash(newUser.password);
+
     // Saving new user to the database
     await newUser.save(function(err){
         if(err){

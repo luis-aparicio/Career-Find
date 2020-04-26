@@ -66,7 +66,12 @@ const UserSchema = new mongoose.Schema({
     aboutMe:{
         type: String,
         default:""
-    }
+    },
+    students:[
+        {
+            username:String
+        }
+    ]
 });
 
 module.exports = User = mongoose.model("User", UserSchema);

@@ -33,7 +33,7 @@ const NavBar = () => {
             <div className = "nav-items">
                 <Link className = "nav-link" to='/Home'>Home</Link>
                 <Link className = "nav-link" to='/Careers'>Careers</Link>
-                <Link className = "nav-link" visibility={globalStateLogin.state.isAdmin ? 'visible' : 'hidden'} to='/Classroom'>Admin</Link>
+                <Link className = "nav-link" to='/Classroom'>Classroom</Link>
                 <Link className = "nav-link" to='/Profile'>Profile</Link>
                 <Link className = "nav-link" to={loggedIn ? '/Rewards' : '/Login'}>Rewards</Link>
                 <Link className = "nav-link" to= '/Login'>

@@ -17,7 +17,8 @@ const initialState = {
     maleCloset: [],
     femaleCloset: [],
     aboutMe: "",
-    avatarHead: ""
+    avatarHead: "",
+    students:[]
 };
 const globalState = createContext(initialState);
 const { Provider } = globalState;
@@ -38,9 +39,9 @@ const StateProvider = ( { children } ) => {
                 localStorage.setItem("isAdmin", action.payload.isAdmin);
                 localStorage.setItem("lastName", action.payload.lastName);
                 localStorage.setItem("firstName", action.payload.firstName);
-
-
+                localStorage.setItem("students", action.payload.students);
                 
+
                 console.log("Logged In!");
                 return {
                     ...state,
@@ -56,7 +57,8 @@ const StateProvider = ( { children } ) => {
                     avatarHead: action.payload.avatarHead,
                     isAdmin: action.payload.isAdmin,
                     lastName: action.payload.lastName,
-                    firstName: action.payload.firstName
+                    firstName: action.payload.firstName,
+                    students: action.payload.students
                     
                 };
             case 'logout':
@@ -117,6 +119,12 @@ const StateProvider = ( { children } ) => {
                     ...state,
                     avatarHead: action.payload.avatarHead
                 };
+            case 'update_students':
+                    localStorage.setItem("students", action.payload.students);
+                    return {
+                        ...state,
+                        students: action.payload.students
+                    };
         };
     }, initialState);
 
