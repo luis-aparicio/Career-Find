@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import {globalState} from '../../state/globalState'
 
 const NewStudent = (props) => {
-    if(props.showNew{
+    if(props.showNew){
         const [formInput, setFormInput] = useState({});
         const[errorString, setErrorString] = useState("");
         const globalStateLogin = React.useContext(globalState);
@@ -38,7 +38,7 @@ const NewStudent = (props) => {
                 adminname=globalStateVars.state.user,
                 userinfo = user
             };
-            let response = await axios.post('/api/user/', admin);
+            let response = await axios.post('/api/user/admin/new', admin);
             
             if(response.data.includes("ERROR")){
                 setErrorString(response.data);
@@ -46,7 +46,7 @@ const NewStudent = (props) => {
             } else {
                 console.log("Success!");
                 dispatch({ 
-                    type:'students', 
+                    type:'update_students', 
                     payload: {
                         students: response.body
                     }
@@ -54,6 +54,7 @@ const NewStudent = (props) => {
             }
 
             console.log(user);
+            props.setShowNew(false);
 
         };
 
@@ -77,7 +78,7 @@ const NewStudent = (props) => {
                                 That username is taken please choose another.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group controlId="adminrUserEmail">
+                        <Form.Group controlId="adminUserEmail">
                             <Form.Label className="lab">Email:</Form.Label>
                             <Form.Control
                                 name="email"

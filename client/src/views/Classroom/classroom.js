@@ -1,5 +1,5 @@
 import React ,{useState, useContext} from 'react';
-import InputGroup from 'react-bootstrap/InputGroup'
+import FormGroup from 'react-bootstrap/FormGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -7,13 +7,16 @@ import { Row, Col } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
 import { globalState } from "../../state/globalState";
 import './classrom.css';
+import NewStudent from '../../components/NewStudent/NewStudent'
 
 
 
 function Classroom() {
 
     const [classroomview,setClassroomview] = useState(false);
+    const [careerInput, setCareerInput] = useState({});
     const globalStateVars = React.useContext(globalState);
+    const [createNewStudent, setCreateNewStudent] = useState(false);
     
 
     
@@ -26,91 +29,48 @@ function Classroom() {
     }
 
 
+    const submitCareer = async(event) => {
 
+        event.preventDefault();
+        let career = {
+            OnetCode: formInput.Code,
+            OnetDescription: formInput.Description
+        };
+        let career = await axios.post('/api/career/career/new', career);
+            console.log("Success!");
+        toTable();
+    }
+    const handleChange = (event) => {
+        event.persist();
+        setCareerInput(careerInput => ({...careerInput, [event.target.name]: event.target.value}));
+    };
+
+    
 
 if (classroomview === false && globalStateVars.state.isAdmin){
     return (
         <div className="text1">
             <Container>
-                <InputGroup className="mb-3">
-                    <FormControl
-                    placeholder="Career Name/Code"
-                    aria-label="Career Name/Codes"
-                    aria-describedby="basic-addon2"
-                    
-                    />
-                    <InputGroup.Append>
-                    <Button variant="outline-secondary" className="butn">Set</Button>
-                    </InputGroup.Append>
-                </InputGroup>
+            <Form onSubmit={submitCareer} onChange={handleChange}>
+
+                <Form.Group controlId="formCode">
+                            <Form.Label className="lab">Enter Career Code:</Form.Label>
+                            <Form.Control
+                                name="Code"
+                                type="text"
+                                placeholder="Career Name/Code"/>
+                        </Form.Group>
     
-                <InputGroup >
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Description</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Salary</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Video Link</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Experience</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Activities</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Knowledge</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Required Skills</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Required Abilities</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
-    
-                <InputGroup>
-                    <InputGroup.Prepend>
-                    <InputGroup.Text className="label1">Related</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                </InputGroup>
+                <FormGroup >
+                    <Form.Label className="label1">Description</Form.Label>
+                    <FormControl type="text"  name="Description"  />
+                </FormGroup>
+                </Form>
             </Container>
     
             
              
-                        <Button type="submit" className="button1">
+                        <Button type="submit" className="button1" onClick = {() => submitCareer()} >
                                 Update
                         </Button>
                         <br></br> 
@@ -143,14 +103,20 @@ if (classroomview === false && globalStateVars.state.isAdmin){
         </Container>
 
             <Row>
-                <Button type="submit" onClick = {()=> newStudent()}>
+                <Button type="submit" onClick = {()=> setCreateNewStudent(true)}>
                         New Student
                 </Button>
                             
                 <Button variant="primary" size="sm" onClick = {() => toUpdate()}>
                         Switch to Update Page
                 </Button>
-            </Row>    
+            </Row>  
+        <Container>
+            <div>
+                <NewStudent showNew= {createNewStudent}
+                   setShowNew={setCreateNewStudent} />
+            </div>
+        </Container>  
 
     </div> 
     );
