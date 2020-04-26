@@ -12,16 +12,30 @@ exports.newStudent = async(req, res) => {
         else returns ERROR with specific info to error*/
         
     let admin = await User.findOne({username: req.body.adminname});
-    if(admin.isAdmin){
+    console.log("moszs");
+    console.log(admin);
+
+    /*if(admin.isAdmin){
         let response = await userController.create(req.body.userinfo, res);
         if(response === "Success"){
             admin.students.push(req.body.userinfo.username);
-            res.sendStatus(200).send(admin.students);
+            //res.sendStatus(200).send(admin.students);
         } else {
             res.sendStatus(200).send("ERROR-COULD NOT SAVE NEW STUDENT");
         }
     } else {
         res.sendStatus(200).send("ERROR-NOT AN ADMIN");
+    }*/
+
+    if(admin){
+       
+            let response = await userController.create(req.body.userinfo, res);
+            if(response === "Success"){
+                admin.students.push(req.body.userinfo.username);
+                //res.sendStatus(200).send(admin.students);
+            } 
+               // res.sendStatus(200).send("ERROR-COULD NOT SAVE NEW STUDENT");
+
     }
 }
 
@@ -36,10 +50,12 @@ exports.getStudent = async(req, res) => {
         const props = req.body.property;
         let admin = await User.findOne({username: req.body.adminname});
         if(admin){
-            if(admin.isAdmin){
+
+                console.log(admin.students);
                 res.sendStatus(200).send(admin.students);
-            }else
-                res.sendStatus(200).send("ERROR-NOT AN ADMIN");
-        } else
-            res.sendStatus(200).send("ERROR-COULD NOT SAVE NEW STUDENT");
+
+                //res.sendStatus(200).send("ERROR-NOT AN ADMIN");
+        } 
+           // res.sendStatus(200).send("ERROR-COULD NOT SAVE NEW STUDENT");
+    
 }
