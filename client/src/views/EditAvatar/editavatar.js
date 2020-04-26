@@ -15,6 +15,10 @@ function EditAvatar() {
     const globalStateVars = React.useContext(globalState);
     const { dispatch } = globalStateVars;
 
+    const maleoutfits = globalStateVars.state.maleCloset;
+    const femaleoutfits = globalStateVars.state.femaleCloset;
+
+
 
     const defaulttraits = libmoji.getTraits("male","cm");
     const genders = [["male",1],["female",2]];
@@ -27,6 +31,9 @@ function EditAvatar() {
     const [selectedoutfit,setSelectedoutfit] = useState(0);
     const [selectedgender,setSelectedgender] = useState(0);
     const [currenttrait,setCurrenttrait] = useState(defaulttraits);
+
+    const [selectedMale,setSelectedMale] = useState("");
+    const [selectedFemale,setSelectedFemale] = useState("");
     
     const [selectedbrow,setSelectedbrow] = useState(0);
     const [selectedcheek,setSelectedcheek] = useState(0);
@@ -50,29 +57,34 @@ function EditAvatar() {
     const [selectedbody,setSelectedbody] = useState(0);
     const [selectedfacesh,setSelectedfacesh] = useState(0);
     const [selectededit,setSelectededit] = useState("");
+    const [currentOutfits,setCurrentOutfits] = useState({maleoutfits});
     
-    const outfits = libmoji.getOutfits(libmoji.getBrands(genders[selectedgender][0])[0]);
+    
+    
     //libmoji.buildPreviewUrl("body",3,genders[selectedgender][1],styles[1][1],0,traits,)
-    console.log(outfits);
+    console.log(maleoutfits);
+    console.log(currentOutfits);
+    console.log(femaleoutfits);
     //console.log(malebrands);
     //console.log(currenttrait[4].options[selectedeye]);
     //console.log(currenttrait[0].options[0].value);
     //console.log(selectedeye);
    
-    let avatar = ("https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender="+genders[selectedgender][1]+"&style=5&rotation=0&hair="+currenttrait[9].options[selectedhair].value+"&hat="+currenttrait[10].options[selectedhat].value+"&mouth="+currenttrait[12].options[selectedmouth].value+"&nose="+currenttrait[13].options[selectednose].value+"&beard="+currenttrait[0].options[selectedbeard].value+"&cheek_details="+currenttrait[2].options[selectedcheek].value+"&ear="+currenttrait[3].options[selectedear].value+"&eye="+currenttrait[4].options[selectedeye].value+"&eyelash="+currenttrait[5].options[selectedeyelash].value+"&eye_details="+currenttrait[6].options[selectedeye].value+"&face_lines="+currenttrait[7].options[selectedface].value+"&glasses="+currenttrait[8].options[selectedglasses].value+"&beard_tone="+currenttrait[14].options[selectedbeardcol].value+"&brow_tone="+currenttrait[16].options[selectedbrowcol].value+"&eyeshadow_tone="+currenttrait[17].options[selectedeyeshadow].value+"&hair_tone="+currenttrait[18].options[selectedhaircol].value+"&lipstick_tone="+currenttrait[20].options[selectedlipstick].value+"&pupil_tone="+currenttrait[21].options[selectedpupil].value+"&skin_tone="+currenttrait[22].options[selectedskincol].value+"&body="+currenttrait[23].options[selectedbody].value+"&face_proportion="+currenttrait[24].options[selectedfacesh].value+"&brow="+currenttrait[1].options[selectedbrow].value+"&outfit="+outfits[selectedoutfit].id);
+    let Avatar = ("https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender="+genders[selectedgender][1]+"&style=5&rotation=0&hair="+currenttrait[9].options[selectedhair].value+"&hat="+currenttrait[10].options[selectedhat].value+"&mouth="+currenttrait[12].options[selectedmouth].value+"&nose="+currenttrait[13].options[selectednose].value+"&beard="+currenttrait[0].options[selectedbeard].value+"&cheek_details="+currenttrait[2].options[selectedcheek].value+"&ear="+currenttrait[3].options[selectedear].value+"&eye="+currenttrait[4].options[selectedeye].value+"&eyelash="+currenttrait[5].options[selectedeyelash].value+"&eye_details="+currenttrait[6].options[selectedeye].value+"&face_lines="+currenttrait[7].options[selectedface].value+"&glasses="+currenttrait[8].options[selectedglasses].value+"&beard_tone="+currenttrait[14].options[selectedbeardcol].value+"&brow_tone="+currenttrait[16].options[selectedbrowcol].value+"&eyeshadow_tone="+currenttrait[17].options[selectedeyeshadow].value+"&hair_tone="+currenttrait[18].options[selectedhaircol].value+"&lipstick_tone="+currenttrait[20].options[selectedlipstick].value+"&pupil_tone="+currenttrait[21].options[selectedpupil].value+"&skin_tone="+currenttrait[22].options[selectedskincol].value+"&body="+currenttrait[23].options[selectedbody].value+"&face_proportion="+currenttrait[24].options[selectedfacesh].value+"&brow="+currenttrait[1].options[selectedbrow].value+"&outfit="+currentOutfits[selectedoutfit]);
+
 
 async function save()
 {
     dispatch({
         type:'update_avatar', 
         payload: {
-            avatar: avatar
+            avatar: Avatar
         }
     });
     let data = {
         username: globalStateVars.state.user,
         property: "avatar",
-        content: avatar
+        content: Avatar
     };
 
     await axios.post('/api/user/profile/update', data);
@@ -83,10 +95,20 @@ function loadUserdata()
 
 }
 
+function switchMale(){
+    setSelectedgender(0);
+    setCurrentOutfits(maleoutfits);
+}
+
+function switchFemale(){
+    setSelectedgender(1);
+    setCurrentOutfits(femaleoutfits);
+}
+
 function makechange(value){
 
     if(value === '+' && selectededit ==="Outfit"){
-         if(selectedoutfit+1<outfits.length)
+         if(selectedoutfit+1<currentOutfits.length)
         setSelectedoutfit(selectedoutfit+1);}
      if(value === '-' && selectededit ==="Outfit"){
          if(selectedoutfit-1>-1)
@@ -304,13 +326,33 @@ function makechange(value){
                     <Dropdown.Item onClick = {()=> setSelectededit("Eyelash")}>Eyelashes</Dropdown.Item>
                 </Dropdown.Menu>
         </Dropdown>
+
+        <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    {selectedMale}
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item onClick = {()=> setSelectededit("Outfit")}>New Male Outfits</Dropdown.Item>
+                </Dropdown.Menu>
+        </Dropdown>
+
+        <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    {selectedFemale}
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item onClick = {()=> setSelectededit("Outfit")}>New Female Outfits</Dropdown.Item>
+                </Dropdown.Menu>
+        </Dropdown>
         <img src={arrow} onClick = {()=> makechange("+")} className="arrowimg" height="80" width="100"  ></img>
         
     </div>
     <div className="editavtrrow">
         
-            <Button variant="primary" onClick = {()=> setSelectedgender(0)}>Male</Button>{' '}
-            <Button variant="primary" onClick = {()=> setSelectedgender(1)}>Female</Button>{' '} 
+            <Button variant="primary" onClick = {()=> switchMale()}>Male</Button>{' '}
+            <Button variant="primary" onClick = {()=> switchFemale()}>Female</Button>{' '} 
        
     </div>
    
@@ -318,7 +360,7 @@ function makechange(value){
     <div className="avtrcol2">
         <h1 className="avtrheading">Edit Avatar</h1>
         
-        <img src={avatar} className="avatarimg" height="450" width="500">
+        <img src={Avatar} className="avatarimg" height="450" width="500">
         </img>
         
         
