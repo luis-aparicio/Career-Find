@@ -48,12 +48,7 @@ const { dispatch } = globalStateVars;
        <li>{career}</li> 
         )}    
 </ul>
-<h3 className="subheadig">Preferred courses</h3>
-<ul className="bullet">
-    <li>Operating system</li>
-    <li>Software Engineering</li>
-    <li>Web design</li>
-</ul>
+
 <h3 className="subheadig">About you</h3>
 <p className="desc">
 {globalStateVars.state.aboutMe}

@@ -18,6 +18,7 @@
     background: #3A82EF;
     display:flex;
     align-items: center;
+    margin-left: 15em;
 }
 
 .nav-link {
