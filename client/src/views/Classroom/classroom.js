@@ -121,7 +121,7 @@ if (classroomview === false && globalStateVars.state.isAdmin){
         </div> 
         );
 } else if(globalStateVars.state.isAdmin)
-
+    let studentarray = globalStateVars.state.studentarray;
     return (
     <div>
 
