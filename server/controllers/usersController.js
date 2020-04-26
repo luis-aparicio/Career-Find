@@ -81,7 +81,7 @@ exports.login = async (req, res) =>{
                         
                         payload,
                         (process.env.secretOrKey || require('./config').secretOrKey),
-                        keys.secretOrKey,{
+                        {
                             expiresIn: 360000
                         },
                         (err, token) =>{
