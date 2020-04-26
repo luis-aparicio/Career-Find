@@ -83,7 +83,7 @@ async function handleFavoriteClick () {
         content: newFavorites
     };
 
-    let response = await axios.post('/api/user/profile/update', data);
+    await axios.post('/api/user/profile/update', data);
     
     
 }

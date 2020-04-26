@@ -74,6 +74,7 @@ const StateProvider = ( { children } ) => {
                 };
             case 'update_avatar':
                 localStorage.setItem("avatar", action.payload.avatar);
+                console.log('golbal stal set avatar')
                 return {
                     ...state,
                     avatar: action.payload.avatar
