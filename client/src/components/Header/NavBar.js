@@ -38,8 +38,7 @@ const NavBar = () => {
                 </Link>
                 {/*<a className = "nav-link" target="_blank" rel="noopener norefferer" href="https://nodejs.org/en/docs/">*To Link*</a>*/}
                
-                <input type={Text} name="search" placeholder="Search for a career.."></input>
-                <Link className = "nav-link" to= '/Search'>Search</Link>
+                
                 
                 <img src={avatarHeadString} height="100" width="100">
                 </img>
