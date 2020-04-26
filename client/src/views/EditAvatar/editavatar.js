@@ -327,25 +327,6 @@ function makechange(value){
                 </Dropdown.Menu>
         </Dropdown>
 
-        <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    {selectedMale}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                    <Dropdown.Item onClick = {()=> setSelectededit("Outfit")}>New Male Outfits</Dropdown.Item>
-                </Dropdown.Menu>
-        </Dropdown>
-
-        <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    {selectedFemale}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                    <Dropdown.Item onClick = {()=> setSelectededit("Outfit")}>New Female Outfits</Dropdown.Item>
-                </Dropdown.Menu>
-        </Dropdown>
         <img src={arrow} onClick = {()=> makechange("+")} className="arrowimg" height="80" width="100"  ></img>
         
     </div>
