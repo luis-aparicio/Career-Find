@@ -86,8 +86,7 @@ const StateProvider = ( { children } ) => {
                     console.log('Error updating' + action.payload.property);
                 }
                 return {
-                    ...state,
-                    [action.payload.property]: action.payload.content
+                    ...state
                 };
             default:
                 return state;
