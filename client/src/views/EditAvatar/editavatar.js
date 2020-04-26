@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import logo from '../../assets/logo.svg';
+
 import './avtr.css';
 import arrow from './icon.png';
 import arrow2 from './icon2.png';
@@ -70,11 +70,12 @@ function EditAvatar() {
     //console.log(currenttrait[4].options[selectedeye]);
     //console.log(currenttrait[0].options[0].value);
     //console.log(selectedeye);
+    
    
     let Avatar = ("https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender="+genders[selectedgender][1]+"&style=5&rotation=0&hair="+currenttrait[9].options[selectedhair].value+"&hat="+currenttrait[10].options[selectedhat].value+"&mouth="+currenttrait[12].options[selectedmouth].value+"&nose="+currenttrait[13].options[selectednose].value+"&beard="+currenttrait[0].options[selectedbeard].value+"&cheek_details="+currenttrait[2].options[selectedcheek].value+"&ear="+currenttrait[3].options[selectedear].value+"&eye="+currenttrait[4].options[selectedeye].value+"&eyelash="+currenttrait[5].options[selectedeyelash].value+"&eye_details="+currenttrait[6].options[selectedeye].value+"&face_lines="+currenttrait[7].options[selectedface].value+"&glasses="+currenttrait[8].options[selectedglasses].value+"&beard_tone="+currenttrait[14].options[selectedbeardcol].value+"&brow_tone="+currenttrait[16].options[selectedbrowcol].value+"&eyeshadow_tone="+currenttrait[17].options[selectedeyeshadow].value+"&hair_tone="+currenttrait[18].options[selectedhaircol].value+"&lipstick_tone="+currenttrait[20].options[selectedlipstick].value+"&pupil_tone="+currenttrait[21].options[selectedpupil].value+"&skin_tone="+currenttrait[22].options[selectedskincol].value+"&body="+currenttrait[23].options[selectedbody].value+"&face_proportion="+currenttrait[24].options[selectedfacesh].value+"&brow="+currenttrait[1].options[selectedbrow].value+"&outfit="+currentOutfits[selectedoutfit]);
     let AvatarHead = ("https://preview.bitmoji.com/avatar-builder-v3/preview/head?scale=3&gender="+genders[selectedgender][1]+"&style=5&rotation=0&hair="+currenttrait[9].options[selectedhair].value+"&hat="+currenttrait[10].options[selectedhat].value+"&mouth="+currenttrait[12].options[selectedmouth].value+"&nose="+currenttrait[13].options[selectednose].value+"&beard="+currenttrait[0].options[selectedbeard].value+"&cheek_details="+currenttrait[2].options[selectedcheek].value+"&ear="+currenttrait[3].options[selectedear].value+"&eye="+currenttrait[4].options[selectedeye].value+"&eyelash="+currenttrait[5].options[selectedeyelash].value+"&eye_details="+currenttrait[6].options[selectedeye].value+"&face_lines="+currenttrait[7].options[selectedface].value+"&glasses="+currenttrait[8].options[selectedglasses].value+"&beard_tone="+currenttrait[14].options[selectedbeardcol].value+"&brow_tone="+currenttrait[16].options[selectedbrowcol].value+"&eyeshadow_tone="+currenttrait[17].options[selectedeyeshadow].value+"&hair_tone="+currenttrait[18].options[selectedhaircol].value+"&lipstick_tone="+currenttrait[20].options[selectedlipstick].value+"&pupil_tone="+currenttrait[21].options[selectedpupil].value+"&skin_tone="+currenttrait[22].options[selectedskincol].value+"&body="+currenttrait[23].options[selectedbody].value+"&face_proportion="+currenttrait[24].options[selectedfacesh].value+"&brow="+currenttrait[1].options[selectedbrow].value+"&outfit="+currentOutfits[selectedoutfit]);
     
-
+    console.log(AvatarHead);
 async function save()
 {
     dispatch({
