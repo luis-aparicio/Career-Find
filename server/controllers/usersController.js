@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const User = require('../models/UserModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const keys = require('../config/config')
+//const keys = require('../config/config')
 const passport = require('passport');
 const getHash = async (password) => {
     const salt = await bcrypt.genSalt(10);
@@ -78,7 +78,9 @@ exports.login = async (req, res) =>{
                         name: user.name
                     };
                     jwt.sign(
+                        
                         payload,
+                        (process.env.secretOrKey || require('./config').secretOrKey),
                         keys.secretOrKey,{
                             expiresIn: 360000
                         },
