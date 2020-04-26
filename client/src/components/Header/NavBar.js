@@ -12,6 +12,7 @@ const NavBar = () => {
     const globalStateLogin = React.useContext(globalState);
     let loggedIn = globalStateLogin.state.isAuthenticated;
     let avatarHeadString = globalStateLogin.state.avatarHead;
+    console.log(avatarHeadString);
 
     React.useEffect(() => {
         loggedIn = globalStateLogin.state.isAuthenticated;
@@ -39,6 +40,11 @@ const NavBar = () => {
                
                 <input type={Text} name="search" placeholder="Search for a career.."></input>
                 <Link className = "nav-link" to= '/Search'>Search</Link>
+                
+                <img src={avatarHeadString} height="100" width="100">
+                </img>
+
+                
             </div>
            
 
