@@ -5,8 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Figure from 'react-bootstrap/Figure';
 import business from './business.jpg';
-import Updateback from '../../components/updateBackEnd';
 import { globalState } from "../../state/globalState";
+import axios from 'axios';
 
 
 const Careerpage = (props) => {
@@ -74,18 +74,18 @@ async function handleFavoriteClick () {
             favorites: newFavorites
         }
     });
-    let response = let data = {
+    let data = {
         username: globalStateVars.state.user,
-        property: property,
-        content: content
+        property: "favorites",
+        content: newFavorites
     };
 
-    let response = axios.post('/api/user/profile/update', data);
+    let response = await axios.post('/api/user/profile/update', data);
     if(!response.includes('ERROR')){
         
-        console.log(property + ' = ' + content);
+        console.log('favorites = ' + newFavorites);
     }else{
-        console.log('Error updating' + property);
+        console.log('Error updating favorites');
     }
     
 }
