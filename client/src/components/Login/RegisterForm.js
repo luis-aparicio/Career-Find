@@ -47,7 +47,7 @@ const RegisterForm = (props) => {
                     dispatch({ 
                         type:'login', 
                         payload: {
-                            user: formInput.firstname,
+                            user: formInput.username,
                             token: response.data.token
                         }
                         });

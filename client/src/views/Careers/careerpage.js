@@ -68,10 +68,9 @@ async function handleFavoriteClick () {
     }
     //update global state var
     dispatch({ 
-        type:'update', 
+        type:'update_favorites', 
         payload: {
-            property: "favorites",
-            content: isFavorite
+            favorites: isFavorite
         }
     });
 }

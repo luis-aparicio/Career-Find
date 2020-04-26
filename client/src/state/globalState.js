@@ -1,7 +1,6 @@
 //code from https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
 // and https://www.freecodecamp.org/news/state-management-with-react-hooks/ as I try different ways to implement
 //context hook
-import axios from 'axios';
 
 import React, {createContext, useReducer} from 'react';
 
@@ -18,27 +17,8 @@ const initialState = {
 const globalState = createContext(initialState);
 const { Provider } = globalState;
 
-async function updateBackEnd(property, content) {
-    //calls update post to change user attribute
-    //will work for any property of UserModel
-    let data = {
-        username:localStorage.getItem("user"),
-        property: property,
-        content: content
-    };
-
-    let response = await axios.post('/api/user/profile/update', data);
-    if(!response.includes('ERROR')){
-        localStorage.setItem(property, content);
-        console.log(property + ' = ' + content);
-    }else{
-        console.log('Error updating' + property);
-    }
-
-}
-
 const StateProvider = ( { children } ) => {
-    const [state, dispatch] = useReducer(async(state, action) => {
+    const [state, dispatch] = useReducer((state, action) => {
         switch(action.type) {
             case 'login':
                 localStorage.setItem("user", action.payload.user);
@@ -69,27 +49,36 @@ const StateProvider = ( { children } ) => {
                     maleCloset: [],
                     femaleCloset: []
                 };
-            case 'update':
-                //calls update post to change user attribute
-                //will work for any property of UserModel
-                let data = {
-                    username:localStorage.getItem("user"),
-                    property: action.payload.property,
-                    content: action.payload.content
-                };
-                
-                let response = await axios.post('/api/user/profile/update', data);
-                if(!response.includes('ERROR')){
-                    localStorage.setItem(action.payload.property, action.payload.content);
-                    console.log(action.payload.property + ' = ' + action.payload.content);
-                }else{
-                    console.log('Error updating' + action.payload.property);
-                }
+            case 'update_points':
+                localStorage.setItem("points", action.payload.points);
                 return {
-                    ...state
+                    ...state,
+                    points: action.payload.points
                 };
-            default:
-                return state;
+            case 'update_favorites':
+                localStorage.setItem("favorites", action.payload.favorites);
+                return {
+                    ...state,
+                    favorites: action.payload.favorites
+                };
+            case 'update_avatar':
+                localStorage.setItem("avatar", action.payload.avatar);
+                return {
+                    ...state,
+                    avatar: action.payload.avatar
+                };
+            case 'update_male_closet':
+                localStorage.setItem("maleCloset", action.payload.avatar);
+                return {
+                    ...state,
+                    maleCloset: action.payload.maleCloset
+                };
+            case 'update_female_closet':
+                localStorage.setItem("femaleCloset", action.payload.femaleCloset);
+                return {
+                    ...state,
+                    femaleCloset: action.payload.femaleCloset
+                };
         };
     }, initialState);
 
