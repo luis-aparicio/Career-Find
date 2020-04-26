@@ -2,12 +2,12 @@
 const mongoose = require ("mongoose");
 const fs = require("fs");
 const Career =require( '../models/CareerModel');
-const config = require ('../config/config');
+//const config = require ('../config/config');
 const async = require ('async');
 
 
 exports.fill = () =>{
-    mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
+    //mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 
     Career.deleteMany({}, (err) =>{
@@ -37,7 +37,7 @@ exports.fill = () =>{
 
 
         }, () =>{
-            mongoose.connection.close();
+            //mongoose.connection.close();
         });
     })
 }
