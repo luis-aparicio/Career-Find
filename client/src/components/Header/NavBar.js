@@ -32,7 +32,7 @@ const NavBar = () => {
                 <Link className = "nav-link" to='/Careers'>Careers</Link>
                 <Link className = "nav-link" to='/Classroom'>Classroom</Link>
                 <Link className = "nav-link" to='/Profile'>Profile</Link>
-                <Link className = "nav-link" to='/Rewards'>Rewards</Link>
+                <Link className = "nav-link" to={loggedIn ? '/Rewards' : '/Login'}>Rewards</Link>
                 <Link className = "nav-link" to= '/Login'>
                     { loggedIn ? 'Logout ' + globalStateLogin.state.user : 'Login/Register'}
                 </Link>
