@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Figure from 'react-bootstrap/Figure';
 import business from './business.jpg';
+import Updateback from '../../components/updateBackEnd';
 import { globalState } from "../../state/globalState";
 
 
@@ -17,8 +18,8 @@ const [isFavorite, setIsFavorite] = useState(false);
 
 const globalStateVars = React.useContext(globalState);
 const { dispatch } = globalStateVars;
-let currFavorites = globalStateVars.state.favorites;
-let newFavorites = currFavorites;
+let newFavorites = globalStateVars.state.favorites;
+
 
 
 let map = props.reducedcareers.map(career => 
@@ -67,12 +68,26 @@ async function handleFavoriteClick () {
         setIsFavorite(true);
     }
     //update global state var
-    dispatch({ 
+    dispatch({
         type:'update_favorites', 
         payload: {
-            favorites: isFavorite
+            favorites: newFavorites
         }
     });
+    let response = let data = {
+        username: globalStateVars.state.user,
+        property: property,
+        content: content
+    };
+
+    let response = axios.post('/api/user/profile/update', data);
+    if(!response.includes('ERROR')){
+        
+        console.log(property + ' = ' + content);
+    }else{
+        console.log('Error updating' + property);
+    }
+    
 }
 
     
