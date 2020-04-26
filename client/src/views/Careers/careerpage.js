@@ -10,11 +10,13 @@ import axios from 'axios';
 
 
 const Careerpage = (props) => {
+    
 
 const [careername,setCareername] = useState("");
 const [careerselected,setCareerselected] = useState(false);
 const [careerdata,setCareerdata] = useState({career:[]});
 const [isFavorite, setIsFavorite] = useState(false);
+const [video,setVideo] = useState("");
 
 const globalStateVars = React.useContext(globalState);
 const { dispatch } = globalStateVars;
@@ -36,6 +38,7 @@ async function handleClick (data) {
     setCareerdata(data);
     setCareername(data[0].OnetTitle);
     setCareerselected(true);
+    
     
     //initialize favorite button
     for(let i in newFavorites) {
