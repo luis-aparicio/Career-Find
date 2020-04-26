@@ -42,7 +42,8 @@ const LoginForm = (props) => {
                         avatar: response.data.avatar,
                         maleCloset: response.data.maleCloset,
                         femaleCloset: response.data.femaleCloset,
-                        aboutMe: response.data.aboutMe
+                        aboutMe: response.data.aboutMe,
+                        avatarHead: response.data.avatarHead
                     }
                  });
                  let vars = {

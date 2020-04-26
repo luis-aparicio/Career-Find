@@ -49,6 +49,10 @@ const UserSchema = new mongoose.Schema({
         type:String,
         default:""
     },
+    avatarHead:{
+        type:String,
+        default:""
+    },
     maleCloset:[
         {
             type: Number

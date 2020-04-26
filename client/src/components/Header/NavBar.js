@@ -11,6 +11,7 @@ const NavBar = () => {
     /*check context to see if user is loggedin*/
     const globalStateLogin = React.useContext(globalState);
     let loggedIn = globalStateLogin.state.isAuthenticated;
+    let avatarHeadString = globalStateLogin.state.avatarHead;
 
     React.useEffect(() => {
         loggedIn = globalStateLogin.state.isAuthenticated;

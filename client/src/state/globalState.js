@@ -13,7 +13,8 @@ const initialState = {
     points: 0,
     maleCloset: [],
     femaleCloset: [],
-    aboutMe: ""
+    aboutMe: "",
+    avatarHead: ""
 };
 const globalState = createContext(initialState);
 const { Provider } = globalState;
@@ -30,6 +31,8 @@ const StateProvider = ( { children } ) => {
                 localStorage.setItem("maleCloset", action.payload.maleCloset);
                 localStorage.setItem("femaleCloset", action.payload.femaleCloset);
                 localStorage.setItem("aboutMe", action.payload.aboutMe);
+                localStorage.setItem("avatarHead", action.payload.aboutMe);
+
 
                 
                 console.log("Logged In!");
@@ -43,7 +46,8 @@ const StateProvider = ( { children } ) => {
                     avatar: action.payload.avatar,
                     maleCloset: action.payload.maleCloset,
                     femaleCloset: action.payload.femaleCloset,
-                    aboutMe: action.payload.aboutMe
+                    aboutMe: action.payload.aboutMe,
+                    avatarHead: action.payload.avatarHead
                     
                 };
             case 'logout':
@@ -58,7 +62,8 @@ const StateProvider = ( { children } ) => {
                     points: 0,
                     maleCloset: [],
                     femaleCloset: [],
-                    aboutMe:""
+                    aboutMe:"",
+                    avatarHead: ""
                 };
             case 'update_points':
                 localStorage.setItem("points", action.payload.points);
@@ -91,11 +96,17 @@ const StateProvider = ( { children } ) => {
                     ...state,
                     femaleCloset: action.payload.femaleCloset
                 };
-                case 'update_aboutMe':
-                    localStorage.setItem("aboutMe", action.payload.aboutMe);
-                    return {
-                        ...state,
-                        aboutMe: action.payload.aboutMe
+            case 'update_aboutMe':
+                localStorage.setItem("aboutMe", action.payload.aboutMe);
+                return {
+                    ...state,
+                    aboutMe: action.payload.aboutMe
+            };
+            case 'update_avatar_head':
+                localStorage.setItem("avatarHead", action.payload.avatarHead);
+                return {
+                    ...state,
+                    avatarHead: action.payload.avatarHead
                 };
         };
     }, initialState);
