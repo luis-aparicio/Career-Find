@@ -40,17 +40,25 @@ const UserSchema = new mongoose.Schema({
         type:Number,
         default: 0
     },
-    favoriteCareers:[
+    favorites:[
         {
-            title:{
-                type: String
-            }
+            type: String
         }
     ],
     avatar:{
         type:String,
         default:""
-    }
+    },
+    maleCloset:[
+        {
+            type: Number
+        }
+    ],
+    femaleCloset:[
+        {
+            type:Number
+        }
+    ]
 });
 
 module.exports = User = mongoose.model("User", UserSchema);

@@ -39,7 +39,7 @@ async function handleClick (data) {
     //initialize favorite button
     for(let i in newFavorites) {
         let found = false;
-        if(newFavorites[i] === careername){
+        if(newFavorites[i] === data[0].OnetTitle){
             setIsFavorite(true);
             found = true;
         }
@@ -47,6 +47,7 @@ async function handleClick (data) {
             setIsFavorite(false);
     }  
 }
+
 
 async function handleFavoriteClick () {
     console.log(isFavorite);
@@ -66,6 +67,13 @@ async function handleFavoriteClick () {
         setIsFavorite(true);
     }
     //update global state var
+    dispatch({ 
+        type:'update', 
+        payload: {
+            property: "favorites",
+            content: isFavorite
+        }
+    });
 }
 
     
@@ -156,20 +164,20 @@ async function handleFavoriteClick () {
         <Fragment>
         <div className="careerheader">
        
-        <center> 
-            <Button variant="outline-danger" 
-                    onClick = {()=> setCareerselected(false)}>
+            <center> 
+                <Button variant="outline-danger" 
+                        onClick = {()=> setCareerselected(false)}>
                 Back
-            </Button>
-            <Button
-                variant="outline-danger"
-                onClick = {()=> handleFavoriteClick()}>
-                    { isFavorite ? 'Remove Favorite' : 'Add Favorite'}
-            </Button>
-            <h1>{careername}</h1>
-        </center>
+                </Button>
+                <Button
+                    variant="outline-danger"
+                    onClick = {()=> handleFavoriteClick()}>
+                        { isFavorite ? 'Remove Favorite' : 'Add Favorite'}
+                </Button>
+                <h1>{careername}</h1>
+            </center>
         
-    </div>
+        </div>
     
     <div className="careerrow">
         <div className="leftcol">

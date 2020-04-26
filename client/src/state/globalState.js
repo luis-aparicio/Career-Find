@@ -1,6 +1,7 @@
 //code from https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
 // and https://www.freecodecamp.org/news/state-management-with-react-hooks/ as I try different ways to implement
 //context hook
+import axios from 'axios';
 
 import React, {createContext, useReducer} from 'react';
 
@@ -11,13 +12,33 @@ const initialState = {
     favorites: [],
     avatar: "",
     points: 0,
-    allCareers: []
+    maleCloset: [],
+    femaleCloset: []
 };
 const globalState = createContext(initialState);
 const { Provider } = globalState;
 
+async function updateBackEnd(property, content) {
+    //calls update post to change user attribute
+    //will work for any property of UserModel
+    let data = {
+        username:localStorage.getItem("user"),
+        property: property,
+        content: content
+    };
+
+    let response = await axios.post('/api/user/profile/update', data);
+    if(!response.includes('ERROR')){
+        localStorage.setItem(property, content);
+        console.log(property + ' = ' + content);
+    }else{
+        console.log('Error updating' + property);
+    }
+
+}
+
 const StateProvider = ( { children } ) => {
-    const [state, dispatch] = useReducer((state, action) => {
+    const [state, dispatch] = useReducer(async(state, action) => {
         switch(action.type) {
             case 'login':
                 localStorage.setItem("user", action.payload.user);
@@ -44,31 +65,29 @@ const StateProvider = ( { children } ) => {
                     user: null,
                     favorites: [],
                     avatar: "",
-                    points: 0
+                    points: 0,
+                    maleCloset: [],
+                    femaleCloset: []
                 };
-            case 'update_points':
-                localStorage.setItem("points", action.payload.points);
+            case 'update':
+                //calls update post to change user attribute
+                //will work for any property of UserModel
+                let data = {
+                    username:localStorage.getItem("user"),
+                    property: action.payload.property,
+                    content: action.payload.content
+                };
+                
+                let response = await axios.post('/api/user/profile/update', data);
+                if(!response.includes('ERROR')){
+                    localStorage.setItem(action.payload.property, action.payload.content);
+                    console.log(action.payload.property + ' = ' + action.payload.content);
+                }else{
+                    console.log('Error updating' + action.payload.property);
+                }
                 return {
                     ...state,
-                    points: action.payload.points
-                };
-            case 'update_favorites':
-                localStorage.setItem("favorites", action.payload.favorites);
-                return {
-                    ...state,
-                    points: action.payload.favorites
-                };
-            case 'update_avatar':
-                localStorage.setItem("avatar", action.payload.avatar);
-                return {
-                    ...state,
-                    points: action.payload.favorites
-                };
-            case 'load_careers':
-                localStorage.setItem("allCareers", action.payload.careers);
-                return {
-                    ...state,
-                    points: action.payload.favorites
+                    [action.payload.property]: action.payload.content
                 };
             default:
                 return state;
